@@ -1,13 +1,14 @@
+@@ -0,0 +1,230 @@
 # TODO: write tests for other stores
 # import asyncio
 # from pathlib import Path
 # from secrets import token_bytes
 # import aiosqlite
 # import pytest
-# from flax.util.ints import uint32, uint64, uint128
-# from flax.wallet.wallet_coin_record import WalletCoinRecord
-# from flax.wallet.util.wallet_types import WalletType
-# from flax.types.coin import Coin
+# from lotus.util.ints import uint32, uint64, uint128
+# from lotus.wallet.wallet_coin_record import WalletCoinRecord
+# from lotus.wallet.util.wallet_types import WalletType
+# from lotus.types.coin import Coin
 #
 #
 # @pytest.fixture(scope="module")
