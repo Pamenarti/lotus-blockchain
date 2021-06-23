@@ -2,17 +2,17 @@ from collections import defaultdict
 from dataclasses import dataclass, replace
 from typing import Dict, Iterator, Set
 
-from spare.full_node.mempool_check_conditions import mempool_check_conditions_dict
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.coin_record import CoinRecord
-from spare.types.spend_bundle import SpendBundle
-from spare.util.condition_tools import (
+from lotus.full_node.mempool_check_conditions import mempool_check_conditions_dict
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.coin_record import CoinRecord
+from lotus.types.spend_bundle import SpendBundle
+from lotus.util.condition_tools import (
     conditions_dict_for_solution,
     coin_announcement_names_for_conditions_dict,
     puzzle_announcement_names_for_conditions_dict,
 )
-from spare.util.ints import uint32, uint64
+from lotus.util.ints import uint32, uint64
 
 
 class BadSpendBundleError(Exception):

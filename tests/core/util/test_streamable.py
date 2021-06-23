@@ -6,14 +6,14 @@ import io
 from clvm_tools import binutils
 from pytest import raises
 
-from spare.protocols.wallet_protocol import RespondRemovals
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.program import Program
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.full_block import FullBlock
-from spare.types.weight_proof import SubEpochChallengeSegment
-from spare.util.ints import uint8, uint32
-from spare.util.streamable import (
+from lotus.protocols.wallet_protocol import RespondRemovals
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.program import Program
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.full_block import FullBlock
+from lotus.types.weight_proof import SubEpochChallengeSegment
+from lotus.util.ints import uint8, uint32
+from lotus.util.streamable import (
     Streamable,
     streamable,
     parse_bool,

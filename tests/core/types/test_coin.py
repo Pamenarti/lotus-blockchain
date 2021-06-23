@@ -1,7 +1,7 @@
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.util.ints import uint64
-from spare.util.hash import std_hash
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.util.ints import uint64
+from lotus.util.hash import std_hash
 import io
 
 

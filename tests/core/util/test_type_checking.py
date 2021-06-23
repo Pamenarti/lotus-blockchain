@@ -2,8 +2,8 @@ import unittest
 from dataclasses import dataclass
 from typing import Dict, List, Optional, Tuple
 
-from spare.util.ints import uint8
-from spare.util.type_checking import is_type_List, is_type_SpecificOptional, strictdataclass
+from lotus.util.ints import uint8
+from lotus.util.type_checking import is_type_List, is_type_SpecificOptional, strictdataclass
 
 
 class TestIsTypeList(unittest.TestCase):

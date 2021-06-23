@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from typing import List, Any
 from unittest import TestCase
 
-from spare.full_node.bundle_tools import (
+from lotus.full_node.bundle_tools import (
     bundle_suitable_for_compression,
     compressed_coin_solution_entry_list,
     compressed_spend_bundle_solution,
@@ -11,13 +11,13 @@ from spare.full_node.bundle_tools import (
     simple_solution_generator,
     spend_bundle_to_serialized_coin_solution_entry_list,
 )
-from spare.full_node.generator import run_generator, create_generator_args
-from spare.types.blockchain_format.program import Program, SerializedProgram, INFINITE_COST
-from spare.types.generator_types import BlockGenerator, CompressorArg, GeneratorArg
-from spare.types.spend_bundle import SpendBundle
-from spare.util.byte_types import hexstr_to_bytes
-from spare.util.ints import uint32
-from spare.wallet.puzzles.load_clvm import load_clvm
+from lotus.full_node.generator import run_generator, create_generator_args
+from lotus.types.blockchain_format.program import Program, SerializedProgram, INFINITE_COST
+from lotus.types.generator_types import BlockGenerator, CompressorArg, GeneratorArg
+from lotus.types.spend_bundle import SpendBundle
+from lotus.util.byte_types import hexstr_to_bytes
+from lotus.util.ints import uint32
+from lotus.wallet.puzzles.load_clvm import load_clvm
 
 from tests.core.make_block_generator import make_spend_bundle
 
@@ -27,17 +27,17 @@ from clvm.serialize import sexp_from_stream
 
 from clvm_tools import binutils
 
-TEST_GEN_DESERIALIZE = load_clvm("test_generator_deserialize.clvm", package_or_requirement="spare.wallet.puzzles")
-DESERIALIZE_MOD = load_clvm("chialisp_deserialisation.clvm", package_or_requirement="spare.wallet.puzzles")
+TEST_GEN_DESERIALIZE = load_clvm("test_generator_deserialize.clvm", package_or_requirement="lotus.wallet.puzzles")
+DESERIALIZE_MOD = load_clvm("lotuslisp_deserialisation.clvm", package_or_requirement="lotus.wallet.puzzles")
 
-DECOMPRESS_PUZZLE = load_clvm("decompress_puzzle.clvm", package_or_requirement="spare.wallet.puzzles")
-DECOMPRESS_CSE = load_clvm("decompress_coin_solution_entry.clvm", package_or_requirement="spare.wallet.puzzles")
+DECOMPRESS_PUZZLE = load_clvm("decompress_puzzle.clvm", package_or_requirement="lotus.wallet.puzzles")
+DECOMPRESS_CSE = load_clvm("decompress_coin_solution_entry.clvm", package_or_requirement="lotus.wallet.puzzles")
 
 DECOMPRESS_CSE_WITH_PREFIX = load_clvm(
-    "decompress_coin_solution_entry_with_prefix.clvm", package_or_requirement="spare.wallet.puzzles"
+    "decompress_coin_solution_entry_with_prefix.clvm", package_or_requirement="lotus.wallet.puzzles"
 )
-DECOMPRESS_BLOCK = load_clvm("block_program_zero.clvm", package_or_requirement="spare.wallet.puzzles")
-TEST_MULTIPLE = load_clvm("test_multiple_generator_input_arguments.clvm", package_or_requirement="spare.wallet.puzzles")
+DECOMPRESS_BLOCK = load_clvm("block_program_zero.clvm", package_or_requirement="lotus.wallet.puzzles")
+TEST_MULTIPLE = load_clvm("test_multiple_generator_input_arguments.clvm", package_or_requirement="lotus.wallet.puzzles")
 
 Nil = Program.from_bytes(b"\x80")
 

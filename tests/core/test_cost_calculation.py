@@ -6,13 +6,13 @@ import time
 import pytest
 from clvm_tools import binutils
 
-from spare.consensus.condition_costs import ConditionCost
-from spare.consensus.cost_calculator import NPCResult, calculate_cost_of_program
-from spare.full_node.bundle_tools import simple_solution_generator
-from spare.full_node.mempool_check_conditions import get_name_puzzle_conditions, get_puzzle_and_solution_for_coin
-from spare.types.blockchain_format.program import Program, SerializedProgram
-from spare.types.generator_types import BlockGenerator
-from spare.wallet.puzzles import p2_delegated_puzzle_or_hidden_puzzle
+from lotus.consensus.condition_costs import ConditionCost
+from lotus.consensus.cost_calculator import NPCResult, calculate_cost_of_program
+from lotus.full_node.bundle_tools import simple_solution_generator
+from lotus.full_node.mempool_check_conditions import get_name_puzzle_conditions, get_puzzle_and_solution_for_coin
+from lotus.types.blockchain_format.program import Program, SerializedProgram
+from lotus.types.generator_types import BlockGenerator
+from lotus.wallet.puzzles import p2_delegated_puzzle_or_hidden_puzzle
 from tests.setup_nodes import bt, test_constants
 
 from .make_block_generator import make_block_generator
@@ -46,7 +46,7 @@ def large_block_generator(size):
     except FileNotFoundError:
         generator = make_block_generator(size)
         blob = bytes(generator.program)
-        #  TODO: Re-enable large-block*.hex but cache in ~/.chia/subdir
+        #  TODO: Re-enable large-block*.hex but cache in ~/.lotus/subdir
         #  with open(hex_path, "w") as f:
         #      f.write(blob.hex())
         return blob

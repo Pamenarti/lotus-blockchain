@@ -2,8 +2,8 @@ import asyncio
 
 import pytest
 
-from spare.full_node.sync_store import SyncStore
-from spare.util.hash import std_hash
+from lotus.full_node.sync_store import SyncStore
+from lotus.util.hash import std_hash
 
 
 @pytest.fixture(scope="module")

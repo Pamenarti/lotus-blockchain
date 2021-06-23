@@ -4,12 +4,12 @@
 #
 # import pytest
 #
-# from spare.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
-# from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-# from spare.types.peer_info import PeerInfo
-# from spare.util.ints import uint16, uint32, uint64
+# from lotus.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
+# from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+# from lotus.types.peer_info import PeerInfo
+# from lotus.util.ints import uint16, uint32, uint64
 # from tests.setup_nodes import setup_simulators_and_wallets
-# from spare.wallet.cc_wallet.cc_wallet import CCWallet
+# from lotus.wallet.cc_wallet.cc_wallet import CCWallet
 # from tests.time_out_assert import time_out_assert
 #
 #

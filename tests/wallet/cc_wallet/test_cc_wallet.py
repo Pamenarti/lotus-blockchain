@@ -3,18 +3,18 @@ from typing import List
 
 import pytest
 
-from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from spare.full_node.mempool_manager import MempoolManager
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.peer_info import PeerInfo
-from spare.util.ints import uint16, uint32, uint64
-from spare.wallet.cc_wallet.cc_utils import cc_puzzle_hash_for_inner_puzzle_hash
-from spare.wallet.cc_wallet.cc_wallet import CCWallet
-from spare.wallet.puzzles.cc_loader import CC_MOD
-from spare.wallet.transaction_record import TransactionRecord
-from spare.wallet.wallet_coin_record import WalletCoinRecord
+from lotus.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from lotus.full_node.mempool_manager import MempoolManager
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.peer_info import PeerInfo
+from lotus.util.ints import uint16, uint32, uint64
+from lotus.wallet.cc_wallet.cc_utils import cc_puzzle_hash_for_inner_puzzle_hash
+from lotus.wallet.cc_wallet.cc_wallet import CCWallet
+from lotus.wallet.puzzles.cc_loader import CC_MOD
+from lotus.wallet.transaction_record import TransactionRecord
+from lotus.wallet.wallet_coin_record import WalletCoinRecord
 from tests.setup_nodes import setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 

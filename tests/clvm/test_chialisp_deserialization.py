@@ -1,10 +1,10 @@
 from unittest import TestCase
 
-from spare.types.blockchain_format.program import Program, INFINITE_COST
-from spare.util.byte_types import hexstr_to_bytes
-from spare.wallet.puzzles.load_clvm import load_clvm
+from lotus.types.blockchain_format.program import Program, INFINITE_COST
+from lotus.util.byte_types import hexstr_to_bytes
+from lotus.wallet.puzzles.load_clvm import load_clvm
 
-DESERIALIZE_MOD = load_clvm("chialisp_deserialisation.clvm", package_or_requirement="spare.wallet.puzzles")
+DESERIALIZE_MOD = load_clvm("lotuslisp_deserialisation.clvm", package_or_requirement="lotus.wallet.puzzles")
 
 
 def serialized_atom_overflow(size):

@@ -3,22 +3,22 @@ from unittest import TestCase
 from clvm_tools import binutils
 from clvm_tools.clvmc import compile_clvm_text
 
-from spare.full_node.generator import run_generator
-from spare.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from spare.types.blockchain_format.program import Program, SerializedProgram
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.condition_with_args import ConditionWithArgs
-from spare.types.name_puzzle_condition import NPC
-from spare.types.generator_types import BlockGenerator, GeneratorArg
-from spare.util.clvm import int_to_bytes
-from spare.util.condition_tools import ConditionOpcode
-from spare.util.ints import uint32
-from spare.wallet.puzzles.load_clvm import load_clvm
+from lotus.full_node.generator import run_generator
+from lotus.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from lotus.types.blockchain_format.program import Program, SerializedProgram
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.condition_with_args import ConditionWithArgs
+from lotus.types.name_puzzle_condition import NPC
+from lotus.types.generator_types import BlockGenerator, GeneratorArg
+from lotus.util.clvm import int_to_bytes
+from lotus.util.condition_tools import ConditionOpcode
+from lotus.util.ints import uint32
+from lotus.wallet.puzzles.load_clvm import load_clvm
 
 MAX_COST = int(1e15)
 
 
-DESERIALIZE_MOD = load_clvm("chialisp_deserialisation.clvm", package_or_requirement="spare.wallet.puzzles")
+DESERIALIZE_MOD = load_clvm("lotuslisp_deserialisation.clvm", package_or_requirement="lotus.wallet.puzzles")
 
 
 GENERATOR_CODE = """

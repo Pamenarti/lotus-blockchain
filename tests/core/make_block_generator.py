@@ -2,15 +2,15 @@ from typing import Dict
 
 import blspy
 
-from spare.full_node.bundle_tools import simple_solution_generator
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.program import Program
-from spare.types.coin_solution import CoinSolution
-from spare.types.condition_opcodes import ConditionOpcode
-from spare.types.generator_types import BlockGenerator
-from spare.types.spend_bundle import SpendBundle
-from spare.util.ints import uint64
-from spare.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import puzzle_for_pk, solution_for_conditions
+from lotus.full_node.bundle_tools import simple_solution_generator
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.program import Program
+from lotus.types.coin_solution import CoinSolution
+from lotus.types.condition_opcodes import ConditionOpcode
+from lotus.types.generator_types import BlockGenerator
+from lotus.types.spend_bundle import SpendBundle
+from lotus.util.ints import uint64
+from lotus.wallet.puzzles.p2_delegated_puzzle_or_hidden_puzzle import puzzle_for_pk, solution_for_conditions
 
 GROUP_ORDER = 0x73EDA753299D7D483339D80809A1D80553BDA402FFFE5BFEFFFFFFFF00000001
 

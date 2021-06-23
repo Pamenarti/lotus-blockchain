@@ -10,31 +10,31 @@ import pytest
 from blspy import AugSchemeMPL, G2Element
 from clvm.casts import int_to_bytes
 
-from spare.consensus.block_rewards import calculate_base_farmer_reward
-from spare.consensus.blockchain import ReceiveBlockResult
-from spare.consensus.coinbase import create_farmer_coin
-from spare.consensus.pot_iterations import is_overflow_block
-from spare.full_node.bundle_tools import detect_potential_template_generator
-from spare.types.blockchain_format.classgroup import ClassgroupElement
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.foliage import TransactionsInfo
-from spare.types.blockchain_format.program import SerializedProgram
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.blockchain_format.slots import InfusedChallengeChainSubSlot
-from spare.types.blockchain_format.vdf import VDFInfo, VDFProof
-from spare.types.condition_opcodes import ConditionOpcode
-from spare.types.condition_with_args import ConditionWithArgs
-from spare.types.end_of_slot_bundle import EndOfSubSlotBundle
-from spare.types.full_block import FullBlock
-from spare.types.spend_bundle import SpendBundle
-from spare.types.unfinished_block import UnfinishedBlock
-from spare.util.block_tools import BlockTools, get_vdf_info_and_proof
-from spare.util.errors import Err
-from spare.util.hash import std_hash
-from spare.util.ints import uint8, uint64, uint32
-from spare.util.merkle_set import MerkleSet
-from spare.util.recursive_replace import recursive_replace
-from spare.util.wallet_tools import WalletTool
+from lotus.consensus.block_rewards import calculate_base_farmer_reward
+from lotus.consensus.blockchain import ReceiveBlockResult
+from lotus.consensus.coinbase import create_farmer_coin
+from lotus.consensus.pot_iterations import is_overflow_block
+from lotus.full_node.bundle_tools import detect_potential_template_generator
+from lotus.types.blockchain_format.classgroup import ClassgroupElement
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.foliage import TransactionsInfo
+from lotus.types.blockchain_format.program import SerializedProgram
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.blockchain_format.slots import InfusedChallengeChainSubSlot
+from lotus.types.blockchain_format.vdf import VDFInfo, VDFProof
+from lotus.types.condition_opcodes import ConditionOpcode
+from lotus.types.condition_with_args import ConditionWithArgs
+from lotus.types.end_of_slot_bundle import EndOfSubSlotBundle
+from lotus.types.full_block import FullBlock
+from lotus.types.spend_bundle import SpendBundle
+from lotus.types.unfinished_block import UnfinishedBlock
+from lotus.util.block_tools import BlockTools, get_vdf_info_and_proof
+from lotus.util.errors import Err
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint8, uint64, uint32
+from lotus.util.merkle_set import MerkleSet
+from lotus.util.recursive_replace import recursive_replace
+from lotus.util.wallet_tools import WalletTool
 from tests.core.fixtures import default_400_blocks  # noqa: F401; noqa: F401
 from tests.core.fixtures import default_1000_blocks  # noqa: F401
 from tests.core.fixtures import default_10000_blocks  # noqa: F401

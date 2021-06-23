@@ -6,13 +6,13 @@ from typing import List
 import aiosqlite
 import pytest
 
-from spare.consensus.blockchain import Blockchain
-from spare.consensus.constants import ConsensusConstants
-from spare.full_node.block_store import BlockStore
-from spare.full_node.coin_store import CoinStore
-from spare.types.full_block import FullBlock
-from spare.util.db_wrapper import DBWrapper
-from spare.util.path import mkdir
+from lotus.consensus.blockchain import Blockchain
+from lotus.consensus.constants import ConsensusConstants
+from lotus.full_node.block_store import BlockStore
+from lotus.full_node.coin_store import CoinStore
+from lotus.types.full_block import FullBlock
+from lotus.util.db_wrapper import DBWrapper
+from lotus.util.path import mkdir
 from tests.setup_nodes import bt, test_constants
 
 
@@ -96,8 +96,8 @@ def persistent_blocks(
 ):
     # try loading from disc, if not create new blocks.db file
     # TODO hash fixtures.py and blocktool.py, add to path, delete if the files changed
-    block_path_dir = Path("~/.chia/blocks").expanduser()
-    file_path = Path(f"~/.chia/blocks/{db_name}").expanduser()
+    block_path_dir = Path("~/.lotus/blocks").expanduser()
+    file_path = Path(f"~/.lotus/blocks/{db_name}").expanduser()
     if not path.exists(block_path_dir):
         mkdir(block_path_dir.parent)
         mkdir(block_path_dir)

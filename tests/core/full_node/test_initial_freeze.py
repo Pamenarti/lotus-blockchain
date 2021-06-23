@@ -3,18 +3,18 @@ import time
 
 import pytest
 
-from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from spare.consensus.blockchain import ReceiveBlockResult
-from spare.protocols import full_node_protocol, wallet_protocol
-from spare.protocols.protocol_message_types import ProtocolMessageTypes
-from spare.server.outbound_message import Message
-from spare.simulator.full_node_simulator import FullNodeSimulator
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.mempool_inclusion_status import MempoolInclusionStatus
-from spare.types.peer_info import PeerInfo
-from spare.util.errors import Err
-from spare.util.ints import uint16, uint32
-from spare.wallet.transaction_record import TransactionRecord
+from lotus.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from lotus.consensus.blockchain import ReceiveBlockResult
+from lotus.protocols import full_node_protocol, wallet_protocol
+from lotus.protocols.protocol_message_types import ProtocolMessageTypes
+from lotus.server.outbound_message import Message
+from lotus.simulator.full_node_simulator import FullNodeSimulator
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.mempool_inclusion_status import MempoolInclusionStatus
+from lotus.types.peer_info import PeerInfo
+from lotus.util.errors import Err
+from lotus.util.ints import uint16, uint32
+from lotus.wallet.transaction_record import TransactionRecord
 from tests.core.full_node.test_full_node import add_dummy_connection
 from tests.setup_nodes import bt, self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert

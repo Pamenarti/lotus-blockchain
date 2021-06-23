@@ -9,38 +9,38 @@ from typing import Dict, Optional, List
 
 import pytest
 
-from spare.consensus.pot_iterations import is_overflow_block
-from spare.full_node.bundle_tools import detect_potential_template_generator
-from spare.full_node.full_node_api import FullNodeAPI
-from spare.full_node.signage_point import SignagePoint
-from spare.protocols import full_node_protocol as fnp, full_node_protocol
-from spare.protocols import timelord_protocol
-from spare.protocols.full_node_protocol import RespondTransaction
-from spare.protocols.protocol_message_types import ProtocolMessageTypes
-from spare.server.address_manager import AddressManager
-from spare.server.outbound_message import Message
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.blockchain_format.classgroup import ClassgroupElement
-from spare.types.blockchain_format.program import SerializedProgram
-from spare.types.blockchain_format.vdf import CompressibleVDFField, VDFProof
-from spare.types.condition_opcodes import ConditionOpcode
-from spare.types.condition_with_args import ConditionWithArgs
-from spare.types.full_block import FullBlock
-from spare.types.mempool_inclusion_status import MempoolInclusionStatus
-from spare.types.peer_info import PeerInfo, TimestampedPeerInfo
-from spare.types.spend_bundle import SpendBundle
-from spare.types.unfinished_block import UnfinishedBlock
-from spare.util.block_tools import get_signage_point
-from spare.util.clvm import int_to_bytes
-from spare.util.errors import Err
-from spare.util.hash import std_hash
-from spare.util.ints import uint8, uint16, uint32, uint64
-from spare.util.recursive_replace import recursive_replace
-from spare.util.vdf_prover import get_vdf_info_and_proof
-from spare.util.wallet_tools import WalletTool
+from lotus.consensus.pot_iterations import is_overflow_block
+from lotus.full_node.bundle_tools import detect_potential_template_generator
+from lotus.full_node.full_node_api import FullNodeAPI
+from lotus.full_node.signage_point import SignagePoint
+from lotus.protocols import full_node_protocol as fnp, full_node_protocol
+from lotus.protocols import timelord_protocol
+from lotus.protocols.full_node_protocol import RespondTransaction
+from lotus.protocols.protocol_message_types import ProtocolMessageTypes
+from lotus.server.address_manager import AddressManager
+from lotus.server.outbound_message import Message
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.blockchain_format.classgroup import ClassgroupElement
+from lotus.types.blockchain_format.program import SerializedProgram
+from lotus.types.blockchain_format.vdf import CompressibleVDFField, VDFProof
+from lotus.types.condition_opcodes import ConditionOpcode
+from lotus.types.condition_with_args import ConditionWithArgs
+from lotus.types.full_block import FullBlock
+from lotus.types.mempool_inclusion_status import MempoolInclusionStatus
+from lotus.types.peer_info import PeerInfo, TimestampedPeerInfo
+from lotus.types.spend_bundle import SpendBundle
+from lotus.types.unfinished_block import UnfinishedBlock
+from lotus.util.block_tools import get_signage_point
+from lotus.util.clvm import int_to_bytes
+from lotus.util.errors import Err
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint8, uint16, uint32, uint64
+from lotus.util.recursive_replace import recursive_replace
+from lotus.util.vdf_prover import get_vdf_info_and_proof
+from lotus.util.wallet_tools import WalletTool
 from tests.core.fixtures import empty_blockchain  # noqa: F401
-from spare.wallet.cc_wallet.cc_wallet import CCWallet
-from spare.wallet.transaction_record import TransactionRecord
+from lotus.wallet.cc_wallet.cc_wallet import CCWallet
+from lotus.wallet.transaction_record import TransactionRecord
 
 from tests.connection_utils import add_dummy_connection, connect_and_get_peer
 from tests.core.full_node.test_coin_store import get_future_reward_coins

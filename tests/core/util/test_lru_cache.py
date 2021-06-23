@@ -1,6 +1,6 @@
 import unittest
 
-from spare.util.lru_cache import LRUCache
+from lotus.util.lru_cache import LRUCache
 
 
 class TestLRUCache(unittest.TestCase):

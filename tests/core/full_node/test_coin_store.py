@@ -6,20 +6,20 @@ from typing import List, Optional, Set, Tuple
 import aiosqlite
 import pytest
 
-from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from spare.consensus.blockchain import Blockchain, ReceiveBlockResult
-from spare.consensus.coinbase import create_farmer_coin, create_pool_coin
-from spare.full_node.block_store import BlockStore
-from spare.full_node.coin_store import CoinStore
-from spare.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from spare.types.blockchain_format.coin import Coin
-from spare.types.coin_record import CoinRecord
-from spare.types.full_block import FullBlock
-from spare.types.generator_types import BlockGenerator
-from spare.util.generator_tools import tx_removals_and_additions
-from spare.util.ints import uint64, uint32
-from spare.util.wallet_tools import WalletTool
-from spare.util.db_wrapper import DBWrapper
+from lotus.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from lotus.consensus.blockchain import Blockchain, ReceiveBlockResult
+from lotus.consensus.coinbase import create_farmer_coin, create_pool_coin
+from lotus.full_node.block_store import BlockStore
+from lotus.full_node.coin_store import CoinStore
+from lotus.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.coin_record import CoinRecord
+from lotus.types.full_block import FullBlock
+from lotus.types.generator_types import BlockGenerator
+from lotus.util.generator_tools import tx_removals_and_additions
+from lotus.util.ints import uint64, uint32
+from lotus.util.wallet_tools import WalletTool
+from lotus.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 

@@ -1,5 +1,5 @@
 import pytest
-from spare.util.misc import format_minutes
+from lotus.util.misc import format_minutes
 
 
 class TestMisc:

@@ -6,9 +6,9 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from spare.server.address_manager import AddressManager, ExtendedPeerInfo
-from spare.server.address_manager_store import AddressManagerStore
-from spare.types.peer_info import PeerInfo, TimestampedPeerInfo
+from lotus.server.address_manager import AddressManager, ExtendedPeerInfo
+from lotus.server.address_manager_store import AddressManagerStore
+from lotus.types.peer_info import PeerInfo, TimestampedPeerInfo
 
 
 @pytest.fixture(scope="module")

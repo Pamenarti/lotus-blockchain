@@ -2,15 +2,15 @@ import asyncio
 
 import pytest
 
-from spare.rpc.wallet_rpc_api import WalletRpcApi
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.blockchain_format.coin import Coin
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.mempool_inclusion_status import MempoolInclusionStatus
-from spare.types.peer_info import PeerInfo
-from spare.util.bech32m import encode_puzzle_hash
-from spare.util.ints import uint16
-from spare.wallet.util.wallet_types import WalletType
+from lotus.rpc.wallet_rpc_api import WalletRpcApi
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.blockchain_format.coin import Coin
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.mempool_inclusion_status import MempoolInclusionStatus
+from lotus.types.peer_info import PeerInfo
+from lotus.util.bech32m import encode_puzzle_hash
+from lotus.util.ints import uint16
+from lotus.wallet.util.wallet_types import WalletType
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 
@@ -112,7 +112,7 @@ class TestRLWallet:
 
         await time_out_assert(15, check_balance, 100, api_user, user_wallet_id)
         receiving_wallet = wallet_node_2.wallet_state_manager.main_wallet
-        address = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "spare")
+        address = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "lotus")
         assert await receiving_wallet.get_spendable_balance() == 0
         val = await api_user.send_transaction({"wallet_id": user_wallet_id, "amount": 3, "fee": 2, "address": address})
         assert "transaction_id" in val
@@ -143,7 +143,7 @@ class TestRLWallet:
         await time_out_assert(15, check_balance, 195, api_user, user_wallet_id)
 
         # test spending
-        puzzle_hash = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "spare")
+        puzzle_hash = encode_puzzle_hash(await receiving_wallet.get_new_puzzlehash(), "lotus")
         val = await api_user.send_transaction(
             {
                 "wallet_id": user_wallet_id,

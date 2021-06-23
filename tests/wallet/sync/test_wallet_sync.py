@@ -3,12 +3,12 @@ import asyncio
 
 import pytest
 
-from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from spare.protocols import full_node_protocol
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.peer_info import PeerInfo
-from spare.util.ints import uint16, uint32
-from spare.wallet.wallet_state_manager import WalletStateManager
+from lotus.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from lotus.protocols import full_node_protocol
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.peer_info import PeerInfo
+from lotus.util.ints import uint16, uint32
+from lotus.wallet.wallet_state_manager import WalletStateManager
 from tests.connection_utils import disconnect_all_and_reconnect
 from tests.core.fixtures import default_400_blocks, default_1000_blocks
 from tests.setup_nodes import bt, self_hostname, setup_node_and_wallet, setup_simulators_and_wallets, test_constants

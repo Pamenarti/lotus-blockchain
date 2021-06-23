@@ -2,11 +2,11 @@ from typing import List
 
 from blspy import AugSchemeMPL, G2Element, PrivateKey
 
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.coin_solution import CoinSolution
-from spare.util.condition_tools import conditions_by_opcode, conditions_for_solution, pkm_pairs_for_conditions_dict
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.coin_solution import CoinSolution
+from lotus.util.condition_tools import conditions_by_opcode, conditions_for_solution, pkm_pairs_for_conditions_dict
 from tests.core.make_block_generator import GROUP_ORDER, int_to_public_key
-from spare.util.block_tools import test_constants
+from lotus.util.block_tools import test_constants
 
 
 class KeyTool(dict):

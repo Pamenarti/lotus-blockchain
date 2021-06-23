@@ -1,17 +1,17 @@
 import pytest
 from blspy import AugSchemeMPL
 
-from spare.consensus.pot_iterations import is_overflow_block
-from spare.protocols import full_node_protocol
-from spare.rpc.full_node_rpc_api import FullNodeRpcApi
-from spare.rpc.full_node_rpc_client import FullNodeRpcClient
-from spare.rpc.rpc_server import start_rpc_server
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.spend_bundle import SpendBundle
-from spare.types.unfinished_block import UnfinishedBlock
-from spare.util.hash import std_hash
-from spare.util.ints import uint16
-from spare.util.wallet_tools import WalletTool
+from lotus.consensus.pot_iterations import is_overflow_block
+from lotus.protocols import full_node_protocol
+from lotus.rpc.full_node_rpc_api import FullNodeRpcApi
+from lotus.rpc.full_node_rpc_client import FullNodeRpcClient
+from lotus.rpc.rpc_server import start_rpc_server
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.spend_bundle import SpendBundle
+from lotus.types.unfinished_block import UnfinishedBlock
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint16
+from lotus.util.wallet_tools import WalletTool
 from tests.setup_nodes import bt, self_hostname, setup_simulators_and_wallets, test_constants
 from tests.time_out_assert import time_out_assert
 

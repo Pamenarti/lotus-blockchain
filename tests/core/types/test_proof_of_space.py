@@ -1,7 +1,7 @@
 from secrets import token_bytes
 
-from spare.consensus.default_constants import DEFAULT_CONSTANTS
-from spare.types.blockchain_format.proof_of_space import ProofOfSpace  # pylint: disable=E0401
+from lotus.consensus.default_constants import DEFAULT_CONSTANTS
+from lotus.types.blockchain_format.proof_of_space import ProofOfSpace  # pylint: disable=E0401
 
 
 class TestProofOfSpace:

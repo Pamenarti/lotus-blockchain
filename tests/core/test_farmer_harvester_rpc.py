@@ -2,23 +2,23 @@ from secrets import token_bytes
 
 import pytest
 from blspy import AugSchemeMPL
-from chiapos import DiskPlotter
+from lotuspos import DiskPlotter
 
-from spare.consensus.coinbase import create_puzzlehash_for_pk
-from spare.plotting.plot_tools import stream_plot_info_ph, stream_plot_info_pk
-from spare.protocols import farmer_protocol
-from spare.rpc.farmer_rpc_api import FarmerRpcApi
-from spare.rpc.farmer_rpc_client import FarmerRpcClient
-from spare.rpc.harvester_rpc_api import HarvesterRpcApi
-from spare.rpc.harvester_rpc_client import HarvesterRpcClient
-from spare.rpc.rpc_server import start_rpc_server
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
-from spare.util.block_tools import get_plot_dir
-from spare.util.config import load_config
-from spare.util.hash import std_hash
-from spare.util.ints import uint8, uint16, uint32, uint64
-from spare.wallet.derive_keys import master_sk_to_wallet_sk
+from lotus.consensus.coinbase import create_puzzlehash_for_pk
+from lotus.plotting.plot_tools import stream_plot_info_ph, stream_plot_info_pk
+from lotus.protocols import farmer_protocol
+from lotus.rpc.farmer_rpc_api import FarmerRpcApi
+from lotus.rpc.farmer_rpc_client import FarmerRpcClient
+from lotus.rpc.harvester_rpc_api import HarvesterRpcApi
+from lotus.rpc.harvester_rpc_client import HarvesterRpcClient
+from lotus.rpc.rpc_server import start_rpc_server
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
+from lotus.util.block_tools import get_plot_dir
+from lotus.util.config import load_config
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint8, uint16, uint32, uint64
+from lotus.wallet.derive_keys import master_sk_to_wallet_sk
 from tests.setup_nodes import bt, self_hostname, setup_farmer_harvester, test_constants
 from tests.time_out_assert import time_out_assert
 
@@ -191,7 +191,7 @@ class TestRpc:
                 master_sk_to_wallet_sk(bt.pool_master_sk, uint32(472)).get_g1()
             )
 
-            await client.set_reward_targets(encode_puzzle_hash(new_ph, "spare"), encode_puzzle_hash(new_ph_2, "spare"))
+            await client.set_reward_targets(encode_puzzle_hash(new_ph, "lotus"), encode_puzzle_hash(new_ph_2, "lotus"))
             targets_3 = await client.get_reward_targets(True)
             assert decode_puzzle_hash(targets_3["farmer_target"]) == new_ph
             assert decode_puzzle_hash(targets_3["pool_target"]) == new_ph_2
@@ -200,7 +200,7 @@ class TestRpc:
             new_ph_3: bytes32 = create_puzzlehash_for_pk(
                 master_sk_to_wallet_sk(bt.pool_master_sk, uint32(1888)).get_g1()
             )
-            await client.set_reward_targets(None, encode_puzzle_hash(new_ph_3, "spare"))
+            await client.set_reward_targets(None, encode_puzzle_hash(new_ph_3, "lotus"))
             targets_4 = await client.get_reward_targets(True)
             assert decode_puzzle_hash(targets_4["farmer_target"]) == new_ph
             assert decode_puzzle_hash(targets_4["pool_target"]) == new_ph_3
@@ -208,10 +208,10 @@ class TestRpc:
 
             root_path = farmer_api.farmer._root_path
             config = load_config(root_path, "config.yaml")
-            assert config["farmer"]["spare_target_address"] == encode_puzzle_hash(new_ph, "spare")
-            assert config["pool"]["spare_target_address"] == encode_puzzle_hash(new_ph_3, "spare")
+            assert config["farmer"]["lotus_target_address"] == encode_puzzle_hash(new_ph, "lotus")
+            assert config["pool"]["lotus_target_address"] == encode_puzzle_hash(new_ph_3, "lotus")
 
-            new_ph_3_encoded = encode_puzzle_hash(new_ph_3, "spare")
+            new_ph_3_encoded = encode_puzzle_hash(new_ph_3, "lotus")
             added_char = new_ph_3_encoded + "a"
             with pytest.raises(ValueError):
                 await client.set_reward_targets(None, added_char)

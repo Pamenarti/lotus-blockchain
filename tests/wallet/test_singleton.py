@@ -1,5 +1,5 @@
-from spare.wallet.puzzles.load_clvm import load_clvm
-from spare.types.blockchain_format.program import Program, INFINITE_COST
+from lotus.wallet.puzzles.load_clvm import load_clvm
+from lotus.types.blockchain_format.program import Program, INFINITE_COST
 
 DID_CORE_MOD = load_clvm("singleton_top_layer.clvm")
 

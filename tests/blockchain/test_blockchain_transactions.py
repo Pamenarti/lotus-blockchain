@@ -4,15 +4,15 @@ import logging
 import pytest
 from clvm.casts import int_to_bytes
 
-from spare.consensus.blockchain import ReceiveBlockResult
-from spare.protocols import full_node_protocol
-from spare.types.announcement import Announcement
-from spare.types.condition_opcodes import ConditionOpcode
-from spare.types.condition_with_args import ConditionWithArgs
-from spare.types.spend_bundle import SpendBundle
-from spare.util.errors import ConsensusError, Err
-from spare.util.ints import uint64
-from spare.util.wallet_tools import WalletTool
+from lotus.consensus.blockchain import ReceiveBlockResult
+from lotus.protocols import full_node_protocol
+from lotus.types.announcement import Announcement
+from lotus.types.condition_opcodes import ConditionOpcode
+from lotus.types.condition_with_args import ConditionWithArgs
+from lotus.types.spend_bundle import SpendBundle
+from lotus.util.errors import ConsensusError, Err
+from lotus.util.ints import uint64
+from lotus.util.wallet_tools import WalletTool
 from tests.core.full_node.test_full_node import connect_and_get_peer
 from tests.setup_nodes import bt, setup_two_nodes, test_constants
 from tests.util.generator_tools_testing import run_and_get_removals_and_additions

@@ -6,11 +6,11 @@ from typing import List
 
 import pytest
 
-from spare.protocols import full_node_protocol
-from spare.types.full_block import FullBlock
-from spare.types.peer_info import PeerInfo
-from spare.util.hash import std_hash
-from spare.util.ints import uint16
+from lotus.protocols import full_node_protocol
+from lotus.types.full_block import FullBlock
+from lotus.types.peer_info import PeerInfo
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint16
 from tests.core.fixtures import default_400_blocks, default_1000_blocks, default_10000_blocks, empty_blockchain
 from tests.core.node_height import node_height_exactly
 from tests.setup_nodes import bt, self_hostname, setup_n_nodes, setup_two_nodes, test_constants

@@ -14,16 +14,16 @@ from blspy import G2Element
 
 from clvm_tools.binutils import assemble
 
-from spare.consensus.blockchain import ReceiveBlockResult
-from spare.consensus.constants import ConsensusConstants
-from spare.types.announcement import Announcement
-from spare.types.blockchain_format.program import Program
-from spare.types.coin_solution import CoinSolution
-from spare.types.condition_opcodes import ConditionOpcode
-from spare.types.full_block import FullBlock
-from spare.types.spend_bundle import SpendBundle
-from spare.util.block_tools import BlockTools, test_constants
-from spare.util.errors import Err
+from lotus.consensus.blockchain import ReceiveBlockResult
+from lotus.consensus.constants import ConsensusConstants
+from lotus.types.announcement import Announcement
+from lotus.types.blockchain_format.program import Program
+from lotus.types.coin_solution import CoinSolution
+from lotus.types.condition_opcodes import ConditionOpcode
+from lotus.types.full_block import FullBlock
+from lotus.types.spend_bundle import SpendBundle
+from lotus.util.block_tools import BlockTools, test_constants
+from lotus.util.errors import Err
 
 from .ram_db import create_ram_blockchain
 

@@ -1,6 +1,6 @@
 import pytest
 
-from spare.wallet.chialisp import (
+from lotus.wallet.lotuslisp import (
     apply,
     args,
     cons,
@@ -17,7 +17,7 @@ from spare.wallet.chialisp import (
 )
 
 
-class TestChialisp:
+class Testlotuslisp:
     def test_sexp(self):
         assert sexp() == "()"
         assert sexp(1) == "(1)"

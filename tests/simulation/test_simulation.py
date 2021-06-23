@@ -1,8 +1,8 @@
 import pytest
 
-from spare.types.peer_info import PeerInfo
-from spare.util.block_tools import BlockTools
-from spare.util.ints import uint16
+from lotus.types.peer_info import PeerInfo
+from lotus.util.block_tools import BlockTools
+from lotus.util.ints import uint16
 from tests.core.node_height import node_height_at_least
 from tests.setup_nodes import self_hostname, setup_full_node, setup_full_system, test_constants
 from tests.time_out_assert import time_out_assert

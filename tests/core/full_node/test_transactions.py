@@ -4,13 +4,13 @@ from typing import Optional
 
 import pytest
 
-from spare.consensus.block_record import BlockRecord
-from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from spare.full_node.full_node_api import FullNodeAPI
-from spare.protocols import full_node_protocol
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.peer_info import PeerInfo
-from spare.util.ints import uint16, uint32
+from lotus.consensus.block_record import BlockRecord
+from lotus.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from lotus.full_node.full_node_api import FullNodeAPI
+from lotus.protocols import full_node_protocol
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.peer_info import PeerInfo
+from lotus.util.ints import uint16, uint32
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
 

@@ -3,13 +3,13 @@ from unittest import TestCase
 
 from blspy import AugSchemeMPL, BasicSchemeMPL, G1Element, G2Element
 
-from spare.types.blockchain_format.program import Program
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.coin_solution import CoinSolution
-from spare.types.spend_bundle import SpendBundle
-from spare.util.condition_tools import ConditionOpcode
-from spare.util.hash import std_hash
-from spare.wallet.puzzles import (
+from lotus.types.blockchain_format.program import Program
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.coin_solution import CoinSolution
+from lotus.types.spend_bundle import SpendBundle
+from lotus.util.condition_tools import ConditionOpcode
+from lotus.util.hash import std_hash
+from lotus.wallet.puzzles import (
     p2_conditions,
     p2_delegated_conditions,
     p2_delegated_puzzle,

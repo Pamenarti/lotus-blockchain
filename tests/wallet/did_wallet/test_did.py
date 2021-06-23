@@ -1,25 +1,25 @@
 import asyncio
 import time
 import pytest
-from spare.simulator.simulator_protocol import FarmNewBlockProtocol
-from spare.types.peer_info import PeerInfo
-from spare.util.ints import uint16, uint32, uint64
+from lotus.simulator.simulator_protocol import FarmNewBlockProtocol
+from lotus.types.peer_info import PeerInfo
+from lotus.util.ints import uint16, uint32, uint64
 from tests.setup_nodes import setup_simulators_and_wallets
-from spare.wallet.did_wallet.did_wallet import DIDWallet
-from spare.wallet.did_wallet import did_wallet_puzzles
+from lotus.wallet.did_wallet.did_wallet import DIDWallet
+from lotus.wallet.did_wallet import did_wallet_puzzles
 from clvm_tools import binutils
-from spare.types.blockchain_format.program import Program
-from spare.wallet.derivation_record import DerivationRecord
-from spare.types.coin_solution import CoinSolution
+from lotus.types.blockchain_format.program import Program
+from lotus.wallet.derivation_record import DerivationRecord
+from lotus.types.coin_solution import CoinSolution
 from blspy import AugSchemeMPL
-from spare.types.spend_bundle import SpendBundle
-from spare.wallet.transaction_record import TransactionRecord
-from spare.wallet.derive_keys import master_sk_to_wallet_sk
-from spare.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
+from lotus.types.spend_bundle import SpendBundle
+from lotus.wallet.transaction_record import TransactionRecord
+from lotus.wallet.derive_keys import master_sk_to_wallet_sk
+from lotus.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
 from tests.time_out_assert import time_out_assert
 from secrets import token_bytes
-from spare.wallet.util.transaction_type import TransactionType
-from spare.consensus.default_constants import DEFAULT_CONSTANTS
+from lotus.wallet.util.transaction_type import TransactionType
+from lotus.consensus.default_constants import DEFAULT_CONSTANTS
 
 
 @pytest.fixture(scope="module")

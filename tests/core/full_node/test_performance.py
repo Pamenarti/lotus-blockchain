@@ -9,15 +9,15 @@ from typing import Dict
 import pytest
 import cProfile
 
-from spare.consensus.block_record import BlockRecord
-from spare.full_node.full_node_api import FullNodeAPI
-from spare.protocols import full_node_protocol as fnp
-from spare.types.condition_opcodes import ConditionOpcode
-from spare.types.condition_with_args import ConditionWithArgs
-from spare.types.unfinished_block import UnfinishedBlock
-from spare.util.clvm import int_to_bytes
-from spare.util.ints import uint64
-from spare.util.wallet_tools import WalletTool
+from lotus.consensus.block_record import BlockRecord
+from lotus.full_node.full_node_api import FullNodeAPI
+from lotus.protocols import full_node_protocol as fnp
+from lotus.types.condition_opcodes import ConditionOpcode
+from lotus.types.condition_with_args import ConditionWithArgs
+from lotus.types.unfinished_block import UnfinishedBlock
+from lotus.util.clvm import int_to_bytes
+from lotus.util.ints import uint64
+from lotus.util.wallet_tools import WalletTool
 from tests.core.fixtures import empty_blockchain  # noqa: F401
 
 from tests.connection_utils import add_dummy_connection, connect_and_get_peer

@@ -5,19 +5,19 @@ from typing import List, Optional
 
 import pytest
 
-from spare.consensus.blockchain import ReceiveBlockResult
-from spare.consensus.multiprocess_validation import PreValidationResult
-from spare.consensus.pot_iterations import is_overflow_block
-from spare.full_node.full_node_store import FullNodeStore
-from spare.full_node.signage_point import SignagePoint
-from spare.protocols import timelord_protocol
-from spare.protocols.timelord_protocol import NewInfusionPointVDF
-from spare.types.blockchain_format.sized_bytes import bytes32
-from spare.types.unfinished_block import UnfinishedBlock
-from spare.util.block_cache import BlockCache
-from spare.util.block_tools import get_signage_point
-from spare.util.hash import std_hash
-from spare.util.ints import uint8, uint32, uint64, uint128
+from lotus.consensus.blockchain import ReceiveBlockResult
+from lotus.consensus.multiprocess_validation import PreValidationResult
+from lotus.consensus.pot_iterations import is_overflow_block
+from lotus.full_node.full_node_store import FullNodeStore
+from lotus.full_node.signage_point import SignagePoint
+from lotus.protocols import timelord_protocol
+from lotus.protocols.timelord_protocol import NewInfusionPointVDF
+from lotus.types.blockchain_format.sized_bytes import bytes32
+from lotus.types.unfinished_block import UnfinishedBlock
+from lotus.util.block_cache import BlockCache
+from lotus.util.block_tools import get_signage_point
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint8, uint32, uint64, uint128
 from tests.core.fixtures import default_1000_blocks, empty_blockchain  # noqa: F401
 from tests.setup_nodes import bt, test_constants
 

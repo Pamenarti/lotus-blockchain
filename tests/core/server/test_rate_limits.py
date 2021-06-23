@@ -2,9 +2,9 @@ import asyncio
 
 import pytest
 
-from spare.protocols.protocol_message_types import ProtocolMessageTypes
-from spare.server.outbound_message import make_msg
-from spare.server.rate_limits import RateLimiter, NON_TX_FREQ
+from lotus.protocols.protocol_message_types import ProtocolMessageTypes
+from lotus.server.outbound_message import make_msg
+from lotus.server.rate_limits import RateLimiter, NON_TX_FREQ
 from tests.setup_nodes import test_constants
 
 

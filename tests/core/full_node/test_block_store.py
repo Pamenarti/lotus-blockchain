@@ -6,10 +6,10 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from spare.consensus.blockchain import Blockchain
-from spare.full_node.block_store import BlockStore
-from spare.full_node.coin_store import CoinStore
-from spare.util.db_wrapper import DBWrapper
+from lotus.consensus.blockchain import Blockchain
+from lotus.full_node.block_store import BlockStore
+from lotus.full_node.coin_store import CoinStore
+from lotus.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 
