@@ -4,15 +4,15 @@ import logging
 import pytest
 from clvm.casts import int_to_bytes
 
-from flax.consensus.blockchain import ReceiveBlockResult
-from flax.protocols import full_node_protocol
-from flax.types.announcement import Announcement
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.condition_with_args import ConditionWithArgs
-from flax.types.spend_bundle import SpendBundle
-from flax.util.errors import ConsensusError, Err
-from flax.util.ints import uint64
-from flax.util.wallet_tools import WalletTool
+from spare.consensus.blockchain import ReceiveBlockResult
+from spare.protocols import full_node_protocol
+from spare.types.announcement import Announcement
+from spare.types.condition_opcodes import ConditionOpcode
+from spare.types.condition_with_args import ConditionWithArgs
+from spare.types.spend_bundle import SpendBundle
+from spare.util.errors import ConsensusError, Err
+from spare.util.ints import uint64
+from spare.util.wallet_tools import WalletTool
 from tests.core.full_node.test_full_node import connect_and_get_peer
 from tests.setup_nodes import bt, setup_two_nodes, test_constants
 from tests.util.generator_tools_testing import run_and_get_removals_and_additions
@@ -975,9 +975,9 @@ class TestBlockchainTransactions:
             if coin.puzzle_hash == coinbase_puzzlehash:
                 spend_coin_block_1 = coin
 
-        # This condition requires fee to be 10 mojo
+        # This condition requires fee to be 10 graviton
         cvp_fee = ConditionWithArgs(ConditionOpcode.RESERVE_FEE, [int_to_bytes(10)])
-        # This spend bundle has 9 mojo as fee
+        # This spend bundle has 9 graviton as fee
         block1_dic_bad = {cvp_fee.opcode: [cvp_fee]}
         block1_dic_good = {cvp_fee.opcode: [cvp_fee]}
         block1_spend_bundle_bad = wallet_a.generate_signed_transaction(

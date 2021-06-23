@@ -5,25 +5,25 @@ from typing import Dict, List
 
 import pytest
 
-from flax.full_node.mempool import Mempool
-from flax.protocols import full_node_protocol
-from flax.simulator.simulator_protocol import FarmNewBlockProtocol
-from flax.types.announcement import Announcement
-from flax.types.blockchain_format.coin import Coin
-from flax.types.coin_solution import CoinSolution
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.condition_with_args import ConditionWithArgs
-from flax.types.spend_bundle import SpendBundle
-from flax.util.clvm import int_to_bytes
-from flax.util.condition_tools import conditions_for_solution
-from flax.util.errors import Err
-from flax.util.ints import uint64
+from spare.full_node.mempool import Mempool
+from spare.protocols import full_node_protocol
+from spare.simulator.simulator_protocol import FarmNewBlockProtocol
+from spare.types.announcement import Announcement
+from spare.types.blockchain_format.coin import Coin
+from spare.types.coin_solution import CoinSolution
+from spare.types.condition_opcodes import ConditionOpcode
+from spare.types.condition_with_args import ConditionWithArgs
+from spare.types.spend_bundle import SpendBundle
+from spare.util.clvm import int_to_bytes
+from spare.util.condition_tools import conditions_for_solution
+from spare.util.errors import Err
+from spare.util.ints import uint64
 
 from tests.connection_utils import connect_and_get_peer
 from tests.core.node_height import node_height_at_least
 from tests.setup_nodes import bt, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert
-from flax.types.blockchain_format.program import Program, INFINITE_COST
+from spare.types.blockchain_format.program import Program, INFINITE_COST
 
 BURN_PUZZLE_HASH = b"0" * 32
 BURN_PUZZLE_HASH_2 = b"1" * 32

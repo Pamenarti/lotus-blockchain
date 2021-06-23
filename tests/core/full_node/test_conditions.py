@@ -14,16 +14,16 @@ from blspy import G2Element
 
 from clvm_tools.binutils import assemble
 
-from flax.consensus.blockchain import ReceiveBlockResult
-from flax.consensus.constants import ConsensusConstants
-from flax.types.announcement import Announcement
-from flax.types.blockchain_format.program import Program
-from flax.types.coin_solution import CoinSolution
-from flax.types.condition_opcodes import ConditionOpcode
-from flax.types.full_block import FullBlock
-from flax.types.spend_bundle import SpendBundle
-from flax.util.block_tools import BlockTools, test_constants
-from flax.util.errors import Err
+from spare.consensus.blockchain import ReceiveBlockResult
+from spare.consensus.constants import ConsensusConstants
+from spare.types.announcement import Announcement
+from spare.types.blockchain_format.program import Program
+from spare.types.coin_solution import CoinSolution
+from spare.types.condition_opcodes import ConditionOpcode
+from spare.types.full_block import FullBlock
+from spare.types.spend_bundle import SpendBundle
+from spare.util.block_tools import BlockTools, test_constants
+from spare.util.errors import Err
 
 from .ram_db import create_ram_blockchain
 

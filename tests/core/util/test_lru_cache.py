@@ -1,6 +1,6 @@
 import unittest
 
-from flax.util.lru_cache import LRUCache
+from spare.util.lru_cache import LRUCache
 
 
 class TestLRUCache(unittest.TestCase):

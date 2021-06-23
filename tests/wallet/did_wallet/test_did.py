@@ -1,25 +1,25 @@
 import asyncio
 import time
 import pytest
-from flax.simulator.simulator_protocol import FarmNewBlockProtocol
-from flax.types.peer_info import PeerInfo
-from flax.util.ints import uint16, uint32, uint64
+from spare.simulator.simulator_protocol import FarmNewBlockProtocol
+from spare.types.peer_info import PeerInfo
+from spare.util.ints import uint16, uint32, uint64
 from tests.setup_nodes import setup_simulators_and_wallets
-from flax.wallet.did_wallet.did_wallet import DIDWallet
-from flax.wallet.did_wallet import did_wallet_puzzles
+from spare.wallet.did_wallet.did_wallet import DIDWallet
+from spare.wallet.did_wallet import did_wallet_puzzles
 from clvm_tools import binutils
-from flax.types.blockchain_format.program import Program
-from flax.wallet.derivation_record import DerivationRecord
-from flax.types.coin_solution import CoinSolution
+from spare.types.blockchain_format.program import Program
+from spare.wallet.derivation_record import DerivationRecord
+from spare.types.coin_solution import CoinSolution
 from blspy import AugSchemeMPL
-from flax.types.spend_bundle import SpendBundle
-from flax.wallet.transaction_record import TransactionRecord
-from flax.wallet.derive_keys import master_sk_to_wallet_sk
-from flax.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
+from spare.types.spend_bundle import SpendBundle
+from spare.wallet.transaction_record import TransactionRecord
+from spare.wallet.derive_keys import master_sk_to_wallet_sk
+from spare.consensus.block_rewards import calculate_pool_reward, calculate_base_farmer_reward
 from tests.time_out_assert import time_out_assert
 from secrets import token_bytes
-from flax.wallet.util.transaction_type import TransactionType
-from flax.consensus.default_constants import DEFAULT_CONSTANTS
+from spare.wallet.util.transaction_type import TransactionType
+from spare.consensus.default_constants import DEFAULT_CONSTANTS
 
 
 @pytest.fixture(scope="module")

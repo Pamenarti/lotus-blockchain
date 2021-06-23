@@ -6,22 +6,22 @@ from typing import Dict, List, Optional, Tuple
 import aiosqlite
 import pytest
 
-from lotus.consensus.block_header_validation import validate_finished_header_block
-from lotus.consensus.block_record import BlockRecord
-from lotus.consensus.blockchain import Blockchain
-from lotus.consensus.default_constants import DEFAULT_CONSTANTS
-from lotus.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
-from lotus.consensus.full_block_to_block_record import block_to_block_record
-from lotus.full_node.block_store import BlockStore
-from lotus.full_node.coin_store import CoinStore
-from lotus.server.start_full_node import SERVICE_NAME
-from lotus.types.blockchain_format.sized_bytes import bytes32
-from lotus.types.blockchain_format.sub_epoch_summary import SubEpochSummary
-from lotus.util.block_cache import BlockCache
-from lotus.util.block_tools import test_constants
-from lotus.util.config import load_config
-from lotus.util.default_root import DEFAULT_ROOT_PATH
-from lotus.util.generator_tools import get_block_header
+from spare.consensus.block_header_validation import validate_finished_header_block
+from spare.consensus.block_record import BlockRecord
+from spare.consensus.blockchain import Blockchain
+from spare.consensus.default_constants import DEFAULT_CONSTANTS
+from spare.consensus.difficulty_adjustment import get_next_sub_slot_iters_and_difficulty
+from spare.consensus.full_block_to_block_record import block_to_block_record
+from spare.full_node.block_store import BlockStore
+from spare.full_node.coin_store import CoinStore
+from spare.server.start_full_node import SERVICE_NAME
+from spare.types.blockchain_format.sized_bytes import bytes32
+from spare.types.blockchain_format.sub_epoch_summary import SubEpochSummary
+from spare.util.block_cache import BlockCache
+from spare.util.block_tools import test_constants
+from spare.util.config import load_config
+from spare.util.default_root import DEFAULT_ROOT_PATH
+from spare.util.generator_tools import get_block_header
 from tests.setup_nodes import bt
 
 try:
@@ -30,16 +30,16 @@ except ImportError:
     pass
 
 
-from lotus.consensus.pot_iterations import calculate_iterations_quality
-from lotus.full_node.weight_proof import (  # type: ignore
+from spare.consensus.pot_iterations import calculate_iterations_quality
+from spare.full_node.weight_proof import (  # type: ignore
     WeightProofHandler,
     _map_sub_epoch_summaries,
     _validate_sub_epoch_segments,
     _validate_summaries_weight,
 )
-from lotus.types.full_block import FullBlock
-from lotus.types.header_block import HeaderBlock
-from lotus.util.ints import uint32, uint64
+from spare.types.full_block import FullBlock
+from spare.types.header_block import HeaderBlock
+from spare.util.ints import uint32, uint64
 from tests.core.fixtures import (
     default_400_blocks,
     default_1000_blocks,

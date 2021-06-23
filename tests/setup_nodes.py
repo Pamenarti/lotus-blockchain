@@ -4,24 +4,24 @@ import signal
 from secrets import token_bytes
 from typing import Dict, List, Optional
 
-from flax.consensus.constants import ConsensusConstants
-from flax.daemon.server import WebSocketServer, create_server_for_daemon, daemon_launch_lock_path, singleton
-from flax.full_node.full_node_api import FullNodeAPI
-from flax.server.start_farmer import service_kwargs_for_farmer
-from flax.server.start_full_node import service_kwargs_for_full_node
-from flax.server.start_harvester import service_kwargs_for_harvester
-from flax.server.start_introducer import service_kwargs_for_introducer
-from flax.server.start_service import Service
-from flax.server.start_timelord import service_kwargs_for_timelord
-from flax.server.start_wallet import service_kwargs_for_wallet
-from flax.simulator.start_simulator import service_kwargs_for_full_node_simulator
-from flax.timelord.timelord_launcher import kill_processes, spawn_process
-from flax.types.peer_info import PeerInfo
-from flax.util.bech32m import encode_puzzle_hash
-from flax.util.block_tools import BlockTools, test_constants
-from flax.util.hash import std_hash
-from flax.util.ints import uint16, uint32
-from flax.util.keychain import Keychain, bytes_to_mnemonic
+from lotus.consensus.constants import ConsensusConstants
+from lotus.daemon.server import WebSocketServer, create_server_for_daemon, daemon_launch_lock_path, singleton
+from lotus.full_node.full_node_api import FullNodeAPI
+from lotus.server.start_farmer import service_kwargs_for_farmer
+from lotus.server.start_full_node import service_kwargs_for_full_node
+from lotus.server.start_harvester import service_kwargs_for_harvester
+from lotus.server.start_introducer import service_kwargs_for_introducer
+from lotus.server.start_service import Service
+from lotus.server.start_timelord import service_kwargs_for_timelord
+from lotus.server.start_wallet import service_kwargs_for_wallet
+from lotus.simulator.start_simulator import service_kwargs_for_full_node_simulator
+from lotus.timelord.timelord_launcher import kill_processes, spawn_process
+from lotus.types.peer_info import PeerInfo
+from lotus.util.bech32m import encode_puzzle_hash
+from lotus.util.block_tools import BlockTools, test_constants
+from lotus.util.hash import std_hash
+from lotus.util.ints import uint16, uint32
+from lotus.util.keychain import Keychain, bytes_to_mnemonic
 from tests.time_out_assert import time_out_assert_custom_interval
 
 bt = BlockTools(constants=test_constants)
@@ -207,10 +207,10 @@ async def setup_farmer(
     config = bt.config["farmer"]
     config_pool = bt.config["pool"]
 
-    config["xfx_target_address"] = encode_puzzle_hash(b_tools.farmer_ph, "xfx")
+    config["lotus_target_address"] = encode_puzzle_hash(b_tools.farmer_ph, "lotus")
     config["pool_public_keys"] = [bytes(pk).hex() for pk in b_tools.pool_pubkeys]
     config["port"] = port
-    config_pool["xfx_target_address"] = encode_puzzle_hash(b_tools.pool_ph, "xfx")
+    config_pool["lotus_target_address"] = encode_puzzle_hash(b_tools.pool_ph, "lotus")
 
     if full_node_port:
         config["full_node_peer"]["host"] = self_hostname
@@ -445,7 +445,7 @@ async def setup_full_system(
         setup_introducer(21233),
         setup_harvester(21234, 21235, consensus_constants, b_tools),
         setup_farmer(21235, consensus_constants, b_tools, uint16(21237)),
-        setup_vdf_clients(8000),
+        setup_vdf_clients(9000),
         setup_timelord(21236, 21237, False, consensus_constants, b_tools),
         setup_full_node(
             consensus_constants, "blockchain_test.db", 21237, b_tools, 21233, False, 10, True, connect_to_daemon

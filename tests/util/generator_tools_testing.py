@@ -1,11 +1,11 @@
 from typing import List, Tuple
 
-from flax.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from flax.types.blockchain_format.coin import Coin
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.types.full_block import FullBlock
-from flax.types.generator_types import BlockGenerator
-from flax.util.generator_tools import additions_for_npc
+from spare.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from spare.types.blockchain_format.coin import Coin
+from spare.types.blockchain_format.sized_bytes import bytes32
+from spare.types.full_block import FullBlock
+from spare.types.generator_types import BlockGenerator
+from spare.util.generator_tools import additions_for_npc
 
 
 def run_and_get_removals_and_additions(

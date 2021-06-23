@@ -6,10 +6,10 @@ from pathlib import Path
 import aiosqlite
 import pytest
 
-from flax.consensus.blockchain import Blockchain
-from flax.full_node.block_store import BlockStore
-from flax.full_node.coin_store import CoinStore
-from flax.util.db_wrapper import DBWrapper
+from spare.consensus.blockchain import Blockchain
+from spare.full_node.block_store import BlockStore
+from spare.full_node.coin_store import CoinStore
+from spare.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 

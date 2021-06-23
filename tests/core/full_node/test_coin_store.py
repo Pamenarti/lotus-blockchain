@@ -6,20 +6,20 @@ from typing import List, Optional, Set, Tuple
 import aiosqlite
 import pytest
 
-from flax.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from flax.consensus.blockchain import Blockchain, ReceiveBlockResult
-from flax.consensus.coinbase import create_farmer_coin, create_pool_coin
-from flax.full_node.block_store import BlockStore
-from flax.full_node.coin_store import CoinStore
-from flax.full_node.mempool_check_conditions import get_name_puzzle_conditions
-from flax.types.blockchain_format.coin import Coin
-from flax.types.coin_record import CoinRecord
-from flax.types.full_block import FullBlock
-from flax.types.generator_types import BlockGenerator
-from flax.util.generator_tools import tx_removals_and_additions
-from flax.util.ints import uint64, uint32
-from flax.util.wallet_tools import WalletTool
-from flax.util.db_wrapper import DBWrapper
+from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from spare.consensus.blockchain import Blockchain, ReceiveBlockResult
+from spare.consensus.coinbase import create_farmer_coin, create_pool_coin
+from spare.full_node.block_store import BlockStore
+from spare.full_node.coin_store import CoinStore
+from spare.full_node.mempool_check_conditions import get_name_puzzle_conditions
+from spare.types.blockchain_format.coin import Coin
+from spare.types.coin_record import CoinRecord
+from spare.types.full_block import FullBlock
+from spare.types.generator_types import BlockGenerator
+from spare.util.generator_tools import tx_removals_and_additions
+from spare.util.ints import uint64, uint32
+from spare.util.wallet_tools import WalletTool
+from spare.util.db_wrapper import DBWrapper
 from tests.setup_nodes import bt, test_constants
 
 

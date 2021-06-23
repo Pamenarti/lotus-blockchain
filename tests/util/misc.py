@@ -1,5 +1,5 @@
 import pytest
-from flax.util.misc import format_minutes
+from spare.util.misc import format_minutes
 
 
 class TestMisc:

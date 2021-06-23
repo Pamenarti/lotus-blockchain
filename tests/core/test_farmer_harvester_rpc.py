@@ -4,21 +4,21 @@ import pytest
 from blspy import AugSchemeMPL
 from chiapos import DiskPlotter
 
-from flax.consensus.coinbase import create_puzzlehash_for_pk
-from flax.plotting.plot_tools import stream_plot_info_ph, stream_plot_info_pk
-from flax.protocols import farmer_protocol
-from flax.rpc.farmer_rpc_api import FarmerRpcApi
-from flax.rpc.farmer_rpc_client import FarmerRpcClient
-from flax.rpc.harvester_rpc_api import HarvesterRpcApi
-from flax.rpc.harvester_rpc_client import HarvesterRpcClient
-from flax.rpc.rpc_server import start_rpc_server
-from flax.types.blockchain_format.sized_bytes import bytes32
-from flax.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
-from flax.util.block_tools import get_plot_dir
-from flax.util.config import load_config
-from flax.util.hash import std_hash
-from flax.util.ints import uint8, uint16, uint32, uint64
-from flax.wallet.derive_keys import master_sk_to_wallet_sk
+from spare.consensus.coinbase import create_puzzlehash_for_pk
+from spare.plotting.plot_tools import stream_plot_info_ph, stream_plot_info_pk
+from spare.protocols import farmer_protocol
+from spare.rpc.farmer_rpc_api import FarmerRpcApi
+from spare.rpc.farmer_rpc_client import FarmerRpcClient
+from spare.rpc.harvester_rpc_api import HarvesterRpcApi
+from spare.rpc.harvester_rpc_client import HarvesterRpcClient
+from spare.rpc.rpc_server import start_rpc_server
+from spare.types.blockchain_format.sized_bytes import bytes32
+from spare.util.bech32m import decode_puzzle_hash, encode_puzzle_hash
+from spare.util.block_tools import get_plot_dir
+from spare.util.config import load_config
+from spare.util.hash import std_hash
+from spare.util.ints import uint8, uint16, uint32, uint64
+from spare.wallet.derive_keys import master_sk_to_wallet_sk
 from tests.setup_nodes import bt, self_hostname, setup_farmer_harvester, test_constants
 from tests.time_out_assert import time_out_assert
 
@@ -191,7 +191,7 @@ class TestRpc:
                 master_sk_to_wallet_sk(bt.pool_master_sk, uint32(472)).get_g1()
             )
 
-            await client.set_reward_targets(encode_puzzle_hash(new_ph, "xfx"), encode_puzzle_hash(new_ph_2, "xfx"))
+            await client.set_reward_targets(encode_puzzle_hash(new_ph, "spare"), encode_puzzle_hash(new_ph_2, "spare"))
             targets_3 = await client.get_reward_targets(True)
             assert decode_puzzle_hash(targets_3["farmer_target"]) == new_ph
             assert decode_puzzle_hash(targets_3["pool_target"]) == new_ph_2
@@ -200,7 +200,7 @@ class TestRpc:
             new_ph_3: bytes32 = create_puzzlehash_for_pk(
                 master_sk_to_wallet_sk(bt.pool_master_sk, uint32(1888)).get_g1()
             )
-            await client.set_reward_targets(None, encode_puzzle_hash(new_ph_3, "xfx"))
+            await client.set_reward_targets(None, encode_puzzle_hash(new_ph_3, "spare"))
             targets_4 = await client.get_reward_targets(True)
             assert decode_puzzle_hash(targets_4["farmer_target"]) == new_ph
             assert decode_puzzle_hash(targets_4["pool_target"]) == new_ph_3
@@ -208,10 +208,10 @@ class TestRpc:
 
             root_path = farmer_api.farmer._root_path
             config = load_config(root_path, "config.yaml")
-            assert config["farmer"]["xfx_target_address"] == encode_puzzle_hash(new_ph, "xfx")
-            assert config["pool"]["xfx_target_address"] == encode_puzzle_hash(new_ph_3, "xfx")
+            assert config["farmer"]["spare_target_address"] == encode_puzzle_hash(new_ph, "spare")
+            assert config["pool"]["spare_target_address"] == encode_puzzle_hash(new_ph_3, "spare")
 
-            new_ph_3_encoded = encode_puzzle_hash(new_ph_3, "xfx")
+            new_ph_3_encoded = encode_puzzle_hash(new_ph_3, "spare")
             added_char = new_ph_3_encoded + "a"
             with pytest.raises(ValueError):
                 await client.set_reward_targets(None, added_char)

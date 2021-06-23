@@ -1,16 +1,16 @@
 import asyncio
 import pytest
 import time
-from lotus.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
-from lotus.protocols.full_node_protocol import RespondBlock
-from lotus.server.server import ChiaServer
-from lotus.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
-from lotus.types.peer_info import PeerInfo
-from lotus.util.ints import uint16, uint32, uint64
-from lotus.wallet.util.transaction_type import TransactionType
-from lotus.wallet.transaction_record import TransactionRecord
-from lotus.wallet.wallet_node import WalletNode
-from lotus.wallet.wallet_state_manager import WalletStateManager
+from spare.consensus.block_rewards import calculate_base_farmer_reward, calculate_pool_reward
+from spare.protocols.full_node_protocol import RespondBlock
+from spare.server.server import ChiaServer
+from spare.simulator.simulator_protocol import FarmNewBlockProtocol, ReorgProtocol
+from spare.types.peer_info import PeerInfo
+from spare.util.ints import uint16, uint32, uint64
+from spare.wallet.util.transaction_type import TransactionType
+from spare.wallet.transaction_record import TransactionRecord
+from spare.wallet.wallet_node import WalletNode
+from spare.wallet.wallet_state_manager import WalletStateManager
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
 from tests.time_out_assert import time_out_assert, time_out_assert_not_none
 from tests.wallet.cc_wallet.test_cc_wallet import tx_in_pool

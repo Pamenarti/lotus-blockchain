@@ -1,7 +1,7 @@
 from secrets import token_bytes
 
-from flax.consensus.default_constants import DEFAULT_CONSTANTS
-from flax.types.blockchain_format.proof_of_space import ProofOfSpace  # pylint: disable=E0401
+from spare.consensus.default_constants import DEFAULT_CONSTANTS
+from spare.types.blockchain_format.proof_of_space import ProofOfSpace  # pylint: disable=E0401
 
 
 class TestProofOfSpace:
