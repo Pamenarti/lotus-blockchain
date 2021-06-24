@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { createGlobalStyle } from 'styled-components';
-import icon from '../../assets/img/flax_circle.svg';
+import icon from '../../assets/img/lotus_circle.svg';
 
 const GlobalStyle = createGlobalStyle`
   body,
@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     color: rgb(31, 31, 31);
     background-color: rgb(238, 238, 238);
     font-size: 12px;
-    font-family: 'Helvetica', 'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+    font-family: 'Lato', 'Josefin', 'Helvetica', 'Arial', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ', Meiryo, 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
   }
 `;
 
@@ -70,7 +70,7 @@ const Spacer = styled.div`
   margin-bottom: 1rem;
 `;
 
-const url = 'https://flaxnetwork.org';
+const url = 'https://lotuscoin.org';
 
 type Props = {
   version: string;
@@ -101,7 +101,7 @@ export default function About(props: Props) {
         <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes" />
         <title>About {productName}</title>
       </head>
-      <body>
+      <body style={{"-webkit-app-region": "drag"}}>
         <GlobalStyle />
         <StyledLink href={url}>
           <StyledLogoContainer>
@@ -113,7 +113,7 @@ export default function About(props: Props) {
         <StyledSubTitle>{description}</StyledSubTitle>
         <Spacer />
         <div className="copyright">
-          Copyright (c) 2021 Chia Network, Flax Network
+          Copyright (c) 2021 lotus
         </div>
         <Spacer />
         <VersionsTable>
@@ -143,7 +143,7 @@ export default function About(props: Props) {
           )}
         </VersionsTable>
 
-        <BugReport href="https://github.com/Flax-Network/flax-blockchain/issues" target="_blank">
+        <BugReport href="https://github.com/lotus-Network/lotus-blockchain/issues" target="_blank">
           Report an issue
         </BugReport>
         {'{{CSS}}'}

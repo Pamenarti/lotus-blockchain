@@ -1,8 +1,8 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { useFormContext } from 'react-hook-form';
-import { ButtonSelected, CardStep, Flex, TextField } from '@flax/core';
 import { Typography } from '@material-ui/core';
+import { ButtonSelected, CardStep, Flex, TextField } from '@lotus/core';
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import useSelectDirectory from '../../../hooks/useSelectDirectory';
 
 export default function PlotAddSelectFinalDirectory() {
@@ -58,7 +58,7 @@ export default function PlotAddSelectFinalDirectory() {
           }}
           required
         />
-        <ButtonSelected onClick={handleSelect} size="large" variant="contained" selected={hasFinalLocation} nowrap>
+        <ButtonSelected onClick={handleSelect} size="large" variant="contained" selected={hasFinalLocation}>
           {hasFinalLocation ? (
             <Trans>Selected</Trans>
           ) : (

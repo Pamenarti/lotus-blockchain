@@ -1,14 +1,14 @@
-import React from 'react';
 import { Grid } from '@material-ui/core';
-import FarmCardStatus from '../card/FarmCardStatus';
-import FarmCardTotalFlaxFarmed from '../card/FarmCardTotalFlaxFarmed';
+import React from 'react';
 import FarmCardBlockRewards from '../card/FarmCardBlockRewards';
-import FarmCardUserFees from '../card/FarmCardUserFees';
-import FarmCardLastHeightFarmed from '../card/FarmCardLastHeightFarmed';
-import FarmCardTotalSizeOfPlots from '../card/FarmCardTotalSizeOfPlots';
-import FarmCardTotalNetworkSpace from '../card/FarmCardTotalNetworkSpace';
-import FarmCardPlotCount from '../card/FarmCardPlotCount';
 import FarmCardExpectedTimeToWin from '../card/FarmCardExpectedTimeToWin';
+import FarmCardLastHeightFarmed from '../card/FarmCardLastHeightFarmed';
+import FarmCardPlotCount from '../card/FarmCardPlotCount';
+import FarmCardStatus from '../card/FarmCardStatus';
+import FarmCardTotalNetworkSpace from '../card/FarmCardTotalNetworkSpace';
+import FarmCardTotalSizeOfPlots from '../card/FarmCardTotalSizeOfPlots';
+import FarmCardTotallotusFarmed from '../card/FarmCardTotallotusFarmed';
+import FarmCardUserFees from '../card/FarmCardUserFees';
 
 export default function FarmOverviewCards() {
   return (
@@ -18,7 +18,7 @@ export default function FarmOverviewCards() {
           <FarmCardStatus />
         </Grid>
         <Grid xs={12} sm={6} md={4} item>
-          <FarmCardTotalFlaxFarmed />
+          <FarmCardTotallotusFarmed />
         </Grid>
         <Grid xs={12} sm={6} md={4} item>
           <FarmCardBlockRewards />

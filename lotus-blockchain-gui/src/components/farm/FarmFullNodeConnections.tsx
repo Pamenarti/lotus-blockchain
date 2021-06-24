@@ -1,18 +1,15 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
-import { Link, Typography, Tooltip, IconButton } from '@material-ui/core';
+import { IconButton, Link, Tooltip, Typography } from '@material-ui/core';
 import { Delete as DeleteIcon } from '@material-ui/icons';
 import {
-  Flex,
-  Table,
-  Card,
-  FormatBytes,
-  FormatConnectionStatus,
-} from '@flax/core';
-import Connection from '../../types/Connection';
+  Card, Flex, FormatBytes,
+  FormatConnectionStatus, Table
+} from '@lotus/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 import type { RootState } from '../../modules/rootReducer';
+import Connection from '../../types/Connection';
 import FarmCloseConnection from './FarmCloseConnection';
 
 const StyledIconButton = styled(IconButton)`
@@ -90,7 +87,7 @@ export default function FarmFullNodeConnections() {
       tooltip={(
         <Trans>
           {'The full node that your farmer is connected to is below. '}
-          <Link target="_blank" href="https://github.com/Flax-Network/flax-blockchain/wiki/Network-Architecture">
+          <Link target="_blank" href="https://github.com/lotus-Network/lotus-blockchain/wiki/Network-Architecture">
             Learn more
           </Link>
         </Trans>

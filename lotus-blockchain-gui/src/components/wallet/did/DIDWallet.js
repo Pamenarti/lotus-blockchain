@@ -1,41 +1,31 @@
-import React from 'react';
-import Grid from '@material-ui/core/Grid';
-import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { Trans } from '@lingui/macro';
-import Typography from '@material-ui/core/Typography';
-import Paper from '@material-ui/core/Paper';
-import Box from '@material-ui/core/Box';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Backdrop from '@material-ui/core/Backdrop';
-import CircularProgress from '@material-ui/core/CircularProgress';
-import { AlertDialog, Card, Dropzone, Flex } from '@flax/core';
-
 import {
-  did_generate_backup_file,
-  did_spend,
-  did_update_recovery_ids_action,
-  did_create_attest,
-} from '../../../modules/message';
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
+    Accordion, AccordionDetails, AccordionSummary, Tooltip
 } from '@material-ui/core';
+import Backdrop from '@material-ui/core/Backdrop';
+import Box from '@material-ui/core/Box';
+import Button from '@material-ui/core/Button';
+import CircularProgress from '@material-ui/core/CircularProgress';
+import Grid from '@material-ui/core/Grid';
+import Paper from '@material-ui/core/Paper';
+import { makeStyles } from '@material-ui/core/styles';
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import { Tooltip } from '@material-ui/core';
 import HelpIcon from '@material-ui/icons/Help';
-import { mojo_to_flax_string } from '../../../util/flax';
-import { useForm, Controller, useFieldArray } from 'react-hook-form';
-import { openDialog } from '../../../modules/dialog';
+import { Dropzone } from '@lotus/core';
+import React from 'react';
+import { Controller, useFieldArray, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
+import { openDialog } from '../../../modules/dialog';
+import {
+    did_create_attest, did_generate_backup_file,
+    did_spend,
+    did_update_recovery_ids_action
+} from '../../../modules/message';
+import { graviton_to_lotus_string } from '../../../util/lotus';
 import WalletHistory from '../WalletHistory';
+
 
 const drawerWidth = 240;
 
@@ -48,10 +38,10 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '0px',
   },
   resultSuccess: {
-    color: 'green',
+    color: '#00D983',
   },
   resultFailure: {
-    color: 'red',
+    color: '#E9398D',
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -472,7 +462,7 @@ const BalanceCardSubSection = (props) => {
           </Box>
           <Box>
             <Typography variant="subtitle1">
-              {mojo_to_flax_string(props.balance)} {currencyCode}
+              {graviton_to_lotus_string(props.balance)} {currencyCode}
             </Typography>
           </Box>
         </Box>
@@ -774,7 +764,7 @@ const CreateAttest = (props) => {
       return;
     }
     let address = puzhash_input.value.trim();
-    if (address.substring(0, 12) === 'flax_addr://') {
+    if (address.substring(0, 12) === 'lotus_addr://') {
       address = address.substring(12);
     }
     if (address.startsWith('0x') || address.startsWith('0X')) {

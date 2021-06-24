@@ -1,9 +1,9 @@
+import { Trans } from '@lingui/macro';
+import { ConfirmDialog } from '@lotus/core';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { Trans } from '@lingui/macro';
-import { ConfirmDialog } from '@flax/core';
-import { closeConnection } from '../../modules/fullnodeMessages';
 import useOpenDialog from '../../hooks/useOpenDialog';
+import { closeConnection } from '../../modules/fullnodeMessages';
 
 type Props = {
   nodeId: string;

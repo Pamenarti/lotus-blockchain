@@ -1,21 +1,19 @@
-import { useDispatch, useSelector } from 'react-redux';
-import React, { useMemo } from 'react';
-import { Dropzone } from '@flax/core';
 import { Trans } from '@lingui/macro';
 import { Button } from '@material-ui/core';
+import { Card, Dropzone } from '@lotus/core';
+import React, { useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  resetTrades,
   offerParsingName,
   parsingStarted,
-  parsingStatePending,
+  parsingStatePending, resetTrades
 } from '../../modules/trade';
-
 import {
   accept_trade_action,
-  parse_trade_action,
+  parse_trade_action
 } from '../../modules/trade_messages';
-import { Card } from '@flax/core';
 import TradesTable from './TradesTable';
+
 
 /* global BigInt */
 
@@ -23,7 +21,7 @@ export const DropView = () => {
   const dispatch = useDispatch();
   const parsing_state = useSelector((state) => state.trade_state.parsing_state);
   const isParsing = parsing_state === parsingStatePending;
- 
+
   function handleDrop(acceptedFiles) {
     const offer_file_path = acceptedFiles[0].path;
     const offer_name = offer_file_path.replace(/^.*[/\\]/, '');

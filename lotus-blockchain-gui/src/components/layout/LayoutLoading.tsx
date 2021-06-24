@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
 import { Typography } from '@material-ui/core';
-import { Loading } from '@flax/core';
+import { Loading } from '@lotus/core';
+import React, { ReactNode } from 'react';
 import LayoutHero from './LayoutHero';
 
 type Props = {

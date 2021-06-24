@@ -1,24 +1,19 @@
-import React, { useState } from 'react';
 import { Trans } from '@lingui/macro';
 import {
-  TextField,
-  Typography,
-  Container,
-  Button,
-  Grid,
-  TextFieldProps,
+    Button, Container, Grid, TextField, TextFieldProps, Typography
 } from '@material-ui/core';
-import { Autocomplete } from '@material-ui/lab';
 import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
-import { useSelector, useDispatch } from 'react-redux';
-import { useHistory } from 'react-router';
-import { Flex, Logo } from '@flax/core';
+import { Autocomplete } from '@material-ui/lab';
+import { Flex, Logo } from '@lotus/core';
 import { matchSorter } from 'match-sorter';
-import LayoutHero from '../layout/LayoutHero';
-import { mnemonic_word_added, resetMnemonic } from '../../modules/mnemonic';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
 import { unselectFingerprint } from '../../modules/message';
+import { mnemonic_word_added, resetMnemonic } from '../../modules/mnemonic';
 import type { RootState } from '../../modules/rootReducer';
 import english from '../../util/english';
+import LayoutHero from '../layout/LayoutHero';
 
 const options = english.map((item) => item.word);
 
@@ -141,7 +136,7 @@ export default function WalletImport() {
           <Typography variant="subtitle1" align="center">
             <Trans>
               Enter the 24 word mnemonic that you have saved in order to restore
-              your Flax wallet.
+              your lotus wallet.
             </Trans>
           </Typography>
           <Grid container spacing={2}>

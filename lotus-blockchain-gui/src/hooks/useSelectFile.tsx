@@ -1,7 +1,7 @@
-import React from 'react';
-import isElectron from 'is-electron';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@flax/core';
+import { AlertDialog } from '@lotus/core';
+import isElectron from 'is-electron';
+import React from 'react';
 import useOpenDialog from './useOpenDialog';
 
 export default function useSelectFile(): () => Promise<string | undefined> {

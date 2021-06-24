@@ -1,10 +1,10 @@
-import React, { useMemo } from 'react';
 import { Trans } from '@lingui/macro';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../../modules/rootReducer';
-import FarmCard from './FarmCard';
-import { mojo_to_flax } from '../../../util/flax';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
+import type { RootState } from '../../../modules/rootReducer';
+import { graviton_to_lotus } from '../../../util/lotus';
+import FarmCard from './FarmCard';
 
 export default function FarmCardBlockRewards() {
   const currencyCode = useCurrencyCode();
@@ -23,7 +23,7 @@ export default function FarmCardBlockRewards() {
   const blockRewards = useMemo(() => {
     if (farmerRewardAmount !== undefined && poolRewardAmount !== undefined) {
       const val = BigInt(farmerRewardAmount.toString()) + BigInt(poolRewardAmount.toString());
-      return mojo_to_flax(val);
+      return graviton_to_lotus(val);
     }
   }, [farmerRewardAmount, poolRewardAmount]);
 

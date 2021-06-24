@@ -1,7 +1,7 @@
-import React from 'react';
 import { SvgIcon, SvgIconProps } from '@material-ui/core';
-import { ReactComponent as FarmIcon } from './images/farm.svg';
+import React from 'react';
+import { ReactComponent as FarmIcon } from './images/icon-farm.svg';
 
 export default function Farm(props: SvgIconProps) {
-  return <SvgIcon component={FarmIcon} viewBox="0 0 32 37" {...props} />;
+  return <SvgIcon component={FarmIcon} viewBox="8 0 30 47" {...props} />;
 }

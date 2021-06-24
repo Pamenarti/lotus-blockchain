@@ -1,25 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
 import { Trans } from '@lingui/macro';
-import { useDispatch } from 'react-redux';
 import { List } from '@material-ui/core';
+import { Flex, SideBarItem } from '@lotus/core';
 import {
-  Wallet as WalletIcon,
-  Farm as FarmIcon,
-  Keys as KeysIcon,
-  Home as HomeIcon,
-  Plot as PlotIcon,
-} from '@flax/icons';
-import { Flex, SideBarItem } from '@flax/core';
+    Farm as FarmIcon, Home as HomeIcon, Keys as KeysIcon, Plot as PlotIcon, Wallet as WalletIcon
+} from '@lotus/icons';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import { logOut } from '../../modules/message';
 
 const StyledRoot = styled(Flex)`
   height: 100%;
+  padding-top: 50px;
   overflow-y: auto;
 `;
 
 const StyledList = styled(List)`
   width: 100%;
+  justify-content: start;
+  display: flex;
+  flex-direction: column;
 `;
 
 export default function DashboardSideBar() {

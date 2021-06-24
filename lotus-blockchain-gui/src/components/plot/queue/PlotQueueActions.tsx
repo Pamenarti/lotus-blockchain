@@ -1,16 +1,17 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { useDispatch } from 'react-redux';
-import { ConfirmDialog, More } from '@flax/core';
 import { Box, Divider, ListItemIcon, MenuItem, Typography } from '@material-ui/core';
 import {
-  DeleteForever as DeleteForeverIcon,
-  Info as InfoIcon,
+    DeleteForever as DeleteForeverIcon,
+    Info as InfoIcon
 } from '@material-ui/icons';
-import useOpenDialog from '../../../hooks/useOpenDialog';
-import type PlotQueueItem from '../../../types/PlotQueueItem';
+import { ConfirmDialog, More } from '@lotus/core';
+import React from 'react';
+import { useDispatch } from 'react-redux';
 import PlotStatus from '../../../constants/PlotStatus';
+import useOpenDialog from '../../../hooks/useOpenDialog';
 import { stopPlotting } from '../../../modules/plotter_messages';
+import type PlotQueueItem from '../../../types/PlotQueueItem';
+import isWindows from '../../../util/isWindows';
 import PlotQueueLogDialog from './PlotQueueLogDialog';
 
 type Props = {
@@ -27,7 +28,7 @@ export default function PlotQueueAction(props: Props) {
 
   const dispatch = useDispatch();
   const openDialog = useOpenDialog();
-  const canDelete = state !== PlotStatus.REMOVING;
+  const canDelete = state !== PlotStatus.REMOVING && !isWindows;
 
   async function handleDeletePlot() {
     if (!canDelete) {

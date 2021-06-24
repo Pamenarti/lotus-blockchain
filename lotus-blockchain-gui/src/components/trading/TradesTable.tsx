@@ -1,9 +1,9 @@
-import React, { useMemo, ReactNode } from 'react';
-import { Table } from '@flax/core';
-import styled from 'styled-components';
 import { Trans } from '@lingui/macro';
 import { Box } from '@material-ui/core';
-import { mojo_to_flax_string } from '../../util/flax';
+import { Table } from '@lotus/core';
+import React, { ReactNode, useMemo } from 'react';
+import styled from 'styled-components';
+import { graviton_to_lotus_string } from '../../util/lotus';
 
 const Amount = styled(Box)`
   white-space: normal;
@@ -48,7 +48,7 @@ export default function TradesTable(props: Props) {
       ),
       amount: (
         <Amount>
-          {mojo_to_flax_string(humanAmount)}
+          {graviton_to_lotus_string(humanAmount)}
         </Amount>
       ),
     };

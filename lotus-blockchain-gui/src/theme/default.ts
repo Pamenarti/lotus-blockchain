@@ -1,7 +1,7 @@
 export default {
   palette: {
     primary: {
-      main: '#3AAC59',
+      main: '#00D983',
       contrastText: '#ffffff',
     },
     secondary: {
@@ -9,11 +9,14 @@ export default {
       contrastText: '#ffffff',
     },
     danger: {
-      main: '#dc3545',
+      main: '#E9398D',
       contrastText: '#ffffff',
     },
   },
+  shape: {
+    borderRadius: 10
+  },
   drawer: {
-    width: '100px',
+    width: '200px',
   },
 };

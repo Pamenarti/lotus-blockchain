@@ -1,27 +1,20 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@flax/core';
 import {
-  Typography,
-  Button,
-  Box,
-  TextField,
-  Backdrop,
-  CircularProgress,
+  Backdrop, Box, Button, CircularProgress, TextField, Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
-import { useDispatch, useSelector } from 'react-redux';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { AlertDialog } from '@lotus/core';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  createState,
-  changeCreateWallet,
-  CREATE_CC_WALLET_OPTIONS,
+  changeCreateWallet, createState, CREATE_CC_WALLET_OPTIONS
 } from '../../../modules/createWallet';
-import { useStyles } from './WalletCreate';
-import { create_cc_action } from '../../../modules/message';
-import { flax_to_mojo } from '../../../util/flax';
 import { openDialog } from '../../../modules/dialog';
+import { create_cc_action } from '../../../modules/message';
+import { lotus_to_graviton } from '../../../util/lotus';
+import { useStyles } from './WalletCreate';
+
 
 export const customStyles = makeStyles((theme) => ({
   input: {
@@ -87,8 +80,8 @@ export const CreateNewCCWallet = () => {
       return;
     }
     dispatch(createState(true, true));
-    const amount = flax_to_mojo(amount_input.value);
-    const fee = flax_to_mojo(fee_input.value);
+    const amount = lotus_to_graviton(amount_input.value);
+    const fee = lotus_to_graviton(fee_input.value);
     dispatch(create_cc_action(amount, fee));
   }
 

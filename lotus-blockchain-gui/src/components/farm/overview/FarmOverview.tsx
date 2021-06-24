@@ -1,14 +1,14 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { Flex, More } from '@flax/core';
-import { useSelector } from 'react-redux';
-import { Box, MenuItem, CircularProgress, ListItemIcon, Typography } from '@material-ui/core';
+import { Box, CircularProgress, ListItemIcon, MenuItem, Typography } from '@material-ui/core';
 import { Settings as SettingsIcon } from '@material-ui/icons';
-import type { RootState } from '../../../modules/rootReducer';
-import FarmOverviewHero from './FarmOverviewHero';
-import FarmOverviewCards from './FarmOverviewCards';
-import FarmManageFarmingRewards from '../FarmManageFarmingRewards';
+import { Flex, More } from '@lotus/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import useOpenDialog from '../../../hooks/useOpenDialog';
+import type { RootState } from '../../../modules/rootReducer';
+import FarmManageFarmingRewards from '../FarmManageFarmingRewards';
+import FarmOverviewCards from './FarmOverviewCards';
+import FarmOverviewHero from './FarmOverviewHero';
 
 export default function FarmOverview() {
   const openDialog = useOpenDialog();
@@ -29,9 +29,9 @@ export default function FarmOverview() {
     <>
       <Flex gap={2} alignItems="center">
         <Flex flexGrow={1}>
-          <Typography variant="h5" gutterBottom>
-            <Trans>Your Farm Overview</Trans>
-          </Typography>
+            <Typography gutterBottom>
+              <span style={ { color: "#E9398D", fontSize: 24, fontWeight:400, fontFamily:"Josefin" }}><Trans>Your Farm Overview</Trans></span>
+            </Typography>
         </Flex>
         <More>
           {({ onClose }) => (
@@ -56,6 +56,8 @@ export default function FarmOverview() {
       ) : (
         <FarmOverviewHero />
       ))}
+
+      
     </>
   );
 }

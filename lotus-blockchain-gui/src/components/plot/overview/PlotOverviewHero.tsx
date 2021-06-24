@@ -1,11 +1,12 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
+import { Button, Card, CardContent, Grid, Typography } from '@material-ui/core';
+import { Flex } from '@lotus/core';
+import { PlotHero as PlotHeroIcon } from '@lotus/icons';
+import React from 'react';
 import { useHistory } from 'react-router-dom';
-import { Button, Grid, Typography, Divider } from '@material-ui/core';
-import { CardHero, Link } from '@flax/core';
-import { PlotHero as PlotHeroIcon } from '@flax/icons';
-import PlotAddDirectoryDialog from '../PlotAddDirectoryDialog';
+import styled from 'styled-components';
 import useOpenDialog from '../../../hooks/useOpenDialog';
+import PlotAddDirectoryDialog from '../PlotAddDirectoryDialog';
 
 export default function PlotOverviewHero() {
   const history = useHistory();
@@ -21,34 +22,52 @@ export default function PlotOverviewHero() {
     ));
   }
 
+  const StyledPlotIcon = styled(PlotHeroIcon)`
+  path {
+    stroke: 'white';
+  }
+`;
+
+
+  const StyledContent = styled(CardContent)`
+    padding: ${({ theme }) => `${theme.spacing(5)}px ${theme.spacing(4)}px !important`};
+    background: tranlotusnt;
+    `;
+
+  const StyledCard = styled(Card)`
+    background: tranlotusnt;
+    box-shadow: none;
+    `;
+
+
   return (
-    <Grid container>
-      <Grid xs={12} md={6} lg={4} item>
-        <CardHero>
-          <PlotHeroIcon fontSize="large" />
-          <Typography variant="body1">
-            <Trans>
-              {'Plots are allocated space on your hard drive used to farm and earn Flax. '}
-              <Link target="_blank" href="https://github.com/Flax-Network/flax-blockchain/wiki/Network-Architecture">Learn more</Link>
-            </Trans>
-          </Typography>
-          <Button
-            onClick={handleAddPlot}
-            variant="contained"
-            color="primary"
-          >
-            <Trans>Add a Plot</Trans>
-          </Button>
-
-          <Divider />
-
-          <Typography variant="body1">
-            <Trans>
-              {'Do you have existing plots on this machine? '}
-              <Link onClick={handleAddPlotDirectory} variant="body1">Add Plot Directory</Link>
-            </Trans>
-          </Typography>
-        </CardHero>
+    <Grid container direction="row" justify="center" alignItems="center">
+      <Grid  md={6}  item>
+        <StyledCard>
+          <StyledContent>
+            <Flex flexDirection="column" gap={3}>
+            <Grid container direction="row"
+              justify="center"
+              alignItems="center">
+              <Grid  md={4}  item >
+              <StyledPlotIcon  style={{ fontSize: 120 }}/>
+              </Grid >
+              </Grid >
+              <Typography variant="body1">
+                <Trans>
+                Add old plots and start mining on both networks simultaneously
+                </Trans>
+              </Typography>
+              <Button
+                onClick={handleAddPlotDirectory} 
+                variant="contained"
+                color="primary"
+              >
+                <Trans>Add Plot Directory</Trans>
+              </Button>
+            </Flex>
+          </StyledContent>
+        </StyledCard>
       </Grid>
     </Grid>
   );

@@ -1,6 +1,6 @@
-import Unit from './Unit';
 import { IS_MAINNET } from './constants';
+import Unit from './Unit';
 
 export default {
-  [Unit.FLAX]: IS_MAINNET ? 'XCH' : 'TXCH',
+  [Unit.lotus]: IS_MAINNET ? 'lotus' : 'Tlotus',
 };

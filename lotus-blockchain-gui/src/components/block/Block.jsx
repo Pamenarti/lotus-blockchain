@@ -1,26 +1,22 @@
-import React, { useEffect, useState } from 'react';
-import { Button, Paper, TableRow, Table, TableBody, TableCell, TableContainer } from '@material-ui/core';
-import { Alert } from '@material-ui/lab';
 import { Trans } from '@lingui/macro';
-import { useParams, useHistory } from 'react-router-dom';
+import { Button, Paper, Table, TableBody, TableCell, TableContainer, TableRow } from '@material-ui/core';
+import { Alert } from '@material-ui/lab';
+import { Card, Flex, FormatLargeNumber, Link, Loading, TooltipIcon } from '@lotus/core';
+import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { Card, FormatLargeNumber, Link, Loading, TooltipIcon, Flex } from '@flax/core';
-import {
-  unix_to_short_date,
-  hex_to_array,
-  arr_to_hex,
-  sha256,
-} from '../../util/utils';
-import {
-  getBlockRecord,
-  getBlock,
-} from '../../modules/fullnodeMessages';
-import { mojo_to_flax } from '../../util/flax';
-import { calculatePoolReward, calculateBaseFarmerReward } from '../../util/blockRewards';
-import LayoutMain from '../layout/LayoutMain';
-import toBech32m from '../../util/toBech32m';
-import BlockTitle from './BlockTitle';
+import { useHistory, useParams } from 'react-router-dom';
 import useCurrencyCode from '../../hooks/useCurrencyCode';
+import {
+  getBlock, getBlockRecord
+} from '../../modules/fullnodeMessages';
+import { calculateBaseFarmerReward, calculatePoolReward } from '../../util/blockRewards';
+import { graviton_to_lotus } from '../../util/lotus';
+import toBech32m from '../../util/toBech32m';
+import {
+  arr_to_hex, hex_to_array, sha256, unix_to_short_date
+} from '../../util/utils';
+import LayoutMain from '../layout/LayoutMain';
+import BlockTitle from './BlockTitle';
 
 /* global BigInt */
 
@@ -168,11 +164,11 @@ export default function Block() {
     ? blockRecord.weight - prevBlockRecord.weight
     : blockRecord?.weight ?? 0;
 
-  const poolReward = mojo_to_flax(calculatePoolReward(blockRecord.height));
-  const baseFarmerReward = mojo_to_flax(calculateBaseFarmerReward(blockRecord.height));
+  const poolReward = graviton_to_lotus(calculatePoolReward(blockRecord.height));
+  const baseFarmerReward = graviton_to_lotus(calculateBaseFarmerReward(blockRecord.height));
 
-  const flaxFees = blockRecord.fees
-    ? mojo_to_flax(BigInt(blockRecord.fees))
+  const lotusFees = blockRecord.fees
+    ? graviton_to_lotus(BigInt(blockRecord.fees))
     : '';
 
   const rows = [
@@ -251,7 +247,7 @@ export default function Block() {
     {
       name: <Trans>Farmer Puzzle Hash</Trans>,
       value: (
-        <Link>
+        <Link target="_blank" href={`https://explorer.lotuscoin.org/blockchain/puzzlehash/${blockRecord.farmer_puzzle_hash}`}>
           {currencyCode ? toBech32m(blockRecord.farmer_puzzle_hash, currencyCode.toLowerCase()) : ''}
         </Link>
       ),
@@ -259,7 +255,7 @@ export default function Block() {
     {
       name: <Trans>Pool Puzzle Hash</Trans>,
       value: (
-        <Link>
+        <Link target="_blank" href={`https://explorer.lotuscoin.org/blockchain/puzzlehash/${blockRecord.pool_puzzle_hash}`}>
           {currencyCode ? toBech32m(blockRecord.pool_puzzle_hash, currencyCode.toLowerCase()) : ''}
         </Link>
       ),
@@ -292,7 +288,7 @@ export default function Block() {
     },
     {
       name: <Trans>Fees Amount</Trans>,
-      value: flaxFees ? `${flaxFees} ${currencyCode}` : '',
+      value: lotusFees ? `${lotusFees} ${currencyCode}` : '',
       tooltip: (
         <Trans>
           The total transactions fees in this block. Rewarded to the farmer.
@@ -309,7 +305,7 @@ export default function Block() {
         title={(
           <BlockTitle>
             <Trans>
-              Block at height {blockRecord.height} in the Flax
+              Block at height {blockRecord.height} in the lotus
               blockchain
             </Trans>
           </BlockTitle>

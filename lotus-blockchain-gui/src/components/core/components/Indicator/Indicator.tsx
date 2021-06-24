@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
-import { Flex } from '@flax/core';
 import { LinearProgress, Typography } from '@material-ui/core';
+import { Flex } from '@lotus/core';
+import React, { ReactNode } from 'react';
 import styled from 'styled-components';
 
 const StyledIndicator = styled.div`

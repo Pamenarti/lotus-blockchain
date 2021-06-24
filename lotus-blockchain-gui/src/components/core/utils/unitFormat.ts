@@ -1,5 +1,5 @@
-import Unit from '../constants/Unit';
 import CurrencyCode from '../constants/CurrencyCode';
+import Unit from '../constants/Unit';
 
 type Options = {
   from?: Unit;
@@ -8,8 +8,8 @@ type Options = {
 };
 
 const defaultOptions = {
-  to: Unit.FLAX,
-  from: Unit.FLAX,
+  to: Unit.lotus,
+  from: Unit.lotus,
 };
 
 export default function unitFormat(value: number, options: Options): string {

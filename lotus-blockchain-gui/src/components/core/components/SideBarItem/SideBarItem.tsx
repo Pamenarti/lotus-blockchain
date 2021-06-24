@@ -10,10 +10,13 @@ const StyledListItem = styled(ListItem)`
   align-items: center;
   padding-left: 0;
   padding-right: 0;
-`;
+  min-height: 150px;
+  padding-top: 50px;
+  `;
 
 const StyledListItemIcon = styled(ListItemIcon)`
   min-width: auto;
+  with: 100%;
 `;
 
 const StyledListItemText = styled(ListItemText)`
@@ -34,7 +37,6 @@ export default function SideBarItem(props: Props) {
   const history = useHistory();
   const match = useRouteMatch(to);
 
-  const isSelected = exact ? !!match && match.isExact : !!match;
 
   async function handleClick() {
     if (onSelect) {
@@ -44,7 +46,7 @@ export default function SideBarItem(props: Props) {
   }
 
   return (
-    <StyledListItem button selected={isSelected} onClick={() => handleClick()}>
+    <StyledListItem button onClick={() => handleClick()}>
       <StyledListItemIcon>{icon}</StyledListItemIcon>
       <StyledListItemText primary={title} />
     </StyledListItem>

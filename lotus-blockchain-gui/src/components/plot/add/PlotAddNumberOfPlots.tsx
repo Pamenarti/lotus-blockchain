@@ -1,7 +1,7 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AdvancedOptions, CardStep, Select, TextField, RadioGroup, Flex, Checkbox, TooltipIcon } from '@flax/core';
-import { Grid, FormControl, InputLabel, MenuItem, InputAdornment, Typography, FormControlLabel, Radio } from '@material-ui/core';
+import { FormControl, FormControlLabel, Grid, InputAdornment, InputLabel, MenuItem, Radio, Typography } from '@material-ui/core';
+import { AdvancedOptions, CardStep, Checkbox, Flex, RadioGroup, Select, TextField, TooltipIcon } from '@lotus/core';
+import React from 'react';
 import { useFormContext } from 'react-hook-form';
 
 const plotCountOptions: number[] = [];
@@ -238,34 +238,6 @@ export default function PlotAddNumberOfPlots() {
                     </TooltipIcon>
                   </>
                 )}
-              />
-            </FormControl>
-          </Grid>
-          <Grid xs={12} item>
-            <FormControl
-              variant="filled"
-              fullWidth
-            >
-              <TextField
-                name="farmerPublicKey"
-                type="text"
-                variant="filled"
-                placeholder="Hex farmer public key"
-                label={<Trans>Farmer Public Key</Trans>}
-              />
-            </FormControl>
-          </Grid>
-          <Grid xs={12} item>
-            <FormControl
-              variant="filled"
-              fullWidth
-            >
-              <TextField
-                name="poolPublicKey"
-                type="text"
-                variant="filled"
-                placeholder="Hex public key of pool"
-                label={<Trans>Pool Public Key</Trans>}
               />
             </FormControl>
           </Grid>

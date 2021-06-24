@@ -15,16 +15,11 @@ import {
 
 const StyledTableHead = styled(TableHead)`
   background-color: ${({ theme }) =>
-    theme.palette.type === 'dark' ? '#202020' : '#eeeeee'};
+    theme.palette.type === 'dark' ? '#1A1E1C' : '#eeeeee'};
   font-weight: 500;
 `;
 
-export const StyledTableRow = styled(TableRow)`
-  &:nth-of-type(even) {
-    background-color: ${({ theme }) =>
-      theme.palette.type === 'dark' ? '#515151' : '#FAFAFA'};
-  }
-`;
+export const StyledTableRow = styled(TableRow)``;
 
 const StyledTableCell = styled(({ width, minWidth, maxWidth, ...rest }) => (
   <TableCell {...rest} />

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
 import { Trans } from '@lingui/macro';
-import { useForm } from 'react-hook-form';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle } from '@material-ui/core';
 import { Alert } from '@material-ui/lab';
-import styled from 'styled-components';
-import { Flex, Form, TextField, Loading } from '@flax/core';
-import { Button, Dialog, DialogActions, DialogTitle, DialogContent } from '@material-ui/core';
+import { Flex, Form, Loading, TextField } from '@lotus/core';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
+import styled from 'styled-components';
 import { getRewardTargets, setRewardTargets } from '../../modules/farmerMessages';
 
 const StyledTextField = styled(TextField)`

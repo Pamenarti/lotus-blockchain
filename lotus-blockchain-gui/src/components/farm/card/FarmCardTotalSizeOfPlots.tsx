@@ -1,6 +1,6 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { FormatBytes } from '@flax/core';
+import { FormatBytes } from '@lotus/core';
+import React from 'react';
 import usePlots from '../../../hooks/usePlots';
 import FarmCard from './FarmCard';
 

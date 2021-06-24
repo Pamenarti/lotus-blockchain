@@ -33,24 +33,24 @@ pip install pyinstaller==4.2
 pip install setuptools_scm
 
 Write-Output "   ---"
-Write-Output "Get FLAX_INSTALLER_VERSION"
-# The environment variable FLAX_INSTALLER_VERSION needs to be defined
-$env:FLAX_INSTALLER_VERSION = python .\build_scripts\installer-version.py -win
+Write-Output "Get LOTUS_INSTALLER_VERSION"
+# The environment variable lotus_INSTALLER_VERSION needs to be defined
+$env:lotus_INSTALLER_VERSION = python .\build_scripts\installer-version.py -win
 
-if (-not (Test-Path env:FLAX_INSTALLER_VERSION)) {
-  $env:FLAX_INSTALLER_VERSION = '0.0.0'
-  Write-Output "WARNING: No environment variable FLAX_INSTALLER_VERSION set. Using 0.0.0"
+if (-not (Test-Path env:LOTUS_INSTALLER_VERSION)) {
+  $env:lotus_INSTALLER_VERSION = '0.0.0'
+  Write-Output "WARNING: No environment variable LOTUS_INSTALLER_VERSION set. Using 0.0.0"
   }
-Write-Output "Flax Version is: $env:FLAX_INSTALLER_VERSION"
+Write-Output "Lotus Version is: $env:LOTUS_INSTALLER_VERSION"
 Write-Output "   ---"
 
 Write-Output "   ---"
-Write-Output "Build flax-blockchain wheels"
+Write-Output "Build lotus-blockchain wheels"
 Write-Output "   ---"
 pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
 
 Write-Output "   ---"
-Write-Output "Install flax-blockchain wheels into venv with pip"
+Write-Output "Install lotus-blockchain wheels into venv with pip"
 Write-Output "   ---"
 
 Write-Output "pip install miniupnpc"
@@ -59,20 +59,20 @@ pip install --no-index --find-links=.\win_build\ miniupnpc
 # Write-Output "pip install setproctitle"
 # pip install setproctitle==1.2.2
 
-Write-Output "pip install flax-blockchain"
-pip install --no-index --find-links=.\win_build\ flax-blockchain
+Write-Output "pip install lotus-blockchain"
+pip install --no-index --find-links=.\win_build\ lotus-blockchain
 
 Write-Output "   ---"
-Write-Output "Use pyinstaller to create flax .exe's"
+Write-Output "Use pyinstaller to create lotus .exe's"
 Write-Output "   ---"
-$SPEC_FILE = (python -c 'import flax; print(flax.PYINSTALLER_SPEC_PATH)') -join "`n"
+$SPEC_FILE = (python -c 'import lotus; print(lotus.PYINSTALLER_SPEC_PATH)') -join "`n"
 pyinstaller --log-level INFO $SPEC_FILE
 
 Write-Output "   ---"
-Write-Output "Copy flax executables to flax-blockchain-gui\"
+Write-Output "Copy lotus executables to lotus-blockchain-gui\"
 Write-Output "   ---"
-Copy-Item "dist\daemon" -Destination "..\flax-blockchain-gui\" -Recurse
-Set-Location -Path "..\flax-blockchain-gui" -PassThru
+Copy-Item "dist\daemon" -Destination "..\lotus-blockchain-gui\" -Recurse
+Set-Location -Path "..\lotus-blockchain-gui" -PassThru
 
 git status
 
@@ -95,19 +95,19 @@ If ($LastExitCode -gt 0){
 }
 
 Write-Output "   ---"
-Write-Output "Increase the stack for flax command for (flax plots create) chiapos limitations"
+Write-Output "Increase the stack for lotus command for (lotus plots create) chiapos limitations"
 # editbin.exe needs to be in the path
-editbin.exe /STACK:8000000 daemon\flax.exe
+editbin.exe /STACK:8000000 daemon\lotus.exe
 Write-Output "   ---"
 
-$packageVersion = "$env:FLAX_INSTALLER_VERSION"
-$packageName = "Flax-$packageVersion"
+$packageVersion = "$env:lotus_INSTALLER_VERSION"
+$packageName = "lotus-$packageVersion"
 
 Write-Output "packageName is $packageName"
 
 Write-Output "   ---"
 Write-Output "electron-packager"
-electron-packager . Flax --asar.unpack="**\daemon\**" --overwrite --icon=.\src\assets\img\flax.ico --app-version=$packageVersion
+electron-packager . lotus --asar.unpack="**\daemon\**" --overwrite --icon=.\src\assets\img\lotus.ico --app-version=$packageVersion
 Write-Output "   ---"
 
 Write-Output "   ---"
@@ -121,8 +121,8 @@ If ($env:HAS_SECRET) {
    Write-Output "   ---"
    Write-Output "Add timestamp and verify signature"
    Write-Output "   ---"
-   signtool.exe timestamp /v /t http://timestamp.comodoca.com/ .\release-builds\windows-installer\FlaxSetup-$packageVersion.exe
-   signtool.exe verify /v /pa .\release-builds\windows-installer\FlaxSetup-$packageVersion.exe
+   signtool.exe timestamp /v /t http://timestamp.comodoca.com/ .\release-builds\windows-installer\lotusSetup-$packageVersion.exe
+   signtool.exe verify /v /pa .\release-builds\windows-installer\lotusSetup-$packageVersion.exe
    }   Else    {
    Write-Output "Skipping timestamp and verify signatures - no authorization to install certificates"
 }

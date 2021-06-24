@@ -2,13 +2,13 @@ const units = require("../../util/units");
 
 describe("units", () => {
   describe("#getUnit", () => {
-    it("gets unit of flax", () => {
-      const result = units.getUnit("flax");
+    it("gets unit of lotus", () => {
+      const result = units.getUnit("lotus");
 
       expect(result).toBe(1);
     });
-    it("gets unit of mojo", () => {
-      const result = units.getUnit("mojo");
+    it("gets unit of graviton", () => {
+      const result = units.getUnit("graviton");
 
       expect(result).toBe(1e-12);
     });
@@ -18,16 +18,16 @@ describe("units", () => {
       expect(result).toBe(1e-9);
     });
     it("supports uppercase characters", () => {
-      const result = units.getUnit("FLAX");
+      const result = units.getUnit("lotus");
 
       expect(result).toBe(1);
     });
-    it("gets unit of flax using alias", () => {
+    it("gets unit of lotus using alias", () => {
       const result = units.getUnit("ch");
 
       expect(result).toBe(1);
     });
-    it("gets unit of mojo using alias", () => {
+    it("gets unit of graviton using alias", () => {
       const result = units.getUnit("mj");
 
       expect(result).toBe(1e-12);
@@ -46,16 +46,16 @@ describe("units", () => {
     });
   });
   describe("#getDisplay", () => {
-    it("gets display of flax", () => {
-      const result = units.getDisplay("flax");
+    it("gets display of lotus", () => {
+      const result = units.getDisplay("lotus");
 
       expect(result).toEqual({
         format: "{amount} CH",
         fractionDigits: 12
       });
     });
-    it("gets display of mojo", () => {
-      const result = units.getDisplay("mojo");
+    it("gets display of graviton", () => {
+      const result = units.getDisplay("graviton");
 
       expect(result).toEqual({
         format: "{amount} MJ",
@@ -87,13 +87,13 @@ describe("units", () => {
       expect(result).toEqual(1);
     });
     it("modifies an existing unit", () => {
-      units.setUnit("flax", 9);
+      units.setUnit("lotus", 9);
 
-      const result = units.getUnit("flax");
+      const result = units.getUnit("lotus");
 
       expect(result).toEqual(9);
 
-      units.setUnit("flax", 1);
+      units.setUnit("lotus", 1);
     });
   });
   describe("#setDisplay", () => {
@@ -111,15 +111,15 @@ describe("units", () => {
       });
     });
     it("updates an existing display", () => {
-      units.setDisplay("flax", {
-        format: "{amount} TXCH",
+      units.setDisplay("lotus", {
+        format: "{amount} Tlotus",
         fractionDigits: 0
       });
 
-      const result = units.getDisplay("flax");
+      const result = units.getDisplay("lotus");
 
       expect(result).toEqual({
-        format: "{amount} TXCH",
+        format: "{amount} Tlotus",
         fractionDigits: 0
       });
     });

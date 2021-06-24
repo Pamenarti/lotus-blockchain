@@ -1,8 +1,8 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { useFormContext } from 'react-hook-form';
-import { AdvancedOptions, ButtonSelected, CardStep, Flex, TextField } from '@flax/core';
 import { Typography } from '@material-ui/core';
+import { AdvancedOptions, ButtonSelected, CardStep, Flex, TextField } from '@lotus/core';
+import React from 'react';
+import { useFormContext } from 'react-hook-form';
 import useSelectDirectory from '../../../hooks/useSelectDirectory';
 
 export default function PlotAddSelectTemporaryDirectory() {
@@ -39,7 +39,7 @@ export default function PlotAddSelectTemporaryDirectory() {
       <Typography variant="subtitle1">
         <Trans>
           Select the temporary destination for the folder where you would like the plot to be stored.
-          We recommend you use a fast drive.
+          We recommend you use a fast SSD.
         </Trans>
       </Typography>
 
@@ -69,7 +69,7 @@ export default function PlotAddSelectTemporaryDirectory() {
           }}
           required
         />
-        <ButtonSelected onClick={handleSelect} size="large" variant="contained" selected={hasWorkspaceLocation} nowrap>
+        <ButtonSelected onClick={handleSelect} size="large" variant="contained" selected={hasWorkspaceLocation}>
           {hasWorkspaceLocation ? (
             <Trans>Selected</Trans>
           ) : (
@@ -100,7 +100,7 @@ export default function PlotAddSelectTemporaryDirectory() {
               }}
               variant="outlined"
             />
-            <ButtonSelected onClick={handleSelect2} size="large" variant="contained" selected={hasWorkspaceLocation2} nowrap>
+            <ButtonSelected onClick={handleSelect2} size="large" variant="contained" selected={hasWorkspaceLocation2}>
               {hasWorkspaceLocation2 ? (
                 <Trans>Selected</Trans>
               ) : (

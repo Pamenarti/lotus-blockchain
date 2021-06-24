@@ -1,14 +1,12 @@
-import React, { ReactNode, ReactElement } from 'react';
-import styled from 'styled-components';
-import { Flex, TooltipIcon } from '@flax/core';
 import {
-  Box,
-  Card,
-  CardContent,
-  Typography,
-  TypographyProps,
-  CircularProgress,
+    Box,
+    Card,
+    CardContent, CircularProgress, Typography,
+    TypographyProps
 } from '@material-ui/core';
+import { Flex, TooltipIcon } from '@lotus/core';
+import React, { ReactElement, ReactNode } from 'react';
+import styled from 'styled-components';
 
 const StyledCard = styled(Card)`
   height: 100%;

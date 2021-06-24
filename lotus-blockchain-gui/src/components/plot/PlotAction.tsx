@@ -1,16 +1,16 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { useDispatch } from 'react-redux';
-import { ConfirmDialog, More } from '@flax/core';
 import { Box, ListItemIcon, MenuItem, Typography } from '@material-ui/core';
 import {
-  DeleteForever as DeleteForeverIcon,
+    DeleteForever as DeleteForeverIcon
 } from '@material-ui/icons';
+import { ConfirmDialog, More } from '@lotus/core';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import useOpenDialog from '../../hooks/useOpenDialog';
 import {
-  deletePlot,
+    deletePlot
 } from '../../modules/harvesterMessages';
 import type Plot from '../../types/Plot';
-import useOpenDialog from '../../hooks/useOpenDialog';
 import isWindows from '../../util/isWindows';
 
 type Props = {
@@ -29,6 +29,10 @@ export default function PlotAction(props: Props) {
   const canDelete = !isWindows;
 
   async function handleDeletePlot() {
+    if (!canDelete) {
+      return;
+    }
+
     const deleteConfirmed = await openDialog((
       <ConfirmDialog
         title={<Trans>Delete Plot</Trans>}

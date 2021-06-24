@@ -8,7 +8,9 @@
       "esnext"
     ],
     "paths": {
-      "@flax/*": ["./components/*"]
+      "@lotus/*": [
+        "./components/*"
+      ]
     },
     "allowJs": true,
     "skipLibCheck": true,

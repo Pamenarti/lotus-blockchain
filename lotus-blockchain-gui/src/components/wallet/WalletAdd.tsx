@@ -1,19 +1,16 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
 import {
-  TextField,
-  Typography,
-  Button,
-  Grid,
-  Container,
+    Button, Container, Grid, TextField,
+    Typography
 } from '@material-ui/core';
 import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
-import { useSelector, useDispatch } from 'react-redux';
+import { Flex, Link, Loading, Logo } from '@lotus/core';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffectOnce } from 'react-use';
-import { Flex, Loading, Link, Logo } from '@flax/core';
-import { genereate_mnemonics, add_new_key_action } from '../../modules/message';
-import LayoutHero from '../layout/LayoutHero';
+import { add_new_key_action, genereate_mnemonics } from '../../modules/message';
 import type { RootState } from '../../modules/rootReducer';
+import LayoutHero from '../layout/LayoutHero';
 
 const MnemonicField = (props: any) => (
   <Grid item xs={2}>

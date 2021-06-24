@@ -1,8 +1,9 @@
+import { AppBar, Box, Toolbar } from '@material-ui/core';
+import { Flex, LocaleToggle } from '@lotus/core';
 import React, { ReactNode } from 'react';
-import { AppBar, Toolbar, Box } from '@material-ui/core';
 import styled from 'styled-components';
-import { Flex, DarkModeToggle, LocaleToggle } from '@flax/core';
 import { defaultLocale, locales } from '../../config/locales';
+
 
 const StyledWrapper = styled(Box)`
   padding-top: ${({ theme }) => `${theme.spacing(3)}px`};
@@ -33,12 +34,11 @@ export default function LayoutHero(props: Props) {
 
   return (
     <StyledWrapper>
-      <AppBar color="transparent" elevation={0}>
+      <AppBar color="tranlotusnt" elevation={0}>
         <Toolbar>
           {header}
           <Flex flexGrow={1} />
           <LocaleToggle locales={locales} defaultLocale={defaultLocale} />
-          <DarkModeToggle />
         </Toolbar>
       </AppBar>
       <StyledBody>

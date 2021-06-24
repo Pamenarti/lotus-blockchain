@@ -1,22 +1,17 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import styled from 'styled-components';
-import { useSelector } from 'react-redux';
 import {
-  Typography,
-  Tooltip,
-  IconButton,
+    IconButton, Tooltip, Typography
 } from '@material-ui/core';
 import { Delete as DeleteIcon } from '@material-ui/icons';
 import {
-  Flex,
-  Table,
-  FormatBytes,
-  FormatConnectionStatus,
-  Card,
-} from '@flax/core';
-import Connection from '../../types/Connection';
+    Card, Flex, FormatBytes,
+    FormatConnectionStatus, Table
+} from '@lotus/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import styled from 'styled-components';
 import type { RootState } from '../../modules/rootReducer';
+import Connection from '../../types/Connection';
 import FarmCloseConnection from './FarmCloseConnection';
 
 const StyledIconButton = styled(IconButton)`
@@ -88,9 +83,9 @@ export default function FarmYourHarvesterNetwork() {
     <Card
       gap={1}
       title={(
-        <Trans>
-          Your Harvester Network
-        </Trans>
+        <Typography gutterBottom>
+            <span style={ { color: "#E9398D", fontSize: 24, fontWeight:400, fontFamily:"Josefin" }}><Trans>Your Harvester Network</Trans></span>
+          </Typography>
       )}
       tooltip={(
         <Trans>

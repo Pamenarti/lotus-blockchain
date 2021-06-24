@@ -1,11 +1,11 @@
+import { Trans } from '@lingui/macro';
+import { Typography } from '@material-ui/core';
+import { Card, Table } from '@lotus/core';
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Trans } from '@lingui/macro';
-import { Card, Table } from '@flax/core';
-import { Typography } from '@material-ui/core';
 import type { RootState } from '../../modules/rootReducer';
-import PlotAction from './PlotAction';
 import type Plot from '../../types/Plot';
+import PlotAction from './PlotAction';
 
 const cols = [{
   field: 'filename',

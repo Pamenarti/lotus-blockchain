@@ -1,15 +1,15 @@
-import React, { useMemo } from 'react';
 import { Trans } from '@lingui/macro';
-import { orderBy } from 'lodash';
 import { Box, Tooltip, Typography } from '@material-ui/core';
+import { Card, CopyToClipboard, Flex, Table } from '@lotus/core';
+import { orderBy } from 'lodash';
+import React, { useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Card, CopyToClipboard, Flex, Table } from '@flax/core';
-import type { RootState } from '../../modules/rootReducer';
-import type { Row } from '../core/components/Table/Table';
-import { mojo_to_flax_string, mojo_to_colouredcoin_string } from '../../util/flax';
-import { unix_to_short_date } from '../../util/utils';
 import TransactionType from '../../constants/TransactionType';
 import WalletType from '../../constants/WalletType';
+import type { RootState } from '../../modules/rootReducer';
+import { graviton_to_colouredcoin_string, graviton_to_lotus_string } from '../../util/lotus';
+import { unix_to_short_date } from '../../util/utils';
+import type { Row } from '../core/components/Table/Table';
 
 const getCols = (type: WalletType) => [
   {
@@ -57,12 +57,12 @@ const getCols = (type: WalletType) => [
   },
   {
     field: (row: Row) => type === WalletType.COLOURED_COIN
-      ? mojo_to_colouredcoin_string(row.amount)
-      : mojo_to_flax_string(row.amount),
+      ? graviton_to_colouredcoin_string(row.amount)
+      : graviton_to_lotus_string(row.amount),
     title: <Trans>Amount</Trans>,
   },
   {
-    field: (row: Row) => mojo_to_flax_string(row.fee_amount),
+    field: (row: Row) => graviton_to_lotus_string(row.fee_amount),
     title: <Trans>Fee</Trans>,
   },
 ];
@@ -85,7 +85,11 @@ export default function WalletHistory(props: Props) {
 
   return (
     <Card
-      title={<Trans>History</Trans>}
+      title={  
+      <Typography >
+        <span style={ { color: "#E9398D", fontSize: 24, fontWeight:400, fontFamily:"Josefin" }}><Trans>History</Trans></span>
+      </Typography>
+      }
     >
       {sortedTransactions?.length ? (
         <Table

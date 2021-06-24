@@ -1,24 +1,22 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import styled from 'styled-components';
-import { Warning as WarningIcon } from '@material-ui/icons';
-import { Card, Flex, Table, FormatBytes, StateColor } from '@flax/core';
 import {
-  Box,
-  Typography,
-  TableCell,
+  Box, TableCell,
   TableRow,
-  Tooltip,
+  Tooltip, Typography
 } from '@material-ui/core';
-import type Plot from '../../../types/Plot';
+import { Warning as WarningIcon } from '@material-ui/icons';
+import { Card, Flex, FormatBytes, StateColor, Table } from '@lotus/core';
+import React from 'react';
+import styled from 'styled-components';
 import PlotStatusEnum from '../../../constants/PlotStatus';
-import PlotStatus from '../PlotStatus';
+import usePlots from '../../../hooks/usePlots';
+import type Plot from '../../../types/Plot';
 import PlotAction from '../PlotAction';
 import PlotHeader from '../PlotHeader';
-import PlotQueueSize from '../queue/PlotQueueSize';
+import PlotStatus from '../PlotStatus';
 import PlotQueueActions from '../queue/PlotQueueActions';
 import PlotQueueIndicator from '../queue/PlotQueueIndicator';
-import usePlots from '../../../hooks/usePlots';
+import PlotQueueSize from '../queue/PlotQueueSize';
 
 const StyledTableRowQueue = styled(TableRow)`
   background-color: ${({ theme }) =>
@@ -105,7 +103,7 @@ export default function PlotOverviewPlots() {
           <Flex flexGrow={1}>
             <Typography variant="body2">
               <Trans>
-                Want to earn more Flax? Add more plots to your farm.
+                Want to earn more lotus? Add more plots to your farm.
               </Trans>
             </Typography>
           </Flex>

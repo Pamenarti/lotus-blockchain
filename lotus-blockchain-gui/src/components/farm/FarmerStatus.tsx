@@ -1,8 +1,8 @@
+import { Trans } from '@lingui/macro';
+import { FiberManualRecord as FiberManualRecordIcon } from '@material-ui/icons';
+import { Flex, StateColor } from '@lotus/core';
 import React from 'react';
 import styled from 'styled-components';
-import { Trans } from '@lingui/macro';
-import { Flex, StateColor } from '@flax/core';
-import { FiberManualRecord as FiberManualRecordIcon } from '@material-ui/icons';
 import FarmerStatus from '../../constants/FarmerStatus';
 import useFarmerStatus from '../../hooks/useFarmerStatus';
 

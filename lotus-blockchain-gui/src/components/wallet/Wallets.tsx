@@ -1,39 +1,36 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import styled from 'styled-components';
 import {
-  Box,
-  Grid,
-  List,
-  Divider,
-  ListItem,
+  Box, Divider, Grid,
+  List, ListItem,
   ListItemText,
-  Typography,
+  Typography
 } from '@material-ui/core';
-import { Route, Switch, useRouteMatch, useHistory } from 'react-router';
+import { Flex, FormatLargeNumber } from '@lotus/core';
+import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Flex, FormatLargeNumber } from '@flax/core';
-import StandardWallet from './standard/WalletStandard';
-import {
-  changeWalletMenu,
-  standardWallet,
-  CCWallet,
-  RLWallet,
-  DIDWallet,
-} from '../../modules/walletMenu';
-import { CreateWalletView } from './create/WalletCreate';
-import ColouredWallet from './coloured/WalletColoured';
-import RateLimitedWallet from './rateLimited/WalletRateLimited';
-import DistributedWallet from './did/DIDWallet';
-import type { RootState } from '../../modules/rootReducer';
-import WalletType from '../../constants/WalletType';
-import LayoutSidebar from '../layout/LayoutSidebar';
+import { Route, Switch, useHistory, useRouteMatch } from 'react-router';
+import styled from 'styled-components';
 import config from '../../config/config';
+import WalletType from '../../constants/WalletType';
+import type { RootState } from '../../modules/rootReducer';
+import {
+  CCWallet, changeWalletMenu, DIDWallet, RLWallet, standardWallet
+} from '../../modules/walletMenu';
+import LayoutSidebar from '../layout/LayoutSidebar';
+import ColouredWallet from './coloured/WalletColoured';
+import { CreateWalletView } from './create/WalletCreate';
+import DistributedWallet from './did/DIDWallet';
+import RateLimitedWallet from './rateLimited/WalletRateLimited';
+import StandardWallet from './standard/WalletStandard';
 
 const localTest = config.local_test;
 
 const StyledList = styled(List)`
   width: 100%;
+`;
+
+const StyledListItem = styled(ListItem)`
+  box-shadow: inset 0px -20px 9px -19px rgba(0,0,0,0.3);
 `;
 
 const WalletItem = (props: any) => {
@@ -53,8 +50,8 @@ const WalletItem = (props: any) => {
 
   let mainLabel = <></>;
   if (wallet.type === WalletType.STANDARD_WALLET) {
-    mainLabel = <Trans>Flax Wallet</Trans>;
-    name = 'Flax';
+    mainLabel = <Trans>lotus Wallet</Trans>;
+    name = 'lotus';
   } else if (wallet.type === WalletType.COLOURED_COIN) {
     mainLabel = <Trans>CC Wallet</Trans>;
     if (name.length > 18) {
@@ -90,9 +87,9 @@ const WalletItem = (props: any) => {
   }
 
   return (
-    <ListItem button onClick={presentWallet}>
-      <ListItemText primary={mainLabel} secondary={name} />
-    </ListItem>
+      <StyledListItem button onClick={presentWallet}>
+        <ListItemText primary={mainLabel} secondary={name} />
+      </StyledListItem>
   );
 };
 
@@ -175,9 +172,6 @@ export default function Wallets() {
       title={<Trans>Wallets</Trans>}
       sidebar={
         <Flex flexDirection="column" height="100%" overflow="hidden">
-          <Divider />
-          <StatusCard />
-          <Divider />
           <Flex flexGrow={1} overflow="auto">
             <StyledList disablePadding>
               {wallets.map((wallet) => (

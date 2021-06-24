@@ -1,67 +1,41 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@flax/core';
-import styled from 'styled-components';
 import { Grid, Typography } from '@material-ui/core';
-import {
-  get_address,
-  format_message,
-  incomingMessage,
-  get_balance_for_wallet,
-  get_transactions,
-  get_height_info,
-  get_sync_status,
-  get_connection_info,
-  get_colour_info,
-  get_colour_name,
-  did_get_recovery_list,
-  did_get_did,
-  pingWallet,
-  get_farmed_amount,
-  getNetworkInfo,
-} from '../modules/message';
-
-import { offerParsed, resetTrades } from '../modules/trade';
+import { AlertDialog } from '@lotus/core';
+import React from 'react';
+import styled from 'styled-components';
+import config from '../config/config';
+import { startService, startServiceTest } from '../modules/daemon_messages';
 import { openDialog, openErrorDialog } from '../modules/dialog';
 import {
-  service_wallet,
-  service_full_node,
-  service_simulator,
-  service_plotter,
-  service_farmer,
-  service_harvester,
-} from '../util/service_names';
-import {
-  pingFullNode,
-  getBlockChainState,
-  getFullNodeConnections,
-  updateLatestBlocks,
-  updateUnfinishedSubBlockHeaders,
-} from '../modules/fullnodeMessages';
-import {
-  getLatestChallenges,
-  getFarmerConnections,
-  pingFarmer,
+  getFarmerConnections, getLatestChallenges, pingFarmer
 } from '../modules/farmerMessages';
 import {
-  getPlots,
-  getPlotDirectories,
-  pingHarvester,
-  refreshPlots,
+  getBlockChainState,
+  getFullNodeConnections, pingFullNode, updateLatestBlocks,
+  updateUnfinishedSubBlockHeaders
+} from '../modules/fullnodeMessages';
+import {
+  getPlotDirectories, getPlots, pingHarvester,
+  refreshPlots
 } from '../modules/harvesterMessages';
-import { plottingStopped } from '../modules/plotter_messages';
-
+import {
+  did_get_did, did_get_recovery_list, format_message, getNetworkInfo, get_address, get_balance_for_wallet, get_colour_info,
+  get_colour_name, get_connection_info, get_farmed_amount, get_height_info,
+  get_sync_status, get_transactions, incomingMessage, pingWallet
+} from '../modules/message';
 import { plotQueueInit, plotQueueUpdate } from '../modules/plotQueue';
-import { startService, startServiceTest } from '../modules/daemon_messages';
+import { plottingStopped } from '../modules/plotter_messages';
+import { offerParsed, resetTrades } from '../modules/trade';
 import { get_all_trades } from '../modules/trade_messages';
 import {
-  COLOURED_COIN,
-  STANDARD_WALLET,
-  RATE_LIMITED,
-  DISTRIBUTED_ID,
+  service_farmer, service_full_node, service_harvester, service_plotter, service_simulator, service_wallet
+} from '../util/service_names';
+import {
+  COLOURED_COIN, DISTRIBUTED_ID, RATE_LIMITED, STANDARD_WALLET
 } from '../util/wallet_types';
 
-import config from '../config/config';
+
+
 
 const StyledTypographyDD = styled(Typography)`
   word-break: break-all;

@@ -1,8 +1,8 @@
-import React, { useMemo } from 'react';
-import { Trans, t } from '@lingui/macro';
-import { useToggle } from 'react-use';
+import { t, Trans } from '@lingui/macro';
 import { Button, Divider, Menu, MenuItem } from '@material-ui/core';
-import { Translate, ExpandMore } from '@material-ui/icons';
+import { ExpandMore, Translate } from '@material-ui/icons';
+import React, { useMemo } from 'react';
+import { useToggle } from 'react-use';
 import useLocale from '../../../../hooks/useLocale';
 import useOpenExternal from '../../../../hooks/useOpenExternal';
 
@@ -40,7 +40,7 @@ export default function LocaleToggle(props: Props) {
   function handleHelpTranslate() {
     handleClose();
 
-    openExternal('https://github.com/Flax-Network/flax-blockchain-gui/tree/main/src/locales/README.md');
+    openExternal('https://github.com/lotus-Network/lotus-blockchain-gui/tree/main/src/locales/README.md');
   }
 
   const localeData = useMemo(

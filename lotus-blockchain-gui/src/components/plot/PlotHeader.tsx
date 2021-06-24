@@ -1,16 +1,16 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { Flex, More } from '@flax/core';
-import { createTeleporter } from 'react-teleporter';
+import { Box, Button, ListItemIcon, MenuItem, Typography } from '@material-ui/core';
+import { Add as AddIcon, Folder as FolderIcon, Refresh as RefreshIcon } from '@material-ui/icons';
+import { Flex, More } from '@lotus/core';
+import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import { Button, MenuItem, Box, ListItemIcon, Typography } from '@material-ui/core';
-import { Refresh as RefreshIcon, Folder as FolderIcon, Add as AddIcon } from '@material-ui/icons';
+import { createTeleporter } from 'react-teleporter';
+import useOpenDialog from '../../hooks/useOpenDialog';
 import {
-  refreshPlots,
+    refreshPlots
 } from '../../modules/harvesterMessages';
 import PlotAddDirectoryDialog from './PlotAddDirectoryDialog';
-import useOpenDialog from '../../hooks/useOpenDialog';
 
 const PlotHeaderTeleporter = createTeleporter();
 
@@ -43,7 +43,7 @@ export default function PlotHeader() {
         <Flex flexGrow={1} />
         <div>
           <Button color="primary" variant="contained" onClick={handleAddPlot} startIcon={<AddIcon />}>
-            <Trans>Add a Plot</Trans>
+            <Trans>Add Plot Directory</Trans>
           </Button>
           {' '}
           <More>

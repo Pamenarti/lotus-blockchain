@@ -1,27 +1,20 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { AlertDialog } from '@flax/core';
 import {
-  Typography,
-  Button,
-  Box,
-  TextField,
-  Backdrop,
-  CircularProgress,
+  Backdrop, Box, Button, CircularProgress, TextField, Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-
-import { useDispatch, useSelector } from 'react-redux';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { AlertDialog } from '@lotus/core';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import {
-  createState,
-  changeCreateWallet,
-  CREATE_RL_WALLET_OPTIONS,
+  changeCreateWallet, createState, CREATE_RL_WALLET_OPTIONS
 } from '../../../modules/createWallet';
-import { useStyles } from './WalletCreate';
-import { create_rl_admin_action } from '../../../modules/message';
-import { flax_to_mojo } from '../../../util/flax';
 import { openDialog } from '../../../modules/dialog';
+import { create_rl_admin_action } from '../../../modules/message';
+import { lotus_to_graviton } from '../../../util/lotus';
+import { useStyles } from './WalletCreate';
+
 
 export const customStyles = makeStyles((theme) => ({
   input: {
@@ -76,7 +69,7 @@ export const CreateRLAdminWallet = () => {
   const custom = customStyles();
   const dispatch = useDispatch();
   let interval_input = null;
-  let flaxper_input = null;
+  let lotusper_input = null;
   let userpubkey_input = null;
   let amount_input = null;
   let fee_input = null;
@@ -106,10 +99,10 @@ export const CreateRLAdminWallet = () => {
       return;
     }
     if (
-      flaxper_input.value === '' ||
-      Number(flaxper_input.value) === 0 ||
-      !Number(flaxper_input.value) ||
-      isNaN(Number(flaxper_input.value))
+      lotusper_input.value === '' ||
+      Number(lotusper_input.value) === 0 ||
+      !Number(lotusper_input.value) ||
+      isNaN(Number(lotusper_input.value))
     ) {
       dispatch(
         openDialog(
@@ -166,18 +159,18 @@ export const CreateRLAdminWallet = () => {
     dispatch(createState(true, true));
     const interval = interval_input.value;
     const interval_value = Number.parseInt(Number(interval));
-    const flaxper = flax_to_mojo(flaxper_input.value);
-    const flaxper_value = Number.parseInt(Number(flaxper));
+    const lotusper = lotus_to_graviton(lotusper_input.value);
+    const lotusper_value = Number.parseInt(Number(lotusper));
     const userpubkey = userpubkey_input.value;
-    const amount = flax_to_mojo(amount_input.value);
+    const amount = lotus_to_graviton(amount_input.value);
     const amount_value = Number.parseInt(Number(amount));
-    // var fee = flax_to_mojo(fee_input.value);
+    // var fee = lotus_to_graviton(fee_input.value);
     // TODO(lipa): send fee to server
     // const fee_value = parseInt(Number(fee));
     dispatch(
       create_rl_admin_action(
         interval_value,
-        flaxper_value,
+        lotusper_value,
         userpubkey,
         amount_value,
       ),
@@ -241,7 +234,7 @@ export const CreateRLAdminWallet = () => {
               color="secondary"
               fullWidth
               inputRef={(input) => {
-                flaxper_input = input;
+                lotusper_input = input;
               }}
               label={
                 <Trans>

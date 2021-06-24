@@ -1,20 +1,20 @@
-import React, { useEffect } from 'react';
-import { useHistory } from 'react-router';
-import { useDispatch, useSelector } from 'react-redux';
 import { Trans } from '@lingui/macro';
 import { Button } from '@material-ui/core';
 import { ChevronRight as ChevronRightIcon } from '@material-ui/icons';
-import { useForm, SubmitHandler } from 'react-hook-form';
-import { Flex, Form } from '@flax/core';
+import { Flex, Form } from '@lotus/core';
+import React, { useEffect } from 'react';
+import { SubmitHandler, useForm } from 'react-hook-form';
+import { useDispatch, useSelector } from 'react-redux';
+import { useHistory } from 'react-router';
+import plotSizes, { defaultPlotSize } from '../../../constants/plotSizes';
+import { plotQueueAdd } from '../../../modules/plotQueue';
+import type { RootState } from '../../../modules/rootReducer';
+import PlotAddConfig from '../../../types/PlotAdd';
 import { PlotHeaderSource } from '../PlotHeader';
 import PlotAddChooseSize from './PlotAddChooseSize';
 import PlotAddNumberOfPlots from './PlotAddNumberOfPlots';
-import PlotAddSelectTemporaryDirectory from './PlotAddSelectTemporaryDirectory';
 import PlotAddSelectFinalDirectory from './PlotAddSelectFinalDirectory';
-import { plotQueueAdd } from '../../../modules/plotQueue';
-import PlotAddConfig from '../../../types/PlotAdd';
-import plotSizes, { defaultPlotSize } from '../../../constants/plotSizes';
-import type { RootState } from '../../../modules/rootReducer';
+import PlotAddSelectTemporaryDirectory from './PlotAddSelectTemporaryDirectory';
 
 type FormData = PlotAddConfig;
 
@@ -35,8 +35,6 @@ export default function PlotAdd() {
       finalLocation: '',
       workspaceLocation: '',
       workspaceLocation2: '',
-      farmerPublicKey: '',
-      poolPublicKey: '',
       delay: 0,
       parallel: false,
       disableBitfieldPlotting: false,
@@ -55,17 +53,16 @@ export default function PlotAdd() {
   }, [plotSize, setValue]);
 
   const handleSubmit: SubmitHandler<FormData> = (data) => {
-    const { delay, farmerPublicKey, poolPublicKey } = data;
-    const plotAddData = {
+    const { delay } = data;
+
+    dispatch(plotQueueAdd(fingerprint ? {
+      ...data,
+      fingerprint,
+      delay: delay * 60,
+    } : {
       ...data,
       delay: delay * 60,
-    };
-
-    if (fingerprint && !farmerPublicKey && !poolPublicKey) {
-      plotAddData.fingerprint = fingerprint;
-    }
-
-    dispatch(plotQueueAdd(plotAddData));
+    }));
 
     history.push('/dashboard/plot');
   }
@@ -78,7 +75,7 @@ export default function PlotAdd() {
         <Flex alignItems="center">
           <ChevronRightIcon color="secondary" />
           <Trans>
-            Add a Plot
+            Add Plot Directory
           </Trans>
         </Flex>
       </PlotHeaderSource>

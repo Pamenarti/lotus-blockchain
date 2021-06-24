@@ -1,26 +1,34 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { get } from 'lodash';
-import {
-  FormatBytes,
-  FormatLargeNumber,
-  Flex,
-  Card,
-  Loading,
-  StateColor,
-  Table,
-} from '@flax/core';
-import { Status } from '@flax/icons';
-import { useRouteMatch, useHistory } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import { Box, Grid, Tooltip, Typography } from '@material-ui/core';
+import { Box, Card, CardContent, Grid, Paper, Tooltip, Typography } from '@material-ui/core';
 import HelpIcon from '@material-ui/icons/Help';
+import {
+  Flex, FormatBytes,
+  FormatLargeNumber, Loading,
+  StateColor,
+  Table
+} from '@lotus/core';
+import { Status } from '@lotus/icons';
+import { get } from 'lodash';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { useHistory, useRouteMatch } from 'react-router-dom';
+import styled from 'styled-components';
 import { unix_to_short_date } from '../../util/utils';
-import FullNodeConnections from './FullNodeConnections';
 import LayoutMain from '../layout/LayoutMain';
 import FullNodeBlockSearch from './FullNodeBlockSearch';
+import FullNodeConnections from './FullNodeConnections';
 
 /* global BigInt */
+
+
+const StyledCard = styled(Card)`
+    background: tranlotusnt;
+    box-shadow: none;
+    `;
+
+const StyledContent = styled(CardContent)`
+    background: tranlotusnt;
+    `;
 
 const cols = [
   {
@@ -121,7 +129,7 @@ const getStatusItems = (state, connected, latestPeakTimestamp, networkInfo) => {
     const item = {
       label: <Trans>Status</Trans>,
       value: <Trans>Not Synced</Trans>,
-      colour: 'red',
+      colour: '#E9398D',
       tooltip: <Trans>The node is not synced</Trans>,
     };
     status_items.push(item);
@@ -129,7 +137,7 @@ const getStatusItems = (state, connected, latestPeakTimestamp, networkInfo) => {
     const item = {
       label: <Trans>Status</Trans>,
       value: <Trans>Synced</Trans>,
-      colour: '#3AAC59',
+      colour: '#00D983',
       tooltip: (
         <Trans>This node is fully caught up and validating the network</Trans>
       ),
@@ -145,7 +153,7 @@ const getStatusItems = (state, connected, latestPeakTimestamp, networkInfo) => {
       ) : (
         <Trans>Not connected</Trans>
       ),
-      colour: connected ? '#3AAC59' : 'red',
+      colour: connected ? '#00D983' : '#E9398D',
     });
   } else {
     const item = {
@@ -217,19 +225,23 @@ const StatusCell = (props) => {
   const { colour } = item;
   return (
     <Grid item xs={12} md={6}>
-      <Flex mb={-2} alignItems="center">
-        <Flex flexGrow={1} gap={1} alignItems="center">
-          <Typography variant="subtitle1">{label}</Typography>
-          {tooltip && (
-            <Tooltip title={tooltip}>
-              <HelpIcon style={{ color: '#c8c8c8', fontSize: 12 }} />
-            </Tooltip>
-          )}
-        </Flex>
-        <Typography variant="subtitle1">
-          <span style={colour ? { color: colour } : {}}>{value}</span>
+      <Paper style={{ padding: 20 }}>
+
+        <Typography style={{ display: 'inline-block' }}>
+          <span style={{ color: "rgba(218, 218, 218, 0.6)", fontSize: 18, fontWeight: 400, fontFamily: "Lato" }}>{label}</span>
         </Typography>
-      </Flex>
+
+        {tooltip && (
+          <Tooltip title={tooltip}>
+            <HelpIcon style={{ color: '#c8c8c8', fontSize: 12 }} />
+          </Tooltip>
+        )}
+
+        <Typography style={{ display: 'block' }}>
+          <span style={colour ? { color: colour, fontSize: 22, fontWeight: 400, } : { color: "#00D983", fontSize: 22, fontWeight: 400, }}>{value}</span>
+        </Typography>
+      </Paper>
+
     </Grid>
   );
 };
@@ -253,19 +265,26 @@ const FullNodeStatus = (props) => {
   const statusItems = blockchainState && getStatusItems(blockchainState, connected, latestPeakTimestamp, networkInfo);
 
   return (
-    <Card title={<Trans>Full Node Status</Trans>}>
-      {statusItems ? (
-        <Grid spacing={4} container>
-          {statusItems.map((item) => (
-            <StatusCell item={item} key={item.label.props.id} />
-          ))}
-        </Grid>
-      ) : (
-        <Flex justifyContent="center">
-          <Loading />
-        </Flex>
-      )}
-    </Card>
+    <>
+      <Typography >
+        <span style={{ color: "#E9398D", fontSize: 24, fontWeight: 400, fontFamily: "Josefin" }}><Trans>Full Node Status</Trans></span>
+      </Typography>
+      <StyledCard >
+        <StyledContent>
+          {statusItems ? (
+            <Grid spacing={2} container>
+              {statusItems.map((item) => (
+                <StatusCell item={item} key={item.label.props.id} />
+              ))}
+            </Grid>
+          ) : (
+            <Flex justifyContent="center">
+              <Loading />
+            </Flex>
+          )}
+        </StyledContent>
+      </StyledCard>
+    </>
   );
 };
 
@@ -296,7 +315,11 @@ const BlocksCard = () => {
   }
 
   return (
-    <Card title={<Trans>Blocks</Trans>} action={<FullNodeBlockSearch />}>
+    <Card title={
+      <Typography >
+        <span style={{ color: "#E9398D", fontSize: 24, fontWeight: 400, fontFamily: "Josefin" }}><Trans>Blocks</Trans></span>
+      </Typography>
+    } action={<FullNodeBlockSearch />}>
       {rows.length ? (
         <Table cols={cols} rows={rows} onRowClick={handleRowClick} />
       ) : (

@@ -1,7 +1,7 @@
+import { FiberManualRecord as FiberManualRecordIcon } from '@material-ui/icons';
+import { StateColor } from '@lotus/core';
 import React, { forwardRef } from 'react';
 import styled from 'styled-components';
-import { StateColor } from '@flax/core';
-import { FiberManualRecord as FiberManualRecordIcon } from '@material-ui/icons';
 
 const StyledFiberManualRecordIcon = styled(({ color, ...rest }) => <FiberManualRecordIcon {...rest} />)`
   font-size: 1rem;

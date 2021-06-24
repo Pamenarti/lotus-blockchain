@@ -1,15 +1,15 @@
-import React from 'react';
-import { Switch, Route, Redirect } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import { Trans } from '@lingui/macro';
-import { PrivateRoute } from '@flax/core';
+import { PrivateRoute } from '@lotus/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
+import { Redirect, Route, Switch } from 'react-router-dom';
+import type { RootState } from '../../modules/rootReducer';
+import BackupRestore from '../backup/BackupRestore';
+import Dashboard from '../dashboard/Dashboard';
+import LayoutLoading from '../layout/LayoutLoading';
 import SelectKey from '../selectKey/SelectKey';
 import WalletAdd from '../wallet/WalletAdd';
 import WalletImport from '../wallet/WalletImport';
-import Dashboard from '../dashboard/Dashboard';
-import BackupRestore from '../backup/BackupRestore';
-import type { RootState } from '../../modules/rootReducer';
-import LayoutLoading from '../layout/LayoutLoading';
 
 export default function AppRouter() {
   const loggedInReceived = useSelector(

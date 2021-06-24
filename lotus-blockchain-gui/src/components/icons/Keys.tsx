@@ -1,7 +1,7 @@
-import React from 'react';
 import { SvgIcon, SvgIconProps } from '@material-ui/core';
-import { ReactComponent as KeysIcon } from './images/keys.svg';
+import React from 'react';
+import { ReactComponent as KeysIcon } from './images/icon-keys.svg';
 
 export default function Keys(props: SvgIconProps) {
-  return <SvgIcon component={KeysIcon} viewBox="0 0 32 33" {...props} />;
+  return <SvgIcon component={KeysIcon} viewBox="8 0 35 51" {...props} />;
 }

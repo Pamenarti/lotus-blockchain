@@ -1,17 +1,17 @@
 import click
 
-from flax import __version__
-from flax.cmds.configure import configure_cmd
-from flax.cmds.farm import farm_cmd
-from flax.cmds.init import init_cmd
-from flax.cmds.keys import keys_cmd
-from flax.cmds.netspace import netspace_cmd
-from flax.cmds.plots import plots_cmd
-from flax.cmds.show import show_cmd
-from flax.cmds.start import start_cmd
-from flax.cmds.stop import stop_cmd
-from flax.cmds.wallet import wallet_cmd
-from flax.util.default_root import DEFAULT_ROOT_PATH
+from lotus import __version__
+from lotus.cmds.configure import configure_cmd
+from lotus.cmds.farm import farm_cmd
+from lotus.cmds.init import init_cmd
+from lotus.cmds.keys import keys_cmd
+from lotus.cmds.netspace import netspace_cmd
+from lotus.cmds.plots import plots_cmd
+from lotus.cmds.show import show_cmd
+from lotus.cmds.start import start_cmd
+from lotus.cmds.stop import stop_cmd
+from lotus.cmds.wallet import wallet_cmd
+from lotus.util.default_root import DEFAULT_ROOT_PATH
 
 CONTEXT_SETTINGS = dict(help_option_names=["-h", "--help"])
 
@@ -33,8 +33,8 @@ def monkey_patch_click() -> None:
 
 
 @click.group(
-    help=f"\n  Manage flax blockchain infrastructure ({__version__})\n",
-    epilog="Try 'flax start node', 'flax netspace -d 192', or 'flax show -s'",
+    help=f"\n  Manage lotus blockchain infrastructure ({__version__})\n",
+    epilog="Try 'lotus start node', 'lotus netspace -d 192', or 'lotus show -s'",
     context_settings=CONTEXT_SETTINGS,
 )
 @click.option("--root-path", default=DEFAULT_ROOT_PATH, help="Config file root", type=click.Path(), show_default=True)
@@ -46,15 +46,15 @@ def cli(ctx: click.Context, root_path: str) -> None:
     ctx.obj["root_path"] = Path(root_path)
 
 
-@cli.command("version", short_help="Show flax version")
+@cli.command("version", short_help="Show lotus version")
 def version_cmd() -> None:
     print(__version__)
 
 
-@cli.command("run_daemon", short_help="Runs flax daemon")
+@cli.command("run_daemon", short_help="Runs lotus daemon")
 @click.pass_context
 def run_daemon_cmd(ctx: click.Context) -> None:
-    from flax.daemon.server import async_run_daemon
+    from lotus.daemon.server import async_run_daemon
     import asyncio
 
     asyncio.get_event_loop().run_until_complete(async_run_daemon(ctx.obj["root_path"]))

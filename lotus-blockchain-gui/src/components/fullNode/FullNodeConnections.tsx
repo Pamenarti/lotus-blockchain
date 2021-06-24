@@ -1,16 +1,16 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { useSelector } from 'react-redux';
+import { Button, Tooltip, Typography } from '@material-ui/core';
 import { Delete as DeleteIcon } from '@material-ui/icons';
+import { Card, Flex, FormatBytes, FormatLargeNumber, IconButton, Loading, Table } from '@lotus/core';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import styled from 'styled-components';
-import { Card, Flex, FormatBytes, FormatLargeNumber, Loading, Table, IconButton } from '@flax/core';
-import { Button, Tooltip } from '@material-ui/core';
-import { service_connection_types } from '../../util/service_names';
-import Connection from '../../types/Connection';
-import FullNodeCloseConnection from './FullNodeCloseConnection';
-import type { RootState } from '../../modules/rootReducer';
 import useOpenDialog from '../../hooks/useOpenDialog';
+import type { RootState } from '../../modules/rootReducer';
+import Connection from '../../types/Connection';
+import { service_connection_types } from '../../util/service_names';
 import FullNodeAddConnection from './FullNodeAddConnection';
+import FullNodeCloseConnection from './FullNodeCloseConnection';
 
 const StyledIconButton = styled(IconButton)`
   padding: 0.2rem;
@@ -89,7 +89,11 @@ export default function Connections() {
 
   return (
     <Card
-      title={<Trans>Connections</Trans>}
+      title={
+        <Typography >
+        <span style={ { color: "#E9398D", fontSize: 24, fontWeight:400, fontFamily:"Josefin" }}><Trans>Connections</Trans></span>
+        </Typography>
+      }
       action={(
         <Flex>
           <Button onClick={handleAddPeer} variant="contained">

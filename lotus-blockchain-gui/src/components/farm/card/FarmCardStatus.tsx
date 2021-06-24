@@ -1,10 +1,10 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { StateIndicator, State } from '@flax/core';
+import { State, StateIndicator } from '@lotus/core';
+import React from 'react';
+import FarmerStatus from '../../../constants/FarmerStatus';
+import useFarmerStatus from '../../../hooks/useFarmerStatus';
 import FarmCard from './FarmCard';
 import FarmCardNotAvailable from './FarmCardNotAvailable';
-import useFarmerStatus from '../../../hooks/useFarmerStatus';
-import FarmerStatus from '../../../constants/FarmerStatus';
 
 export default function FarmCardStatus() {
   const farmerStatus = useFarmerStatus();

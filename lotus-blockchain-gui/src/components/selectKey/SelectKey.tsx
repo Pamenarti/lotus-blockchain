@@ -1,35 +1,25 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { useSelector, useDispatch } from 'react-redux';
-import styled from 'styled-components';
-import { ConfirmDialog, Flex, Button, Link, Logo } from '@flax/core';
 import {
-  Card,
-  Typography,
-  Container,
-  Tooltip,
-  List,
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction,
-  IconButton,
+    Card, Container, IconButton, List,
+    ListItem, ListItemSecondaryAction, ListItemText, Tooltip, Typography
 } from '@material-ui/core';
 import {
-  Delete as DeleteIcon,
-  Visibility as VisibilityIcon,
+    Delete as DeleteIcon,
+    Visibility as VisibilityIcon
 } from '@material-ui/icons';
-import LayoutHero from '../layout/LayoutHero';
+import { Button, ConfirmDialog, Flex, Link, Logo } from '@lotus/core';
+import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import styled from 'styled-components';
+import useOpenDialog from '../../hooks/useOpenDialog';
 import {
-  login_action,
-  delete_key,
-  get_private_key,
-  selectFingerprint,
-  delete_all_keys,
+    delete_all_keys, delete_key,
+    get_private_key, login_action, selectFingerprint
 } from '../../modules/message';
 import { resetMnemonic } from '../../modules/mnemonic';
 import type { RootState } from '../../modules/rootReducer';
 import type Fingerprint from '../../types/Fingerprint';
-import useOpenDialog from '../../hooks/useOpenDialog';
+import LayoutHero from '../layout/LayoutHero';
 
 const StyledFingerprintListItem = styled(ListItem)`
   padding-right: ${({ theme }) => `${theme.spacing(11)}px`};
@@ -101,10 +91,10 @@ export default function SelectKey() {
     <LayoutHero>
       <Container maxWidth="xs">
         <Flex flexDirection="column" alignItems="center" gap={3}>
-          <Logo width={130} />
+          <Logo  />
           {hasFingerprints ? (
-            <Typography variant="h5" component="h1" gutterBottom>
-              <Trans>Select Key</Trans>
+            <Typography gutterBottom>
+            <span style={ {  fontSize: 32, fontWeight:500, fontFamily:"Josefin" }}><Trans>Wallets</Trans></span>
             </Typography>
           ) : (
             <>
@@ -113,7 +103,7 @@ export default function SelectKey() {
               </Typography>
               <Typography variant="subtitle1">
                 <Trans>
-                  Welcome to Flax. Please log in with an existing key, or create
+                  Welcome to lotus. Please log in with an existing key, or create
                   a new key.
                 </Trans>
               </Typography>
@@ -136,9 +126,14 @@ export default function SelectKey() {
                     >
                       <ListItemText
                         primary={
+                          <>
                           <Trans>
-                            Private key with public fingerprint {fingerprint}
+                            Private key with public fingerprint 
                           </Trans>
+                          <Typography gutterBottom>
+                            <span style={ { color: "#E9398D"}}>{fingerprint}</span>
+                          </Typography>
+                          </>
                         }
                         secondary={
                           <Trans>
@@ -191,16 +186,6 @@ export default function SelectKey() {
                 </Trans>
               </Button>
             </Link>
-            <Button
-              onClick={handleDeleteAllKeys}
-              type="submit"
-              variant="contained"
-              color="danger"
-              size="large"
-              fullWidth
-            >
-              <Trans>Delete all keys</Trans>
-            </Button>
           </Flex>
         </Flex>
       </Container>

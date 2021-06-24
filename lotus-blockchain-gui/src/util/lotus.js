@@ -12,7 +12,7 @@ const convert = (amount, from, to) => {
   return Number.parseFloat(amountInFromUnit.div(units.getUnit(to)));
 };
 
-class Flax {
+class lotus {
   constructor(value, unit) {
     this._value = value;
     this._unit = unit;
@@ -73,42 +73,42 @@ class Flax {
   }
 }
 
-export const flax_formatter = (value, unit) => new Flax(value, unit);
+export const lotus_formatter = (value, unit) => new lotus(value, unit);
 
-flax_formatter.convert = convert;
-flax_formatter.setDisplay = units.setDisplay;
-flax_formatter.setUnit = units.setUnit;
-flax_formatter.getUnit = units.getUnit;
-flax_formatter.setFiat = (currency, rate, display = null) => {
+lotus_formatter.convert = convert;
+lotus_formatter.setDisplay = units.setDisplay;
+lotus_formatter.setUnit = units.setUnit;
+lotus_formatter.getUnit = units.getUnit;
+lotus_formatter.setFiat = (currency, rate, display = null) => {
   units.setUnit(currency, 1 / rate, display);
 };
 
-export const mojo_to_flax = (mojo) => {
-  return flax_formatter(Number.parseInt(mojo), 'mojo').to('flax').value();
+export const graviton_to_lotus = (graviton) => {
+  return lotus_formatter(Number.parseInt(graviton), 'graviton').to('lotus').value();
 };
 
-export const flax_to_mojo = (flax) => {
-  return flax_formatter(Number.parseFloat(Number(flax)), 'flax')
-    .to('mojo')
+export const lotus_to_graviton = (lotus) => {
+  return lotus_formatter(Number.parseFloat(Number(lotus)), 'lotus')
+    .to('graviton')
     .value();
 };
 
-export const mojo_to_flax_string = (mojo) => {
-  return flax_formatter(Number(mojo), 'mojo').to('flax').toString();
+export const graviton_to_lotus_string = (graviton) => {
+  return lotus_formatter(Number(graviton), 'graviton').to('lotus').toString();
 };
 
-export const mojo_to_colouredcoin = (mojo) => {
-  return flax_formatter(Number.parseInt(mojo), 'mojo')
+export const graviton_to_colouredcoin = (graviton) => {
+  return lotus_formatter(Number.parseInt(graviton), 'graviton')
     .to('colouredcoin')
     .value();
 };
 
-export const colouredcoin_to_mojo = (colouredcoin) => {
-  return flax_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
-    .to('mojo')
+export const colouredcoin_to_graviton = (colouredcoin) => {
+  return lotus_formatter(Number.parseFloat(Number(colouredcoin)), 'colouredcoin')
+    .to('graviton')
     .value();
 };
 
-export const mojo_to_colouredcoin_string = (mojo) => {
-  return flax_formatter(Number(mojo), 'mojo').to('colouredcoin').toString();
+export const graviton_to_colouredcoin_string = (graviton) => {
+  return lotus_formatter(Number(graviton), 'graviton').to('colouredcoin').toString();
 };

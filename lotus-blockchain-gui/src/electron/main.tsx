@@ -1,20 +1,20 @@
-import { app, dialog, shell, ipcMain, BrowserWindow, Menu } from 'electron';
+import { app, BrowserWindow, dialog, ipcMain, Menu, shell } from 'electron';
+import os from 'os';
 import path from 'path';
 import React from 'react';
-import url from 'url';
-import os from 'os';
 import ReactDOMServer from 'react-dom/server';
 import { ServerStyleSheet, StyleSheetManager } from 'styled-components';
+import url from 'url';
+import packageJson from '../../package.json';
+import About from '../components/about/About';
+import config from '../config/config';
 // handle setupevents as quickly as possible
 import '../config/env';
-import handleSquirrelEvent from './handleSquirrelEvent';
-import config from '../config/config';
-import dev_config from '../dev_config';
-import flaxEnvironment from '../util/flaxEnvironment';
-import flaxConfig from '../util/config';
 import { i18n } from '../config/locales';
-import About from '../components/about/About';
-import packageJson from '../../package.json';
+import dev_config from '../dev_config';
+import lotusConfig from '../util/config';
+import lotusEnvironment from '../util/lotusEnvironment';
+import handleSquirrelEvent from './handleSquirrelEvent';
 
 function renderAbout(): string {
   const sheet = new ServerStyleSheet();
@@ -96,7 +96,7 @@ if (!handleSquirrelEvent()) {
 
   const ensureCorrectEnvironment = () => {
     // check that the app is either packaged or running in the python venv
-    if (!flaxEnvironment.guessPackaged() && !('VIRTUAL_ENV' in process.env)) {
+    if (!lotusEnvironment.guessPackaged() && !('VIRTUAL_ENV' in process.env)) {
       console.log('App must be installed or in venv');
       app.quit();
       return false;
@@ -110,7 +110,7 @@ if (!handleSquirrelEvent()) {
   // if any of these checks return false, don't do any other initialization since the app is quitting
   if (ensureSingleInstance() && ensureCorrectEnvironment()) {
     // this needs to happen early in startup so all processes share the same global config
-    flaxConfig.loadConfig('mainnet');
+    lotusConfig.loadConfig(lotusEnvironment.getlotusVersion());
     global.sharedObj = { local_test };
 
     const exitPyProc = (e) => {};
@@ -132,6 +132,7 @@ if (!handleSquirrelEvent()) {
         minHeight: 500,
         backgroundColor: '#ffffff',
         show: false,
+        titleBarStyle: 'hiddenInset',
         webPreferences: {
           preload: `${__dirname}/preload.js`,
           nodeIntegration: true,
@@ -169,7 +170,7 @@ if (!handleSquirrelEvent()) {
       });
 
       // don't show remote daeomn detials in the title bar
-      if (!flaxConfig.manageDaemonLifetime()) {
+      if (!lotusConfig.manageDaemonLifetime()) {
         mainWindow.webContents.on('did-finish-load', () => {
           mainWindow.setTitle(`${app.getName()} [${global.daemon_rpc_ws}]`);
         });
@@ -180,7 +181,7 @@ if (!handleSquirrelEvent()) {
       // }
       mainWindow.on('close', (e) => {
         // if the daemon isn't local we aren't going to try to start/stop it
-        if (decidedToClose || !flaxConfig.manageDaemonLifetime()) {
+        if (decidedToClose || !lotusConfig.manageDaemonLifetime()) {
           return;
         }
         e.preventDefault();
@@ -223,8 +224,8 @@ if (!handleSquirrelEvent()) {
       createWindow();
       app.applicationMenu = createMenu();
       // if the daemon isn't local we aren't going to try to start/stop it
-      if (flaxConfig.manageDaemonLifetime()) {
-        flaxEnvironment.startFlaxDaemon();
+      if (lotusConfig.manageDaemonLifetime()) {
+        lotusEnvironment.startlotusDaemon();
       }
     };
 
@@ -356,10 +357,10 @@ if (!handleSquirrelEvent()) {
         role: 'help',
         submenu: [
           {
-            label: i18n._(/* i18n */ { id: 'Flax Blockchain Wiki' }),
+            label: i18n._(/* i18n */ { id: 'lotus Blockchain Wiki' }),
             click: () => {
               openExternal(
-                'https://github.com/Flax-Network/flax-blockchain/wiki',
+                'https://github.com/lotus-Network/lotus-blockchain/wiki',
               );
             },
           },
@@ -367,7 +368,7 @@ if (!handleSquirrelEvent()) {
             label: i18n._(/* i18n */ { id: 'Frequently Asked Questions' }),
             click: () => {
               openExternal(
-                'https://github.com/Flax-Network/flax-blockchain/wiki/FAQ',
+                'https://github.com/lotus-Network/lotus-blockchain/wiki/FAQ',
               );
             },
           },
@@ -375,7 +376,7 @@ if (!handleSquirrelEvent()) {
             label: i18n._(/* i18n */ { id: 'Release Notes' }),
             click: () => {
               openExternal(
-                'https://github.com/Flax-Network/flax-blockchain/releases',
+                'https://github.com/lotus-Network/lotus-blockchain/releases',
               );
             },
           },
@@ -383,7 +384,7 @@ if (!handleSquirrelEvent()) {
             label: i18n._(/* i18n */ { id: 'Contribute on GitHub' }),
             click: () => {
               openExternal(
-                'https://github.com/Flax-Network/flax-blockchain/blob/master/CONTRIBUTING.md',
+                'https://github.com/lotus-Network/lotus-blockchain/blob/master/CONTRIBUTING.md',
               );
             },
           },
@@ -394,20 +395,14 @@ if (!handleSquirrelEvent()) {
             label: i18n._(/* i18n */ { id: 'Report an Issue...' }),
             click: () => {
               openExternal(
-                'https://github.com/Flax-Network/flax-blockchain/issues',
+                'https://github.com/lotus-Network/lotus-blockchain/issues',
               );
-            },
-          },
-          {
-            label: i18n._(/* i18n */ { id: 'Chat on Discord' }),
-            click: () => {
-              openExternal('https://discord.gg/TgJyxsEFFc');
             },
           },
           {
             label: i18n._(/* i18n */ { id: 'Follow on Twitter' }),
             click: () => {
-              openExternal('https://twitter.com/flax_project');
+              openExternal('https://twitter.com/Getlotus');
             },
           },
         ],
@@ -415,12 +410,12 @@ if (!handleSquirrelEvent()) {
     ];
 
     if (process.platform === 'darwin') {
-      // Flax Blockchain menu (Mac)
+      // lotus Blockchain menu (Mac)
       template.unshift({
-        label: i18n._(/* i18n */ { id: 'Flax' }),
+        label: i18n._(/* i18n */ { id: 'lotus' }),
         submenu: [
           {
-            label: i18n._(/* i18n */ { id: 'About Flax Blockchain' }),
+            label: i18n._(/* i18n */ { id: 'About lotus Blockchain' }),
             click: () => {
               openAbout();
             },
@@ -507,7 +502,7 @@ if (!handleSquirrelEvent()) {
           type: 'separator',
         },
         {
-          label: i18n._(/* i18n */ { id: 'About Flax Blockchain' }),
+          label: i18n._(/* i18n */ { id: 'About lotus Blockchain' }),
           click() {
             openAbout();
           },

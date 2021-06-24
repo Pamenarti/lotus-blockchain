@@ -1,32 +1,18 @@
-import { useDispatch, useSelector } from 'react-redux';
-import React, { useMemo } from 'react';
-import { Dropzone } from '@flax/core';
 import { Trans } from '@lingui/macro';
 import {
-  CssBaseline, 
-  Container,
-  Typography,
-  Paper,
-  Grid,
-  Button,
-  Box,
-  TextField,
-  Backdrop,
-  CircularProgress,
+    Box, Button, Typography
 } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { Card } from '@flax/core';
-
-import {
-  createState,
-  changeCreateWallet,
-  CREATE_DID_WALLET_OPTIONS,
-} from '../../../modules/createWallet';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import { Dropzone } from '@lotus/core';
+import React from 'react';
+import { useDispatch } from 'react-redux';
+import {
+    changeCreateWallet,
+    CREATE_DID_WALLET_OPTIONS
+} from '../../../modules/createWallet';
 import { recover_did_action } from '../../../modules/message';
-import { flax_to_mojo } from '../../../util/flax';
-import { openDialog } from '../../../modules/dialog';
-import { useForm, Controller, useFieldArray } from 'react-hook-form';
+
 
 const useStyles = makeStyles((theme) => ({
   root: {

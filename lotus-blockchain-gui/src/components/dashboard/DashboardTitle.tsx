@@ -1,6 +1,6 @@
-import React, { ReactNode } from 'react';
 import { Typography } from '@material-ui/core';
-import { Flex } from '@flax/core';
+import { Flex } from '@lotus/core';
+import React, { ReactNode } from 'react';
 import { createTeleporter } from 'react-teleporter';
 
 const DashboardTitleTeleporter = createTeleporter();
@@ -19,11 +19,13 @@ type Props = {
 
 export default function DashboardTitle(props: Props) {
   const { children } = props;
-
+  
   return (
     <DashboardTitleTeleporter.Source>
       <Flex alignItems="center">
-        {children}
+        <Typography >
+          <span style={ { color: "#ffffff", fontSize: 40, fontWeight:500, fontFamily:"Josefin" }}>{children}</span>
+        </Typography>
       </Flex>
     </DashboardTitleTeleporter.Source>
   );

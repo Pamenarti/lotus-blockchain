@@ -1,36 +1,24 @@
-import React, { DragEvent } from 'react';
 import { Trans } from '@lingui/macro';
-import styled from 'styled-components';
 import {
-  Box,
-  Button,
-  Paper,
-  Grid,
-  Typography,
-  Container,
+    Box,
+    Button, Container, Grid, Paper, Typography
 } from '@material-ui/core';
 import { ArrowBackIos as ArrowBackIosIcon } from '@material-ui/icons';
-import { useSelector, useDispatch } from 'react-redux';
+import { Flex, Link } from '@lotus/core';
+import React, { DragEvent } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useHistory } from 'react-router';
-import { Flex, Link } from '@flax/core';
+import styled from 'styled-components';
+import myStyle from '../../constants/style';
 import {
-  add_new_key_action,
-  add_and_restore_from_backup,
-  login_and_skip_action,
-  get_backup_info_action,
-  log_in_and_import_backup_action,
-} from '../../modules/message';
-import {
-  changeBackupView,
-  presentMain,
-  presentBackupInfo,
-  setBackupInfo,
-  selectFilePath,
+    changeBackupView, presentBackupInfo, presentMain, selectFilePath, setBackupInfo
 } from '../../modules/backup';
-import { unix_to_short_date } from '../../util/utils';
+import {
+    add_and_restore_from_backup, add_new_key_action, get_backup_info_action, login_and_skip_action, log_in_and_import_backup_action
+} from '../../modules/message';
 import type { RootState } from '../../modules/rootReducer';
 import Wallet from '../../types/Wallet';
-import myStyle from '../../constants/style';
+import { unix_to_short_date } from '../../util/utils';
 import LayoutHero from '../layout/LayoutHero';
 
 const StyledDropPaper = styled(Paper)`

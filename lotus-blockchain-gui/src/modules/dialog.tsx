@@ -1,9 +1,9 @@
+import { AlertDialog } from '@lotus/core';
 import React, { ReactNode } from 'react';
 import { Action } from 'redux';
 import { ThunkAction } from 'redux-thunk';
-import { AlertDialog } from '@flax/core';
-import type { RootState } from './rootReducer';
 import getDescriptiveError from '../util/getDescriptiveError';
+import type { RootState } from './rootReducer';
 
 let nextId = 1;
 

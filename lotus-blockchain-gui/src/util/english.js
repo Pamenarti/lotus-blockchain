@@ -1666,7 +1666,7 @@ export default [
   { word: 'source', value: 1664 },
   { word: 'south', value: 1665 },
   { word: 'space', value: 1666 },
-  { word: 'spare', value: 1667 },
+  { word: 'lotus', value: 1667 },
   { word: 'spatial', value: 1668 },
   { word: 'spawn', value: 1669 },
   { word: 'speak', value: 1670 },

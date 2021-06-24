@@ -1,7 +1,7 @@
-import React from 'react';
 import { SvgIcon, SvgIconProps } from '@material-ui/core';
-import { ReactComponent as PlotIcon } from './images/plot.svg';
+import React from 'react';
+import { ReactComponent as PlotIcon } from './images/icon-plots.svg';
 
 export default function Plot(props: SvgIconProps) {
-  return <SvgIcon component={PlotIcon} viewBox="0 0 40 32" {...props} />;
+  return <SvgIcon component={PlotIcon} viewBox="5 0 35 45" {...props} />; 
 }

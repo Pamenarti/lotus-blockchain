@@ -14,16 +14,16 @@ function getInstallerConfig () {
   const outPath = path.join(rootPath, 'release-builds')
 
   return Promise.resolve({
-    appDirectory: path.join(rootPath, 'Flax-win32-x64'),
-    authors: 'Flax Network',
-    version: process.env.FLAX_INSTALLER_VERSION,
+    appDirectory: path.join(rootPath, 'lotus-win32-x64'),
+    authors: 'lotus Network',
+    version: process.env.lotus_INSTALLER_VERSION,
     noMsi: true,
-    iconUrl: 'https://raw.githubusercontent.com/Flax-Network/flax-blockchain/master/electron-react/src/assets/img/flax.ico',
+    iconUrl: 'https://raw.githubusercontent.com/lotus-Network/lotus-blockchain/master/electron-react/src/assets/img/lotus.ico',
     outputDirectory: path.join(outPath, 'windows-installer'),
     certificateFile: 'win_code_sign_cert.p12',
     certificatePassword: process.env.WIN_CODE_SIGN_PASS,
-    exe: 'Flax.exe',
-    setupExe: 'FlaxSetup-' + process.env.FLAX_INSTALLER_VERSION + '.exe',
-    setupIcon: path.join(rootPath, 'src', 'assets', 'img', 'flax.ico')
+    exe: 'lotus.exe',
+    setupExe: 'lotusSetup-' + process.env.lotus_INSTALLER_VERSION + '.exe',
+    setupIcon: path.join(rootPath, 'src', 'assets', 'img', 'lotus.ico')
   })
 }

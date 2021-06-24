@@ -2,9 +2,7 @@ import { i18n } from '@lingui/core';
 import moment from 'moment';
 import {
   ar,
-  be,
   bg,
-  ca,
   cs,
   da,
   de,
@@ -15,7 +13,6 @@ import {
   fi,
   fr,
   hr,
-  hu,
   id,
   it,
   ja,
@@ -27,7 +24,6 @@ import {
   ro,
   ru,
   sk,
-  sq,
   sr,
   sv,
   tr,
@@ -38,9 +34,7 @@ import {
 import * as materialLocales from '@material-ui/core/locale';
 
 const catalogArSA = require('../locales/ar-SA/messages');
-const catalogBeBY = require('../locales/be-BY/messages');
 const catalogBgBG = require('../locales/bg-BG/messages');
-const catalogCaES = require('../locales/ca-ES/messages');
 const catalogCsCZ = require('../locales/cs-CZ/messages');
 const catalogDa = require('../locales/da-DK/messages');
 const catalogDe = require('../locales/de-DE/messages');
@@ -56,7 +50,6 @@ const catalogFaIR = require('../locales/fa-IR/messages');
 const catalogFi = require('../locales/fi-FI/messages');
 const catalogFr = require('../locales/fr-FR/messages');
 const catalogHrHR = require('../locales/hr-HR/messages');
-const catalogHuHU = require('../locales/hu-HU/messages');
 const catalogIdID = require('../locales/id-ID/messages');
 const catalogIt = require('../locales/it-IT/messages');
 const catalogJa = require('../locales/ja-JP/messages');
@@ -69,7 +62,6 @@ const catalogPt = require('../locales/pt-PT/messages');
 const catalogRo = require('../locales/ro-RO/messages');
 const catalogRu = require('../locales/ru-RU/messages');
 const catalogSk = require('../locales/sk-SK/messages');
-const catalogSqAL = require('../locales/sq-AL/messages');
 const catalogSrSP = require('../locales/sr-SP/messages');
 const catalogSv = require('../locales/sv-SE/messages');
 const catalogTrTR = require('../locales/tr-TR/messages');
@@ -81,19 +73,10 @@ const catalogZhCN = require('../locales/zh-CN/messages');
 export const defaultLocale = 'en-US';
 
 // https://www.codetwo.com/admins-blog/list-of-office-365-language-id/
-// https://www.venea.net/web/culture_code
 export const locales = [
-  {
-    locale: 'be-BY',
-    label: 'Беларускі',
-  },
   {
     locale: 'bg-BG',
     label: 'български език',
-  },
-  {
-    locale: 'ca-ES',
-    label: 'Català',
   },
   {
     locale: 'cs-CZ',
@@ -156,8 +139,12 @@ export const locales = [
     label: 'Italiano',
   },
   {
-    locale: 'hu-HU',
-    label: 'Magyar',
+    locale: 'ja-JP',
+    label: '日本語 (日本)',
+  },
+  {
+    locale: 'ko-KR',
+    label: '한국어',
   },
   {
     locale: 'nl-NL',
@@ -192,10 +179,6 @@ export const locales = [
     label: 'Русский',
   },
   {
-    locale: 'sq-AL',
-    label: 'Shqipe',
-  },
-  {
     locale: 'sk-SK',
     label: 'Slovenčina',
   },
@@ -223,10 +206,6 @@ export const locales = [
     locale: 'ar-SA',
     label: '(العربية (المملكة العربية السعودية',
   },
-  {
-    locale: 'ko-KR',
-    label: '한국어',
-  },
   /* {
   locale: 'vi-VN',
   label: 'Tiếng Việt',
@@ -238,16 +217,10 @@ export const locales = [
     locale: 'zh-CN',
     label: '简体中文',
   },
-  {
-    locale: 'ja-JP',
-    label: '日本語 (日本)',
-  },
 ];
 
 i18n.loadLocaleData('ar-SA', { plurals: ar });
-i18n.loadLocaleData('be-BY', { plurals: be });
 i18n.loadLocaleData('bg-BG', { plurals: bg });
-i18n.loadLocaleData('ca-ES', { plurals: ca });
 i18n.loadLocaleData('cs-CZ', { plurals: cs });
 i18n.loadLocaleData('da-DK', { plurals: da });
 i18n.loadLocaleData('de-DE', { plurals: de });
@@ -263,7 +236,6 @@ i18n.loadLocaleData('fa-IR', { plurals: fa });
 i18n.loadLocaleData('fi-FI', { plurals: fi });
 i18n.loadLocaleData('fr-FR', { plurals: fr });
 i18n.loadLocaleData('hr-HR', { plurals: hr });
-i18n.loadLocaleData('hu-HU', { plurals: hu });
 i18n.loadLocaleData('id-ID', { plurals: id });
 i18n.loadLocaleData('it-IT', { plurals: it });
 i18n.loadLocaleData('ja-JP', { plurals: ja });
@@ -276,7 +248,6 @@ i18n.loadLocaleData('pt-PT', { plurals: pt });
 i18n.loadLocaleData('ro-RO', { plurals: ro });
 i18n.loadLocaleData('ru-RU', { plurals: ru });
 i18n.loadLocaleData('sk-SK', { plurals: sk });
-i18n.loadLocaleData('sq-AL', { plurals: sq });
 i18n.loadLocaleData('sr-SP', { plurals: sr });
 i18n.loadLocaleData('sv-SE', { plurals: sv });
 i18n.loadLocaleData('tr-TR', { plurals: tr });
@@ -286,9 +257,7 @@ i18n.loadLocaleData('zh-TW', { plurals: zh });
 i18n.loadLocaleData('zh-CN', { plurals: zh });
 
 i18n.load('ar-SA', catalogArSA.messages);
-i18n.load('be-BY', catalogBeBY.messages);
 i18n.load('bg-BG', catalogBgBG.messages);
-i18n.load('ca-ES', catalogCaES.messages);
 i18n.load('cs-CZ', catalogCsCZ.messages);
 i18n.load('da-DK', catalogDa.messages);
 i18n.load('de-DE', catalogDe.messages);
@@ -304,7 +273,6 @@ i18n.load('fa-IR', catalogFaIR.messages);
 i18n.load('fi-FI', catalogFi.messages);
 i18n.load('fr-FR', catalogFr.messages);
 i18n.load('hr-HR', catalogHrHR.messages);
-i18n.load('hu-HU', catalogHuHU.messages);
 i18n.load('id-ID', catalogIdID.messages);
 i18n.load('it-IT', catalogIt.messages);
 i18n.load('ja-JP', catalogJa.messages);
@@ -317,7 +285,6 @@ i18n.load('pt-PT', catalogPt.messages);
 i18n.load('ro-RO', catalogRo.messages);
 i18n.load('ru-RU', catalogRu.messages);
 i18n.load('sk-SK', catalogSk.messages);
-i18n.load('sq-AL', catalogSqAL.messages);
 i18n.load('sr-SP', catalogSrSP.messages);
 i18n.load('sv-SE', catalogSv.messages);
 i18n.load('tr-TR', catalogTrTR.messages);

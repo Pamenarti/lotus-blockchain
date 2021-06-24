@@ -1,13 +1,13 @@
-import React, { useMemo } from 'react';
 import { Trans } from '@lingui/macro';
-import { useSelector } from 'react-redux';
+import { State } from '@lotus/core';
 import moment from 'moment';
-import { State } from '@flax/core';
-import type { RootState } from '../../../modules/rootReducer';
-import FarmCard from './FarmCard';
-import type Plot from '../../../types/Plot';
+import React, { useMemo } from 'react';
+import { useSelector } from 'react-redux';
 import FullNodeState from '../../../constants/FullNodeState';
 import useFullNodeState from '../../../hooks/useFullNodeState';
+import type { RootState } from '../../../modules/rootReducer';
+import type Plot from '../../../types/Plot';
+import FarmCard from './FarmCard';
 import FarmCardNotAvailable from './FarmCardNotAvailable';
 
 const MINUTES_PER_BLOCK = (24 * 60) / 4608; // 0.3125

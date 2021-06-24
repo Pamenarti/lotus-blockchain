@@ -1,21 +1,20 @@
+import { I18nProvider } from '@lingui/react';
+import { ThemeProvider } from '@lotus/core';
+import { ConnectedRouter } from 'connected-react-router';
+import isElectron from 'is-electron';
 import React, { useEffect, useMemo } from 'react';
 import { Provider } from 'react-redux';
-import { I18nProvider } from '@lingui/react';
+import { createGlobalStyle } from 'styled-components';
 import useDarkMode from 'use-dark-mode';
-import isElectron from 'is-electron';
-import { createGlobalStyle } from 'styled-components'
-import { ConnectedRouter } from 'connected-react-router';
-import { ThemeProvider } from '@flax/core';
-import AppRouter from './AppRouter';
-import darkTheme from '../../theme/dark';
-import lightTheme from '../../theme/light';
+import { activateLocale, defaultLocale, getMaterialLocale, i18n } from '../../config/locales';
 import WebSocketConnection from '../../hocs/WebsocketConnection';
-import store, { history } from '../../modules/store';
-import { exit_and_close } from '../../modules/message';
 import useLocale from '../../hooks/useLocale';
-import AppModalDialogs from './AppModalDialogs';
+import { exit_and_close } from '../../modules/message';
+import store, { history } from '../../modules/store';
+import darkTheme from '../../theme/dark';
 import AppLoading from './AppLoading';
-import { i18n, activateLocale, defaultLocale, getMaterialLocale } from '../../config/locales';
+import AppModalDialogs from './AppModalDialogs';
+import AppRouter from './AppRouter';
 import Fonts from './fonts/Fonts';
 
 const GlobalStyle = createGlobalStyle`
@@ -33,6 +32,13 @@ const GlobalStyle = createGlobalStyle`
   ul .MuiBox-root {
     outline: none;
   }
+
+  #root > .MuiBox-root {
+    background:
+      url("/cbackground_shapes.png") right bottom no-repeat, /// add the right image !!!
+      linear-gradient(142deg, #105C3E, #152620 13%, #171717 63%, #191919);
+  }
+
 `;
 
 export default function App() {
@@ -43,7 +49,7 @@ export default function App() {
     const material = getMaterialLocale(locale);
     return darkMode
       ? darkTheme(material)
-      : lightTheme(material);
+      : darkTheme(material); // only dark mode
   }, [locale, darkMode]);
 
   // get the daemon's uri from global storage (put there by loadConfig)

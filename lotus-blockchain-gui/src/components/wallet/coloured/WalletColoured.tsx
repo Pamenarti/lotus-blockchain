@@ -1,35 +1,29 @@
-import React, { ReactNode } from 'react';
+import { Trans } from '@lingui/macro';
+import {
+  Accordion, AccordionDetails, AccordionSummary, Box,
+  Button,
+  TextField
+} from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { makeStyles } from '@material-ui/core/styles';
-import { useDispatch, useSelector } from 'react-redux';
-import { Trans } from '@lingui/macro';
-import { AlertDialog, Card, Flex } from '@flax/core';
 import Typography from '@material-ui/core/Typography';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
-import {
-  Accordion,
-  AccordionSummary,
-  AccordionDetails,
-  Box,
-  Button,
-  TextField,
-} from '@material-ui/core';
-import {
-  get_address,
-  cc_spend,
-  farm_block,
-  rename_cc_wallet,
-} from '../../../modules/message';
-import {
-  mojo_to_colouredcoin_string,
-  colouredcoin_to_mojo,
-} from '../../../util/flax';
-import { openDialog } from '../../../modules/dialog';
-import { get_transaction_result } from '../../../util/transaction_result';
+import { AlertDialog, Card, Flex } from '@lotus/core';
+import React, { ReactNode } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import config from '../../../config/config';
-import type { RootState } from '../../../modules/rootReducer';
-import WalletHistory from '../WalletHistory';
 import useCurrencyCode from '../../../hooks/useCurrencyCode';
+import { openDialog } from '../../../modules/dialog';
+import {
+  cc_spend,
+  farm_block, get_address, rename_cc_wallet
+} from '../../../modules/message';
+import type { RootState } from '../../../modules/rootReducer';
+import {
+  colouredcoin_to_graviton, graviton_to_colouredcoin_string
+} from '../../../util/lotus';
+import { get_transaction_result } from '../../../util/transaction_result';
+import WalletHistory from '../WalletHistory';
 
 const drawerWidth = 240;
 
@@ -39,10 +33,10 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '0px',
   },
   resultSuccess: {
-    color: '#3AAC59',
+    color: '#00D983',
   },
   resultFailure: {
-    color: 'red',
+    color: '#E9398D',
   },
   toolbar: {
     paddingRight: 24, // keep right padding when drawer closed
@@ -288,7 +282,7 @@ function BalanceCardSubSection(props: BalanceCardSubSectionProps) {
         </Box>
         <Box>
           <Typography variant="subtitle1">
-            {mojo_to_colouredcoin_string(props.balance)} {cc_unit}
+            {graviton_to_colouredcoin_string(props.balance)} {cc_unit}
           </Typography>
         </Box>
       </Box>
@@ -344,15 +338,15 @@ function BalanceCard(props: BalanceCardProps) {
   const balancebox_unit = ` ${cc_unit}`;
   const balancebox_hline =
     "<tr><td colspan='2' style='text-align:center'><hr width='50%'></td></tr>";
-  const balance_ptotal_flax = mojo_to_colouredcoin_string(balance_ptotal);
-  const balance_pending_flax = mojo_to_colouredcoin_string(balance_pending);
-  const balance_change_flax = mojo_to_colouredcoin_string(balance_change);
+  const balance_ptotal_lotus = graviton_to_colouredcoin_string(balance_ptotal);
+  const balance_pending_lotus = graviton_to_colouredcoin_string(balance_pending);
+  const balance_change_lotus = graviton_to_colouredcoin_string(balance_change);
   const acc_content =
     balancebox_1 +
     balancebox_2 +
     balancebox_ptotal +
     balancebox_3 +
-    balance_ptotal_flax +
+    balance_ptotal_lotus +
     balancebox_unit +
     balancebox_hline +
     balancebox_4 +
@@ -360,14 +354,14 @@ function BalanceCard(props: BalanceCardProps) {
     balancebox_2 +
     balancebox_pending +
     balancebox_3 +
-    balance_pending_flax +
+    balance_pending_lotus +
     balancebox_unit +
     balancebox_4 +
     balancebox_row +
     balancebox_2 +
     balancebox_change +
     balancebox_3 +
-    balance_change_flax +
+    balance_change_lotus +
     balancebox_unit +
     balancebox_5;
 
@@ -494,10 +488,10 @@ function SendCard(props: SendCardProps) {
       return;
     }
 
-    const amount = colouredcoin_to_mojo(amount_input.value);
-    const fee = colouredcoin_to_mojo(fee_input.value);
+    const amount = colouredcoin_to_graviton(amount_input.value);
+    const fee = colouredcoin_to_graviton(fee_input.value);
 
-    if (address.includes('flax_addr') || address.includes('colour_desc')) {
+    if (address.includes('lotus_addr') || address.includes('colour_desc')) {
       dispatch(
         openDialog(
           <AlertDialog>

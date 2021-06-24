@@ -53,7 +53,7 @@ export default function PlotAddDirectoryDialog(props: Props) {
       open={open}
     >
       <DialogTitle id="confirmation-dialog-title">
-        <Trans>Add a plot</Trans>
+        <Trans>Add Plot Directory</Trans>
       </DialogTitle>
       <DialogContent dividers>
         <Typography>

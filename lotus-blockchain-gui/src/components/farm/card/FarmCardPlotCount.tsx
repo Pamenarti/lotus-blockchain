@@ -1,8 +1,8 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
-import { FormatLargeNumber } from '@flax/core';
-import FarmCard from './FarmCard';
+import { FormatLargeNumber } from '@lotus/core';
+import React from 'react';
 import usePlots from '../../../hooks/usePlots';
+import FarmCard from './FarmCard';
 
 export default function FarmCardPlotCount() {
   const { uniquePlots } = usePlots();

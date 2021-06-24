@@ -1,15 +1,15 @@
-import React from 'react';
 import { Trans } from '@lingui/macro';
+import { AdvancedOptions, Flex } from '@lotus/core';
+import React from 'react';
 import { useSelector } from 'react-redux';
-import { AdvancedOptions, Flex } from '@flax/core';
-import LayoutMain from '../layout/LayoutMain';
-import FarmOverview from './overview/FarmOverview';
-import FarmLatestBlockChallenges from './FarmLatestBlockChallenges';
-import FarmFullNodeConnections from './FarmFullNodeConnections';
-import FarmYourHarvesterNetwork from './FarmYourHarvesterNetwork';
-import FarmLastAttemptedProof from './FarmLastAttemptedProof';
 import usePlots from '../../hooks/usePlots';
 import type { RootState } from '../../modules/rootReducer';
+import LayoutMain from '../layout/LayoutMain';
+import FarmFullNodeConnections from './FarmFullNodeConnections';
+import FarmLastAttemptedProof from './FarmLastAttemptedProof';
+import FarmLatestBlockChallenges from './FarmLatestBlockChallenges';
+import FarmYourHarvesterNetwork from './FarmYourHarvesterNetwork';
+import FarmOverview from './overview/FarmOverview';
 
 export default function Farm() {
   const { hasPlots } = usePlots();

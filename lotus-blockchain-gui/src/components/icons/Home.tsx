@@ -1,7 +1,7 @@
-import React from 'react';
 import { SvgIcon, SvgIconProps } from '@material-ui/core';
+import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as HomeIcon } from './images/home.svg';
+import { ReactComponent as HomeIcon } from './images/icon-node.svg';
 
 const StyledHomeIcon = styled(HomeIcon)`
   path {
@@ -12,5 +12,5 @@ const StyledHomeIcon = styled(HomeIcon)`
 `;
 
 export default function Home(props: SvgIconProps) {
-  return <SvgIcon component={StyledHomeIcon} viewBox="0 0 32 31" {...props} />;
+  return <SvgIcon fontSize='large'	component={StyledHomeIcon} viewBox="0 0 38 40" {...props} />;
 }

@@ -1,11 +1,11 @@
-import React from 'react';
-import { Flex, Link } from '@flax/core';
 import { Trans } from '@lingui/macro';
+import { Flex, Link } from '@lotus/core';
+import React from 'react';
 import { Route, Switch, useRouteMatch } from 'react-router-dom';
 import LayoutMain from '../layout/LayoutMain';
-import PlotOverview from './overview/PlotOverview';
 import PlotAdd from './add/PlotAdd';
-import { PlotHeaderTarget }  from './PlotHeader';
+import PlotOverview from './overview/PlotOverview';
+import { PlotHeaderTarget } from './PlotHeader';
 
 export default function Plot() {
   const { path } = useRouteMatch();

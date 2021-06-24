@@ -1,10 +1,10 @@
-import React, { useEffect, useState, ReactNode } from 'react';
 import { Trans } from '@lingui/macro';
-import { Button, Dialog, DialogActions, DialogTitle, DialogContent, LinearProgress, Typography } from '@material-ui/core';
-import { Flex, Log } from '@flax/core';
+import { Button, Dialog, DialogActions, DialogContent, DialogTitle, LinearProgress, Typography } from '@material-ui/core';
+import { Flex, Log } from '@lotus/core';
+import React, { ReactNode, useEffect, useState } from 'react';
 import styled from 'styled-components';
-import type { RootState } from '../../../modules/rootReducer';
 import useThrottleSelector from '../../../hooks/useThrottleSelector';
+import type { RootState } from '../../../modules/rootReducer';
 
 const StyledLinearProgress = styled(LinearProgress)`
   height: 10px;

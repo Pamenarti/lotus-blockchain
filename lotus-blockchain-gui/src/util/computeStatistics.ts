@@ -5,7 +5,7 @@ import type Wallet from '../types/Wallet';
 export default function computeStatistics(
   wallets: Wallet[],
 ): {
-  totalFlaxFarmed: Big;
+  totallotusFarmed: Big;
   biggestHeight: number;
   biggestRewardHeight: number;
   poolCoins: Big;
@@ -56,7 +56,7 @@ export default function computeStatistics(
     });
   });
 
-  const totalFlaxFarmed = poolCoins.plus(farmerCoins);
+  const totallotusFarmed = poolCoins.plus(farmerCoins);
   const totalBlockRewards = Big(poolCoins).times(8).div(7);
   const userTransactionFees = Big(farmerCoins).minus(
     Big(totalBlockRewards).div(8),
@@ -66,7 +66,7 @@ export default function computeStatistics(
     .minus(userTransactionFees);
 
   return {
-    totalFlaxFarmed,
+    totallotusFarmed,
     biggestHeight,
     biggestRewardHeight,
     poolCoins,
