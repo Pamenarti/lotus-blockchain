@@ -32,20 +32,27 @@ npm run electron &
 Almost done.
 
 ### Ubuntu/Debian
+We have an experimental GUI installer (x86_64) for Ubuntu 18.04 Desktop and newer and Debian Buster w GUI and newer. There is also an experimental GUI installer for ARM64 Ubuntu and Debian/Raspberry Pi OS 64. Binary CLI tools can be found in `/usr/lib/chia-blockchain/resources/app.asar.unpacked/daemon/`
+
+Follow below install instructions for Ubuntu 20.04 LTS. If you are installing on Ubuntu 18.04 LTS you should use Python 3.7 instead: `sudo apt-get install python3.7-venv python3.7-distutils python3.7-dev git lsb-release -y`
 ```
 sudo apt-get update
 sudo apt-get upgrade -y
+
 # Install Git
 sudo apt install git -y
+
 # Checkout the source and install
 git clone https://github.com/Lotus-Network/Lotus-blockchain
 cd Lotus-blockchain
 sh install.sh
 . ./activate
+
 # The GUI requires you have Ubuntu Desktop or a similar windowing system installed.
 # You can not install and run the GUI as root
 sh install-gui.sh
 cd lotus-blockchain-gui
+
 npm install
 npm run build
 npm run electron &
