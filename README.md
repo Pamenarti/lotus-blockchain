@@ -132,7 +132,8 @@ sh install.sh
 . ./activate
 ```
 
-
 email : pamenarti@gmail.com
+
 discord id : Paro#7842
+
 linkedin : https://www.linkedin.com/in/yusuf-ko%C3%A7-ab147a182/
