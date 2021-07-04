@@ -12,7 +12,7 @@ by typing `python3`.
 
 ### Windows 
 
-Lotus Windows client can be downloaded from [here](https://elasticbeanstalk-us-west-2-793349189011.s3.us-west-2.amazonaws.com/Lotus-win32-x64.zip).
+Lotus Windows client can be downloaded from [here](...).
 
 
 ### MacOS build
