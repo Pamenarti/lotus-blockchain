@@ -1,7 +1,7 @@
-[submodule "flax-blockchain-gui"]
-	path = flax-blockchain-gui
-	url = https://github.com/Flax-Network/flax-blockchain-gui.git
+[submodule "lotus-blockchain-gui"]
+	path = lotus-blockchain-gui
+	url = https://github.com/Lotus-Network/lotus-blockchain-gui.git
 	branch = main
 [submodule "mozilla-ca"]
 	path = mozilla-ca
-	url = https://github.com/Chia-Network/mozilla-ca.git
+	url = https://github.com/Lotus-Network/mozilla-ca.git

@@ -17,7 +17,7 @@ Lotus Windows client can be downloaded from [here](https://elasticbeanstalk-us-w
 
 ### MacOS build
 ```
-git clone https://github.com/Lotus-Network/Lotus-blockchain
+git clone https://github.com/Lotus-Network/lotus-blockchain
 cd lotus-blockchain
 sh install.sh
 . ./activate
@@ -43,7 +43,7 @@ sudo apt-get upgrade -y
 sudo apt install git -y
 
 # Checkout the source and install
-git clone https://github.com/Lotus-Network/Lotus-blockchain
+git clone https://github.com/Lotus-Network/lotus-blockchain
 cd Lotus-blockchain
 sh install.sh
 . ./activate
@@ -126,7 +126,7 @@ npm run electron
 ```
 sudo yum update -y
 sudo yum install python3 git -y
-git clone https://github.com/Lotus-Network/shia-blockchain.git
+git clone https://github.com/Lotus-Network/lotus-blockchain.git
 cd lotus-blockchain
 sh install.sh
 . ./activate
