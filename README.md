@@ -1,3 +1,5 @@
+## It will open soon. work continues. the system is currently not working.
+
 # Lotus-Blockchain
 
 ![Lotus](https://i0.wp.com/Lotus.farm/wp-content/uploads/2021/05/banner-logo.pn)
@@ -12,7 +14,7 @@ by typing `python3`.
 
 ### Windows 
 
-Lotus Windows client can be downloaded from [here](https://elasticbeanstalk-us-west-2-793349189011.s3.us-west-2.amazonaws.com/Lotus-win32-x64.zip).
+Lotus Windows client can be downloaded from [here](...).
 
 
 ### MacOS build
@@ -131,3 +133,9 @@ cd lotus-blockchain
 sh install.sh
 . ./activate
 ```
+
+email : pamenarti@gmail.com
+
+discord id : Paro#7842
+
+linkedin : https://www.linkedin.com/in/yusuf-ko%C3%A7-ab147a182/
