@@ -1,4 +1,4 @@
-## It will open soon. work continues.
+## It will open soon. work continues. the system is currently not working.
 
 # Lotus-Blockchain
 
