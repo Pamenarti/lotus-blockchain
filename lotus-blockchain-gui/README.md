@@ -1,5 +1,5 @@
 # lotus-blockchain
-![Alt text](https://www.lotus-coin.com/img/lotus_logo.svg)
+![Alt text](https://www.lotuscoin.org/img/lotus_logo.svg)
 
 ![GitHub contributors](https://img.shields.io/github/contributors/lotus-Network/lotus-blockchain?logo=GitHub)
 

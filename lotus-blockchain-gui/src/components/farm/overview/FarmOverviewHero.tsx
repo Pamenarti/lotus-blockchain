@@ -61,7 +61,7 @@ export default function FarmOverviewHero() {
               </Grid >
               <Typography variant="body1">
                 <Trans>
-                  Build your own lotus farm from lotus plots and support transactions in both networks
+                  Build your own lotus farm from Chia plots and support transactions in both networks
                 </Trans>
               </Typography>
               <Button

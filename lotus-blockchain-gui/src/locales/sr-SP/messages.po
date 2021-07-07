@@ -6,21 +6,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: sr_SP\n"
-"Project-Id-Version: spare-blockchain\n"
+"Project-Id-Version: lotus-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-05-16 17:30\n"
 "Last-Translator: \n"
 "Language-Team: Serbian (Cyrillic)\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Crowdin-Project: spare-blockchain\n"
+"X-Crowdin-Project: lotus-blockchain\n"
 "X-Crowdin-Project-ID: 440660\n"
 "X-Crowdin-Language: sr\n"
 "X-Crowdin-File: /main/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 72\n"
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:39
-#~ msgid "*Want to explore Spare's blocks further? Check out <0>Spare Explorer</0> built by an open source developer."
-#~ msgstr "* Желиш да сазнаш више о Spare блоковима? Провери <0>Spare претраживач</0> који је настао од стране програмера отвореног кода."
+#~ msgid "*Want to explore lotus's blocks further? Check out <0>lotus Explorer</0> built by an open source developer."
+#~ msgstr "* Желиш да сазнаш више о lotus блоковима? Провери <0>lotus претраживач</0> који је настао од стране програмера отвореног кода."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:94
 #~ msgid "0 automatically chooses bucket count"
@@ -36,7 +36,7 @@ msgstr "Сакупљач је услуга која ради на машини �
 
 #: src/electron/main.tsx:360
 #: src/electron/main.tsx:438
-msgid "About Spare Blockchain"
+msgid "About lotus Blockchain"
 msgstr ""
 
 #: src/components/trading/ViewOffer.jsx:83
@@ -77,7 +77,7 @@ msgid "Add Plot to Queue"
 msgstr "Додај плот на чекање"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:43
-#~ msgid "Add Spare plot and start mining on both networks simultaneously"
+#~ msgid "Add lotus plot and start mining on both networks simultaneously"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:86
@@ -199,7 +199,7 @@ msgid "Block VDF Iterations"
 msgstr "Блок VDF понављања"
 
 #: src/components/block/Block.jsx:307
-msgid "Block at height {0} in the Spare blockchain"
+msgid "Block at height {0} in the lotus blockchain"
 msgstr ""
 
 #: src/components/fullNode/FullNode.jsx:331
@@ -229,11 +229,11 @@ msgid "Browse"
 msgstr "Претражи"
 
 #: src/components/farm/overview/FarmOverviewHero.tsx:48
-msgid "Build your own Spare farm from Chia plots and support transactions in both networks"
+msgid "Build your own lotus farm from Chia plots and support transactions in both networks"
 msgstr ""
 
 #: src/components/farm/overview/FarmOverviewHero.tsx:48
-#~ msgid "Build your own Spare farm from Spare plots and support transactions in both networks"
+#~ msgid "Build your own lotus farm from lotus plots and support transactions in both networks"
 #~ msgstr ""
 
 #: src/components/farm/FarmLastAttemptedProof.tsx:50
@@ -598,7 +598,7 @@ msgid "Edit"
 msgstr "Уреди"
 
 #: src/components/wallet/WalletImport.tsx:67
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your Spare wallet."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your lotus wallet."
 msgstr ""
 
 #: src/components/farm/FarmerStatus.tsx:30
@@ -612,7 +612,7 @@ msgid "Error"
 msgstr "Грешка"
 
 #: src/components/wallet/standard/WalletStandard.tsx:294
-msgid "Error: Cannot send spare to coloured address. Please enter a spare address."
+msgid "Error: Cannot send lotus to coloured address. Please enter a lotus address."
 msgstr ""
 
 #: src/components/farm/card/FarmCardExpectedTimeToWin.tsx:32
@@ -666,7 +666,7 @@ msgid "Farmer is not running"
 msgstr "Фармер није покренут"
 
 #: src/components/farm/overview/FarmOverviewHero.tsx:27
-#~ msgid "Farmers earn block rewards and transaction fees by committing spare space to the network to help secure transactions. This is where your farm will be once you add a plot. <0>Learn more</0>"
+#~ msgid "Farmers earn block rewards and transaction fees by committing lotus space to the network to help secure transactions. This is where your farm will be once you add a plot. <0>Learn more</0>"
 #~ msgstr "Пољопривредници зарађују блоковске награде и накнаде за трансакције одвајањем резервног простора мрежи да би помогли у осигурању трансакција. Овде ће бити ваша фарма када додате парцелу. <0> Сазнајте више </0>"
 
 #: src/components/farm/Farm.tsx:15
@@ -695,7 +695,7 @@ msgid "Fee"
 msgstr "Накнада"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
-#~ msgid "Fee (TSPARE)"
+#~ msgid "Fee (Tlotus)"
 #~ msgstr ""
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
@@ -1229,8 +1229,8 @@ msgid "Plots Passed Filter"
 msgstr "Филтрирани плотови"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:23
-#~ msgid "Plots are allocated space on your hard drive used to farm and earn Spare. <0>Learn more</0>"
-#~ msgstr "Плотовима је додељен простор на твом хард-диску који се користи за фарму и Spare зараду. <0> Сазнај више </0>"
+#~ msgid "Plots are allocated space on your hard drive used to farm and earn lotus. <0>Learn more</0>"
+#~ msgstr "Плотовима је додељен простор на твом хард-диску који се користи за фарму и lotus зараду. <0> Сазнај више </0>"
 
 #: src/components/plot/queue/PlotQueueIndicator.tsx:21
 msgid "Plotting"
@@ -1527,15 +1527,15 @@ msgid "Skips adding a final directory to harvester for farming"
 msgstr "Прескаче додавање коначног фолдера сакупљачу за фармање"
 
 #: src/electron/main.tsx:357
-msgid "Spare"
+msgid "lotus"
 msgstr ""
 
 #: src/electron/main.tsx:313
-msgid "Spare Blockchain Wiki"
+msgid "lotus Blockchain Wiki"
 msgstr ""
 
 #: src/components/wallet/Wallets.tsx:35
-msgid "Spare Wallet"
+msgid "lotus Wallet"
 msgstr ""
 
 #: src/electron/main.tsx:404
@@ -1567,7 +1567,7 @@ msgstr "Дужина интервала трошења (број блокова)
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:414
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:465
-msgid "Spending Limit (spare per interval): {0}"
+msgid "Spending Limit (lotus per interval): {0}"
 msgstr ""
 
 #: src/components/fullNode/FullNode.jsx:103
@@ -1616,8 +1616,8 @@ msgstr "Статус:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Spare blockchain"
-#~ msgstr "Sub Block at height {0} in the Spare blockchain"
+#~ msgid "Sub Block at height {0} in the lotus blockchain"
+#~ msgstr "Sub Block at height {0} in the lotus blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:356
 msgid "Submit"
@@ -1642,23 +1642,23 @@ msgstr ""
 #~ msgstr "Синхронизација {progress}/{tip}"
 
 #: src/components/farm/card/FarmCardBlockRewards.tsx:15
-#~ msgid "TSPARE Block Rewards"
+#~ msgid "Tlotus Block Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardCoinbaseRewards.tsx:12
-#~ msgid "TSPARE Farming Rewards"
+#~ msgid "Tlotus Farming Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardFeesReward.tsx:12
-#~ msgid "TSPARE Fees Collected"
+#~ msgid "Tlotus Fees Collected"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardUserFees.tsx:12
-#~ msgid "TSPARE User Fees"
-#~ msgstr "TSPARE User Fees"
+#~ msgid "Tlotus User Fees"
+#~ msgstr "Tlotus User Fees"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:15
-#~ msgid "TSPARE User Transaction Fees"
+#~ msgid "Tlotus User Transaction Fees"
 #~ msgstr ""
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:18
@@ -1721,7 +1721,7 @@ msgid "This feature is available only from the GUI."
 msgstr "Ова опција је доступна само кроз корисничко окружење."
 
 #: src/components/wallet/standard/WalletStandard.tsx:203
-msgid "This is the amount of Spare that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Spare that you have just spent but is not yet in the blockchain."
+msgid "This is the amount of lotus that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and lotus that you have just spent but is not yet in the blockchain."
 msgstr ""
 
 #: src/components/wallet/standard/WalletStandard.tsx:230
@@ -1741,7 +1741,7 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Ово је време када је фармер креирао блок, и то пре него што је финализован доказом о времену"
 
 #: src/components/wallet/standard/WalletStandard.tsx:197
-msgid "This is the total amount of spare in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgid "This is the total amount of lotus in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
 msgstr ""
 
 #: src/components/wallet/standard/WalletStandard.tsx:220
@@ -1769,7 +1769,7 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Ова трговина је укључена на блокчејну у овој висини блока"
 
 #: src/components/app/AppTimeBombAlert.tsx:11
-msgid "This version of Spare is no longer compatible with the blockchain and can not safely farm."
+msgid "This version of lotus is no longer compatible with the blockchain and can not safely farm."
 msgstr ""
 
 #: src/components/fullNode/FullNode.jsx:95
@@ -1810,8 +1810,8 @@ msgstr "Укупна величина плота:"
 msgid "Total Size of Plots"
 msgstr "Укупна величина плотова"
 
-#: src/components/farm/card/FarmCardTotalSpareFarmed.tsx:15
-#~ msgid "Total Spare Farmed"
+#: src/components/farm/card/FarmCardTotallotusFarmed.tsx:15
+#~ msgid "Total lotus Farmed"
 #~ msgstr ""
 
 #: src/components/block/Block.jsx:216
@@ -1933,7 +1933,7 @@ msgstr "Сачекај синхронизацију"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:30
-#~ msgid "WalletItem.spareWallet"
+#~ msgid "WalletItem.lotusWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:107
@@ -1959,7 +1959,7 @@ msgstr "Новчаници"
 #~ msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:84
-msgid "Want to earn more Spare? Add more plots to your farm."
+msgid "Want to earn more lotus? Add more plots to your farm."
 msgstr ""
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:53
@@ -1975,7 +1975,7 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Тежина је укупна додата сложеност свих блокова до овог, укључујући и њега"
 
 #: src/components/selectKey/SelectKey.tsx:77
-msgid "Welcome to Spare. Please log in with an existing key, or create a new key."
+msgid "Welcome to lotus. Please log in with an existing key, or create a new key."
 msgstr ""
 
 #: src/components/wallet/WalletAdd.tsx:35
@@ -2025,8 +2025,8 @@ msgstr "Имаш {0}% простора на мрежи, за израду бло
 #~ msgstr "You have {0}% of the space on the network, so farming a block will take {expectedTimeToWin} in expectation. Actual results may take 3-4 times longer this estimate. <0>Learn about Expected Value</0>"
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the Spare application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the Spare application as this version will stop working soon!"
+#~ msgid "You need to upgrade the lotus application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the lotus application as this version will stop working soon!"
 
 #: src/components/farm/overview/FarmOverview.tsx:24
 msgid "Your Farm Overview"
@@ -2089,8 +2089,8 @@ msgstr "синхронизација"
 msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} награде од блокова"
 
-#: src/components/farm/card/FarmCardTotalSpareFarmed.tsx:17
-msgid "{currencyCode} Total Spare Farmed"
+#: src/components/farm/card/FarmCardTotallotusFarmed.tsx:17
+msgid "{currencyCode} Total lotus Farmed"
 msgstr ""
 
 #: src/components/farm/card/FarmCardUserFees.tsx:17

@@ -15,13 +15,14 @@ dependencies = [
     "concurrent-log-handler==0.9.19",  # Concurrently log and rotate logs
     "cryptography==3.4.7",  # Python cryptography library for TLS - keyring conflict
     "keyring==23.0.1",  # Store keys in MacOS Keychain, Windows Credential Locker
-    "keyrings.cryptfile==1.3.4",  # Secure storage for keys on Linux (Will be replaced)
+    # Secure storage for keys on Linux (Will be replaced)
+    "keyrings.cryptfile==1.3.4",
     #  "keyrings.cryptfile==1.3.8",  # Secure storage for keys on Linux (Will be replaced)
     #  See https://github.com/frispete/keyrings.cryptfile/issues/15
     "PyYAML==5.4.1",  # Used for config file format
     "setproctitle==1.2.2",  # Gives the lotus processes readable names
     "sortedcontainers==2.3.0",  # For maintaining sorted mempools
-    "websockets==9.1",  # For use in wallet RPC and electron UI
+    "websockets==8.1.0",  # For use in wallet RPC and electron UI
     "click==7.1.2",  # For the CLI
     "dnspython==2.1.0",  # Query DNS seeds
 ]
@@ -42,10 +43,10 @@ dev_dependencies = [
 
 kwargs = dict(
     name="lotus-blockchain",
-    author="Mariano Sorgente",
-    author_email="paro@lotusnetwork.org",
+    author="Uncle Tom",
+    author_email="tom@lotuscoin.org",
     description="lotus blockchain full node, farmer, timelord, and wallet.",
-    url="https://lotusnetwork.org/",
+    url="https://lotuscoin.org/",
     license="Apache License",
     python_requires=">=3.7, <4",
     keywords="lotus blockchain node",
@@ -103,7 +104,7 @@ kwargs = dict(
         "lotus": ["pyinstaller.spec"],
         "lotus.wallet.puzzles": ["*.clvm", "*.clvm.hex"],
         "lotus.util": ["initial-*.yaml", "english.txt"],
-        "lotus.ssl": ["lotus_ca.crt", "lotus_ca.key", "dst_root_ca.pem"],
+        "lotus.ssl": ["chia_ca.crt", "chia_ca.key", "dst_root_ca.pem"],
         "mozilla-ca": ["cacert.pem"],
     },
     use_scm_version={"fallback_version": "unknown-no-.git-directory"},

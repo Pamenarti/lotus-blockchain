@@ -18,9 +18,9 @@ fi
 if [ "$(uname -m)" = "armv7l" ]; then
   echo ""
 	echo "WARNING:"
-	echo "The Lotus Blockchain requires a 64 bit OS and this is 32 bit armv7l"
+	echo "The lotus Blockchain requires a 64 bit OS and this is 32 bit armv7l"
 	echo "For more information, see"
-	echo "https://github.com/Lotus-Network/lotus-blockchain/wiki/Raspberry-Pi"
+	echo "https://github.com/lotus-Network/lotus-blockchain"
 	echo "Exiting."
 	exit 1
 fi
@@ -120,13 +120,8 @@ python -m pip install --extra-index-url https://pypi.chia.net/simple/ miniupnpc=
 python -m pip install -e . --extra-index-url https://pypi.chia.net/simple/
 
 echo ""
-echo "Lotus blockchain install.sh complete."
-echo "For assistance join us on Discord in the #testnet chat channel:"
-echo "https://discord.gg/TgJyxsEFFc"
-echo ""
-echo "Try the Quick Start Guide to running lotus-blockchain:"
-echo "https://github.com/Lotus-Network/lotus-blockchain/wiki/Quick-Start-Guide"
-echo ""
+echo "lotus blockchain install.sh complete."
+echo "For assistance join us on Twitter"
 echo "To install the GUI type 'sh install-gui.sh' after '. ./activate'."
 echo ""
-echo "Type '. ./activate' and then 'Lotus init' to begin."
+echo "Type '. ./activate' and then 'lotus init' to begin."

@@ -45,7 +45,7 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 fi
 
 electron-packager . lotus --asar.unpack="**/daemon/**" --platform=darwin \
---icon=src/assets/img/lotus.icns --overwrite --app-bundle-id=net.lotus.blockchain \
+--icon=src/assets/img/lotus.icns --overwrite --app-bundle-id=org.lotuscoin.blockchain \
 --appVersion=$lotus_INSTALLER_VERSION
 LAST_EXIT_CODE=$?
 if [ "$LAST_EXIT_CODE" -ne 0 ]; then
@@ -53,12 +53,10 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	exit $LAST_EXIT_CODE
 fi
 
-if [ "$NOTARIZE" ]; then
   electron-osx-sign lotus-darwin-x64/lotus.app --platform=darwin \
-  --hardened-runtime=true --provisioning-profile=lotusblockchain.provisionprofile \
-  --entitlements=entitlements.mac.plist --entitlements-inherit=entitlements.mac.plist \
+  --hardened-runtime=true --identity="${lotus_SIGNATURE}"   --entitlements=entitlements.mac.plist --entitlements-inherit=entitlements.mac.plist \
   --no-gatekeeper-assess
-fi
+  
 LAST_EXIT_CODE=$?
 if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	echo >&2 "electron-osx-sign failed!"
@@ -80,20 +78,19 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 fi
 
 if [ "$NOTARIZE" ]; then
-	echo "Notarize $DMG_NAME on ci"
-	cd final_installer || exit
-  notarize-cli --file=$DMG_NAME --bundle-id net.lotus.blockchain \
+echo "Notarize $DMG_NAME on ci"
+cd final_installer || exit
+notarize-cli --file=$DMG_NAME --bundle-id org.lotuscoin.blockchain \
 	--username "$APPLE_NOTARIZE_USERNAME" --password "$APPLE_NOTARIZE_PASSWORD"
-  echo "Notarization step complete"
+echo "Notarization step complete"
 else
 	echo "Not on ci or no secrets so skipping Notarize"
 fi
-
 # Notes on how to manually notarize
 #
 # Ask for username and password. password should be an app specific password.
 # Generate app specific password https://support.apple.com/en-us/HT204397
-# xcrun altool --notarize-app -f lotus-0.1.X.dmg --primary-bundle-id net.lotus.blockchain -u username -p password
+# xcrun altool --notarize-app -f lotus-0.1.X.dmg --primary-bundle-id org.lotus.blockchain -u username -p password
 # xcrun altool --notarize-app; -should return REQUEST-ID, use it in next command
 #
 # Wait until following command return a success message".

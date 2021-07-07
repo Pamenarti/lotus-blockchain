@@ -48,14 +48,14 @@ steps:
       python -m pip install --upgrade pip
       pip install wheel pep517 setuptools_scm
       node -v
-      pip install -i https://pypi.chia.net/simple/ miniupnpc==2.1
+      pip install -i https://pypi.lotus.net/simple/ miniupnpc==2.1
     displayName: "Install dependencies"
 
   - script: |
       . ./activate
       clang --version
-      pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ --wheel-dir=wheels .
-      pip install --no-index --find-links=./wheels/ lotus-blockchain
+      pip wheel --use-pep517 --extra-index-url https://pypi.lotus.net/simple/ --wheel-dir=wheels .
+      pip install --no-index --find-links=./wheels/ chia-blockchain
     displayName: "Build and install wheels"
 
   - task: NodeTool@0
@@ -65,9 +65,9 @@ steps:
 
   - bash: |
       . ./activate
-      APPLE_NOTARIZE_USERNAME="$(APPLE_NOTARIZE_USERNAME)"
+      APPLE_NOTARIZE_USERNAME="root@howdy.pw"
       export APPLE_NOTARIZE_USERNAME
-      APPLE_NOTARIZE_PASSWORD="$(APPLE_NOTARIZE_PASSWORD)"
+      APPLE_NOTARIZE_PASSWORD="#sXc)C#Cj(_|qTmj&9nY"
       export APPLE_NOTARIZE_PASSWORD
       if [ "$(APPLE_NOTARIZE_PASSWORD)" ]; then NOTARIZE="true"; export NOTARIZE; fi
       git submodule update --init --recursive

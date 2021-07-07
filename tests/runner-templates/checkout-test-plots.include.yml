@@ -1,7 +1,7 @@
     - name: Checkout test blocks and plots
       uses: actions/checkout@v2
       with:
-        repository: 'Lotus-Network/test-cache'
+        repository: 'lotus-Network/test-cache'
         path: '.lotus'
         ref: '0.26.0'
         fetch-depth: 1
