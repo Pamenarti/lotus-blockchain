@@ -10,14 +10,14 @@ git status
 Write-Output "   ---"
 Write-Output "curl miniupnpc"
 Write-Output "   ---"
-Invoke-WebRequest -Uri "https://pypi.chia.net/simple/miniupnpc/miniupnpc-2.1-cp37-cp37m-win_amd64.whl" -OutFile "miniupnpc-2.1-cp37-cp37m-win_amd64.whl"
+Invoke-WebRequest -Uri "https://pypi.lotus.net/simple/miniupnpc/miniupnpc-2.1-cp37-cp37m-win_amd64.whl" -OutFile "miniupnpc-2.1-cp37-cp37m-win_amd64.whl"
 Write-Output "Using win_amd64 python 3.7 wheel from https://github.com/miniupnp/miniupnp/pull/475 (2.2.0-RC1)"
 If ($LastExitCode -gt 0){
     Throw "Failed to download miniupnpc!"
 }
 else
 {
-    Set-Location -Path - -PassThru
+    Set-Location -Path "..\.." -PassThru
     Write-Output "miniupnpc download successful."
 }
 
@@ -33,21 +33,21 @@ pip install pyinstaller==4.2
 pip install setuptools_scm
 
 Write-Output "   ---"
-Write-Output "Get LOTUS_INSTALLER_VERSION"
+Write-Output "Get lotus_INSTALLER_VERSION"
 # The environment variable lotus_INSTALLER_VERSION needs to be defined
 $env:lotus_INSTALLER_VERSION = python .\build_scripts\installer-version.py -win
 
-if (-not (Test-Path env:LOTUS_INSTALLER_VERSION)) {
+if (-not (Test-Path env:lotus_INSTALLER_VERSION)) {
   $env:lotus_INSTALLER_VERSION = '0.0.0'
-  Write-Output "WARNING: No environment variable LOTUS_INSTALLER_VERSION set. Using 0.0.0"
+  Write-Output "WARNING: No environment variable lotus_INSTALLER_VERSION set. Using 0.0.0"
   }
-Write-Output "Lotus Version is: $env:LOTUS_INSTALLER_VERSION"
+Write-Output "lotus Version is: $env:lotus_INSTALLER_VERSION"
 Write-Output "   ---"
 
 Write-Output "   ---"
 Write-Output "Build lotus-blockchain wheels"
 Write-Output "   ---"
-pip wheel --use-pep517 --extra-index-url https://pypi.chia.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
+pip wheel --use-pep517 --extra-index-url https://pypi.lotus.net/simple/ -f . --wheel-dir=.\build_scripts\win_build .
 
 Write-Output "   ---"
 Write-Output "Install lotus-blockchain wheels into venv with pip"
@@ -95,7 +95,7 @@ If ($LastExitCode -gt 0){
 }
 
 Write-Output "   ---"
-Write-Output "Increase the stack for lotus command for (lotus plots create) chiapos limitations"
+Write-Output "Increase the stack for lotus command for (lotus plots create) lotuspos limitations"
 # editbin.exe needs to be in the path
 editbin.exe /STACK:8000000 daemon\lotus.exe
 Write-Output "   ---"

@@ -4,7 +4,7 @@ from pathlib import Path
 from typing import Dict, List
 
 from blspy import G1Element
-from lotuspos import Verifier
+from chiapos import Verifier
 
 from lotus.plotting.plot_tools import find_duplicate_plot_IDs, get_plot_filenames, load_plots, parse_plot_info
 from lotus.util.config import load_config

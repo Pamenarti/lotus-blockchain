@@ -6,21 +6,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
 "Language: vi_VN\n"
-"Project-Id-Version: spare-blockchain\n"
+"Project-Id-Version: lotus-blockchain\n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: 2021-05-17 17:54\n"
 "Last-Translator: \n"
 "Language-Team: Vietnamese\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Crowdin-Project: spare-blockchain\n"
+"X-Crowdin-Project: lotus-blockchain\n"
 "X-Crowdin-Project-ID: 440660\n"
 "X-Crowdin-Language: vi\n"
 "X-Crowdin-File: /main/src/locales/en-US/messages.po\n"
 "X-Crowdin-File-ID: 72\n"
 
 #: src/components/farm/FarmLatestBlockChallenges.tsx:39
-msgid "*Want to explore Spare's blocks further? Check out <0>Spare Explorer</0> built by an open source developer."
-msgstr "* Bạn muốn khám phá thêm về Spare Blockchain? Xem <0> Spare Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
+msgid "*Want to explore lotus's blocks further? Check out <0>lotus Explorer</0> built by an open source developer."
+msgstr "* Bạn muốn khám phá thêm về lotus Blockchain? Xem <0> lotus Explorer </0> được xây dựng bởi các nhà phát triển nguồn mở."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:94
 #~ msgid "0 automatically chooses bucket count"
@@ -36,8 +36,8 @@ msgstr "Harvester là một dịch vụ chạy trên một máy chứa các tệ
 
 #: src/electron/main.tsx:365
 #: src/electron/main.tsx:443
-msgid "About Spare Blockchain"
-msgstr "Về Spare Blockchain"
+msgid "About lotus Blockchain"
+msgstr "Về lotus Blockchain"
 
 #: src/components/trading/ViewOffer.jsx:85
 msgid "Accept"
@@ -187,8 +187,8 @@ msgid "Block VDF Iterations"
 msgstr "Khối VDF lặp lại"
 
 #: src/components/block/Block.jsx:311
-msgid "Block at height {0} in the Spare blockchain"
-msgstr "Khối tại height {0} trong Spare blockchain"
+msgid "Block at height {0} in the lotus blockchain"
+msgstr "Khối tại height {0} trong lotus blockchain"
 
 #: src/components/fullNode/FullNode.jsx:331
 #~ msgid "Block hash"
@@ -268,16 +268,16 @@ msgid "Chat on KeyBase"
 msgstr "Chat trên Keybase"
 
 #: src/electron/main.tsx:362
-msgid "Spare"
-msgstr "Spare"
+msgid "lotus"
+msgstr "lotus"
 
 #: src/electron/main.tsx:312
-msgid "Spare Blockchain Wiki"
-msgstr "Spare Blockchain Wiki"
+msgid "lotus Blockchain Wiki"
+msgstr "lotus Blockchain Wiki"
 
 #: src/components/wallet/Wallets.tsx:32
-msgid "Spare Wallet"
-msgstr "Ví Spare"
+msgid "lotus Wallet"
+msgstr "Ví lotus"
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:13
 msgid "Choose Number of Plots"
@@ -591,8 +591,8 @@ msgid "Edit"
 msgstr "Chỉnh sửa"
 
 #: src/components/wallet/WalletImport.tsx:67
-msgid "Enter the 24 word mnemonic that you have saved in order to restore your Spare wallet."
-msgstr "Nhập 24 từ ghi nhớ mà bạn đã lưu để khôi phục ví Spare của bạn."
+msgid "Enter the 24 word mnemonic that you have saved in order to restore your lotus wallet."
+msgstr "Nhập 24 từ ghi nhớ mà bạn đã lưu để khôi phục ví lotus của bạn."
 
 #: src/components/farm/FarmerStatus.tsx:30
 #: src/components/farm/FarmerStatus.tsx:31
@@ -605,8 +605,8 @@ msgid "Error"
 msgstr "Lỗi"
 
 #: src/components/wallet/standard/WalletStandard.tsx:292
-msgid "Error: Cannot send spare to coloured address. Please enter a spare address."
-msgstr "Lỗi: Không thể gửi spare đến địa chỉ coloured. Vui lòng nhập địa chỉ spare."
+msgid "Error: Cannot send lotus to coloured address. Please enter a lotus address."
+msgstr "Lỗi: Không thể gửi lotus đến địa chỉ coloured. Vui lòng nhập địa chỉ lotus."
 
 #: src/components/farm/card/FarmCardExpectedTimeToWin.tsx:32
 #: src/components/farm/card/FarmCardExpectedTimeToWin.tsx:34
@@ -659,7 +659,7 @@ msgid "Farmer is not running"
 msgstr "Farmer không hoạt động"
 
 #: src/components/farm/overview/FarmOverviewHero.tsx:27
-msgid "Farmers earn block rewards and transaction fees by committing spare space to the network to help secure transactions. This is where your farm will be once you add a plot. <0>Learn more</0>"
+msgid "Farmers earn block rewards and transaction fees by committing lotus space to the network to help secure transactions. This is where your farm will be once you add a plot. <0>Learn more</0>"
 msgstr "Các Farmer kiếm được phần thưởng khối và phí giao dịch bằng cách cung cấp không gian trống cho mạng để giúp giao dịch an toàn. Đây là nơi bạn farm sau khi bạn thêm một plot. <0> Tìm hiểu thêm </0>"
 
 #: src/components/farm/Farm.tsx:15
@@ -688,7 +688,7 @@ msgid "Fee"
 msgstr "Phí"
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
-#~ msgid "Fee (TSPARE)"
+#~ msgid "Fee (Tlotus)"
 #~ msgstr ""
 
 #: src/components/wallet/coloured/WalletColoured.tsx:420
@@ -1222,8 +1222,8 @@ msgid "Plots Passed Filter"
 msgstr "Plot đã lọc"
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:23
-msgid "Plots are allocated space on your hard drive used to farm and earn Spare. <0>Learn more</0>"
-msgstr "Plot được phân bổ không gian trên ổ cứng của bạn dùng để farm và thu về Spare. <0> Tìm hiểu thêm </0>"
+msgid "Plots are allocated space on your hard drive used to farm and earn lotus. <0>Learn more</0>"
+msgstr "Plot được phân bổ không gian trên ổ cứng của bạn dùng để farm và thu về lotus. <0> Tìm hiểu thêm </0>"
 
 #: src/components/plot/queue/PlotQueueIndicator.tsx:21
 msgid "Plotting"
@@ -1544,8 +1544,8 @@ msgstr "Chi tiêu thời gian khoảng (số khối): {thời gian khoảng các
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:415
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:466
-msgid "Spending Limit (spare per interval): {0}"
-msgstr "Giới hạn Chi tiêu (spare cho mỗi khoảng thời gian): {0}"
+msgid "Spending Limit (lotus per interval): {0}"
+msgstr "Giới hạn Chi tiêu (lotus cho mỗi khoảng thời gian): {0}"
 
 #: src/components/fullNode/FullNode.jsx:94
 msgid "State"
@@ -1592,8 +1592,8 @@ msgstr "Tình trạng:"
 #~ msgstr "Sub Block Height"
 
 #: src/components/block/Block.jsx:338
-#~ msgid "Sub Block at height {0} in the Spare blockchain"
-#~ msgstr "Sub Block at height {0} in the Spare blockchain"
+#~ msgid "Sub Block at height {0} in the lotus blockchain"
+#~ msgstr "Sub Block at height {0} in the lotus blockchain"
 
 #: src/components/wallet/rateLimited/WalletRateLimited.jsx:357
 msgid "Submit"
@@ -1614,23 +1614,23 @@ msgid "Syncing {progress}/{tip}"
 msgstr "Đang đồng bộ {progress}{tip}"
 
 #: src/components/farm/card/FarmCardBlockRewards.tsx:15
-#~ msgid "TSPARE Block Rewards"
+#~ msgid "Tlotus Block Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardCoinbaseRewards.tsx:12
-#~ msgid "TSPARE Farming Rewards"
+#~ msgid "Tlotus Farming Rewards"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardFeesReward.tsx:12
-#~ msgid "TSPARE Fees Collected"
+#~ msgid "Tlotus Fees Collected"
 #~ msgstr ""
 
 #: src/components/farm/card/FarmCardUserFees.tsx:12
-#~ msgid "TSPARE User Fees"
-#~ msgstr "TSPARE User Fees"
+#~ msgid "Tlotus User Fees"
+#~ msgstr "Tlotus User Fees"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:15
-#~ msgid "TSPARE User Transaction Fees"
+#~ msgid "Tlotus User Transaction Fees"
 #~ msgstr ""
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:18
@@ -1693,8 +1693,8 @@ msgid "This feature is available only from the GUI."
 msgstr "Tính năng này chỉ khả dụng trên GUI."
 
 #: src/components/wallet/standard/WalletStandard.tsx:201
-msgid "This is the amount of Spare that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and Spare that you have just spent but is not yet in the blockchain."
-msgstr "Đây là số lượng Spare mà bạn hiện có thể sử dụng để thực hiện các giao dịch. Nó không bao gồm phần thưởng farm đang chờ xử lý, các giao dịch đến đang chờ xử lý và Spare mà bạn vừa chi tiêu nhưng chưa có trong blockchain."
+msgid "This is the amount of lotus that you can currently use to make transactions. It does not include pending farming rewards, pending incoming transactions, and lotus that you have just spent but is not yet in the blockchain."
+msgstr "Đây là số lượng lotus mà bạn hiện có thể sử dụng để thực hiện các giao dịch. Nó không bao gồm phần thưởng farm đang chờ xử lý, các giao dịch đến đang chờ xử lý và lotus mà bạn vừa chi tiêu nhưng chưa có trong blockchain."
 
 #: src/components/wallet/standard/WalletStandard.tsx:228
 msgid "This is the pending change, which are change coins which you have sent to yourself, but have not been confirmed yet."
@@ -1713,8 +1713,8 @@ msgid "This is the time the block was created by the farmer, which is before it 
 msgstr "Đây là thời gian khối được tạo ra bởi farmer, trước khi nó được hoàn thiện với một bằng chứng về thời gian"
 
 #: src/components/wallet/standard/WalletStandard.tsx:195
-msgid "This is the total amount of spare in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
-msgstr "Đây là tổng lượng SPARE trong chuỗi khối ở khối phụ cao nhất hiện tại được kiểm soát bởi các khóa riêng của bạn. Nó bao gồm phần thưởng farm bị đóng băng, nhưng không phải là các giao dịch đến và đi đang chờ xử lý."
+msgid "This is the total amount of lotus in the blockchain at the current peak sub block that is controlled by your private keys. It includes frozen farming rewards, but not pending incoming and outgoing transactions."
+msgstr "Đây là tổng lượng lotus trong chuỗi khối ở khối phụ cao nhất hiện tại được kiểm soát bởi các khóa riêng của bạn. Nó bao gồm phần thưởng farm bị đóng băng, nhưng không phải là các giao dịch đến và đi đang chờ xử lý."
 
 #: src/components/wallet/standard/WalletStandard.tsx:218
 msgid "This is the total balance + pending balance: it is what your balance will be after all pending transactions are confirmed."
@@ -1741,8 +1741,8 @@ msgid "This trade was included on blockchain at this block height"
 msgstr "Giao dịch này đã được đưa vào blockchain ở chiều cao khối này"
 
 #: src/components/app/AppTimeBombAlert.tsx:11
-msgid "This version of Spare is no longer compatible with the blockchain and can not safely farm."
-msgstr "Phiên bản Spare này không còn tương thích với blockchain và không thể farm một cách an toàn."
+msgid "This version of lotus is no longer compatible with the blockchain and can not safely farm."
+msgstr "Phiên bản lotus này không còn tương thích với blockchain và không thể farm một cách an toàn."
 
 #: src/components/fullNode/FullNode.jsx:86
 msgid "Time Created"
@@ -1766,8 +1766,8 @@ msgstr "Đến"
 msgid "Total Balance"
 msgstr "Tổng số dư"
 
-#: src/components/farm/card/FarmCardTotalSpareFarmed.tsx:15
-#~ msgid "Total Spare Farmed"
+#: src/components/farm/card/FarmCardTotallotusFarmed.tsx:15
+#~ msgid "Total lotus Farmed"
 #~ msgstr ""
 
 #: src/components/fullNode/FullNode.jsx:191
@@ -1897,7 +1897,7 @@ msgstr "Chờ đồng bộ hóa"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:30
-#~ msgid "WalletItem.spareWallet"
+#~ msgid "WalletItem.lotusWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:48
@@ -1930,8 +1930,8 @@ msgstr "Wallets"
 #~ msgstr ""
 
 #: src/components/plot/overview/PlotOverviewPlots.tsx:84
-msgid "Want to earn more Spare? Add more plots to your farm."
-msgstr "Muốn thêm Spare? Thêm nhiều plot vào farm của bạn."
+msgid "Want to earn more lotus? Add more plots to your farm."
+msgstr "Muốn thêm lotus? Thêm nhiều plot vào farm của bạn."
 
 #: src/components/plot/add/PlotAddNumberOfPlots.tsx:53
 msgid "Want to have a delay before the next plot starts?"
@@ -1946,8 +1946,8 @@ msgid "Weight is the total added difficulty of all sub blocks up to and includin
 msgstr "Trọng lượng là tổng độ khó cộng thêm của tất cả các khối phụ lên đến và bao gồm khối này"
 
 #: src/components/selectKey/SelectKey.tsx:77
-msgid "Welcome to Spare. Please log in with an existing key, or create a new key."
-msgstr "Chào mừng đến với Spare. Vui lòng đăng nhập bằng khóa hiện có hoặc tạo khóa mới."
+msgid "Welcome to lotus. Please log in with an existing key, or create a new key."
+msgstr "Chào mừng đến với lotus. Vui lòng đăng nhập bằng khóa hiện có hoặc tạo khóa mới."
 
 #: src/components/wallet/WalletAdd.tsx:35
 msgid "Welcome! The following words are used for your wallet backup. Without them, you will lose access to your wallet, keep them safe! Write down each word along with the order number next to them. (Order is important)"
@@ -1996,8 +1996,8 @@ msgstr "Bạn chiếm {0}% dung lượng của mạng lưới, vì vậy để �
 #~ msgstr "You have {0}% of the space on the network, so farming a block will take {expectedTimeToWin} in expectation. Actual results may take 3-4 times longer this estimate. <0>Learn about Expected Value</0>"
 
 #: src/components/app/AppTimeBomb.tsx:28
-#~ msgid "You need to upgrade the Spare application as this version will stop working soon!"
-#~ msgstr "You need to upgrade the Spare application as this version will stop working soon!"
+#~ msgid "You need to upgrade the lotus application as this version will stop working soon!"
+#~ msgstr "You need to upgrade the lotus application as this version will stop working soon!"
 
 #: src/components/farm/overview/FarmOverview.tsx:24
 msgid "Your Farm Overview"
@@ -2060,9 +2060,9 @@ msgstr "đang đồng bộ"
 msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} phần thưởng khối"
 
-#: src/components/farm/card/FarmCardTotalSpareFarmed.tsx:17
-msgid "{currencyCode} Total Spare Farmed"
-msgstr "{currencyCode} Tổng số Spare thu được"
+#: src/components/farm/card/FarmCardTotallotusFarmed.tsx:17
+msgid "{currencyCode} Total lotus Farmed"
+msgstr "{currencyCode} Tổng số lotus thu được"
 
 #: src/components/farm/card/FarmCardUserFees.tsx:17
 msgid "{currencyCode} User Transaction Fees"

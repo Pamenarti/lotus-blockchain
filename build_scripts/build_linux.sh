@@ -42,6 +42,7 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 	echo >&2 "pyinstaller failed!"
 	exit $LAST_EXIT_CODE
 fi
+echo "HIIIIIIIIIIIIIII 2"
 
 cp -r dist/daemon ../lotus-blockchain-gui
 cd .. || exit
@@ -58,7 +59,7 @@ if [ "$LAST_EXIT_CODE" -ne 0 ]; then
 fi
 
 electron-packager . lotus-blockchain --asar.unpack="**/daemon/**" --platform=linux \
---icon=src/assets/img/lotus.icns --overwrite --app-bundle-id=net.lotus.blockchain \
+--icon=src/assets/img/lotus.ico --overwrite --app-bundle-id=net.lotus.blockchain \
 --appVersion=$lotus_INSTALLER_VERSION
 LAST_EXIT_CODE=$?
 if [ "$LAST_EXIT_CODE" -ne 0 ]; then

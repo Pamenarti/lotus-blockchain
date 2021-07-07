@@ -98,6 +98,6 @@ else
 fi
 
 echo ""
-echo "Lotus blockchain install-gui.sh completed."
+echo "lotus blockchain install-gui.sh completed."
 echo ""
 echo "Type 'cd lotus-blockchain-gui' and then 'npm run electron &' to start the GUI."

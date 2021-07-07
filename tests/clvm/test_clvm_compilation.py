@@ -7,39 +7,39 @@ from lotus.types.blockchain_format.program import Program, SerializedProgram
 
 wallet_program_files = set(
     [
-        "lotus/wallet/puzzles/calculate_synthetic_public_key.clvm",
-        "lotus/wallet/puzzles/cc.clvm",
-        "lotus/wallet/puzzles/lotuslisp_deserialisation.clvm",
-        "lotus/wallet/puzzles/rom_bootstrap_generator.clvm",
-        "lotus/wallet/puzzles/generator_for_single_coin.clvm",
-        "lotus/wallet/puzzles/genesis-by-coin-id-with-0.clvm",
-        "lotus/wallet/puzzles/genesis-by-puzzle-hash-with-0.clvm",
-        "lotus/wallet/puzzles/lock.inner.puzzle.clvm",
-        "lotus/wallet/puzzles/p2_conditions.clvm",
-        "lotus/wallet/puzzles/p2_delegated_conditions.clvm",
-        "lotus/wallet/puzzles/p2_delegated_puzzle.clvm",
-        "lotus/wallet/puzzles/p2_delegated_puzzle_or_hidden_puzzle.clvm",
-        "lotus/wallet/puzzles/p2_m_of_n_delegate_direct.clvm",
-        "lotus/wallet/puzzles/p2_puzzle_hash.clvm",
-        "lotus/wallet/puzzles/rl_aggregation.clvm",
-        "lotus/wallet/puzzles/rl.clvm",
-        "lotus/wallet/puzzles/sha256tree_module.clvm",
-        "lotus/wallet/puzzles/singleton_top_layer.clvm",
-        "lotus/wallet/puzzles/did_innerpuz.clvm",
-        "lotus/wallet/puzzles/decompress_puzzle.clvm",
-        "lotus/wallet/puzzles/decompress_coin_solution_entry_with_prefix.clvm",
-        "lotus/wallet/puzzles/decompress_coin_solution_entry.clvm",
-        "lotus/wallet/puzzles/block_program_zero.clvm",
-        "lotus/wallet/puzzles/test_generator_deserialize.clvm",
-        "lotus/wallet/puzzles/test_multiple_generator_input_arguments.clvm",
+        "chia/wallet/puzzles/calculate_synthetic_public_key.clvm",
+        "chia/wallet/puzzles/cc.clvm",
+        "chia/wallet/puzzles/chialisp_deserialisation.clvm",
+        "chia/wallet/puzzles/rom_bootstrap_generator.clvm",
+        "chia/wallet/puzzles/generator_for_single_coin.clvm",
+        "chia/wallet/puzzles/genesis-by-coin-id-with-0.clvm",
+        "chia/wallet/puzzles/genesis-by-puzzle-hash-with-0.clvm",
+        "chia/wallet/puzzles/lock.inner.puzzle.clvm",
+        "chia/wallet/puzzles/p2_conditions.clvm",
+        "chia/wallet/puzzles/p2_delegated_conditions.clvm",
+        "chia/wallet/puzzles/p2_delegated_puzzle.clvm",
+        "chia/wallet/puzzles/p2_delegated_puzzle_or_hidden_puzzle.clvm",
+        "chia/wallet/puzzles/p2_m_of_n_delegate_direct.clvm",
+        "chia/wallet/puzzles/p2_puzzle_hash.clvm",
+        "chia/wallet/puzzles/rl_aggregation.clvm",
+        "chia/wallet/puzzles/rl.clvm",
+        "chia/wallet/puzzles/sha256tree_module.clvm",
+        "chia/wallet/puzzles/singleton_top_layer.clvm",
+        "chia/wallet/puzzles/did_innerpuz.clvm",
+        "chia/wallet/puzzles/decompress_puzzle.clvm",
+        "chia/wallet/puzzles/decompress_coin_solution_entry_with_prefix.clvm",
+        "chia/wallet/puzzles/decompress_coin_solution_entry.clvm",
+        "chia/wallet/puzzles/block_program_zero.clvm",
+        "chia/wallet/puzzles/test_generator_deserialize.clvm",
+        "chia/wallet/puzzles/test_multiple_generator_input_arguments.clvm",
     ]
 )
 
 clvm_include_files = set(
-    ["lotus/wallet/puzzles/create-lock-puzzlehash.clvm", "lotus/wallet/puzzles/condition_codes.clvm"]
+    ["chia/wallet/puzzles/create-lock-puzzlehash.clvm", "chia/wallet/puzzles/condition_codes.clvm"]
 )
 
-CLVM_PROGRAM_ROOT = "lotus/wallet/puzzles"
+CLVM_PROGRAM_ROOT = "chia/wallet/puzzles"
 
 
 def list_files(dir, glob):
@@ -66,7 +66,7 @@ class TestClvmCompilation(TestCase):
 
     def test_all_programs_listed(self):
         """
-        Checks to see if a new .clvm file was added to lotus/wallet/puzzles, but not added to `wallet_program_files`
+        Checks to see if a new .clvm file was added to chia/wallet/puzzles, but not added to `wallet_program_files`
         """
         existing_files = list_files(CLVM_PROGRAM_ROOT, "*.clvm")
         existing_file_paths = set([Path(x).relative_to(CLVM_PROGRAM_ROOT) for x in existing_files])

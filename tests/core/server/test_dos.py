@@ -11,7 +11,7 @@ from lotus.protocols.protocol_message_types import ProtocolMessageTypes
 from lotus.server.outbound_message import make_msg
 from lotus.server.rate_limits import RateLimiter
 from lotus.server.server import ssl_context_for_client
-from lotus.server.ws_connection import WSlotusConnection
+from lotus.server.ws_connection import WSChiaConnection
 from lotus.types.peer_info import PeerInfo
 from lotus.util.ints import uint16, uint64
 from tests.setup_nodes import self_hostname, setup_simulators_and_wallets
@@ -60,7 +60,7 @@ class TestDos:
         url = f"wss://{self_hostname}:{server_1._port}/ws"
 
         ssl_context = ssl_context_for_client(
-            server_2.lotus_ca_crt_path, server_2.lotus_ca_key_path, server_2.p2p_crt_path, server_2.p2p_key_path
+            server_2.chia_ca_crt_path, server_2.chia_ca_key_path, server_2.p2p_crt_path, server_2.p2p_key_path
         )
         ws = await session.ws_connect(
             url, autoclose=True, autoping=True, heartbeat=60, ssl=ssl_context, max_msg_size=100 * 1024 * 1024
@@ -109,7 +109,7 @@ class TestDos:
         url = f"wss://{self_hostname}:{server_1._port}/ws"
 
         ssl_context = ssl_context_for_client(
-            server_2.lotus_ca_crt_path, server_2.lotus_ca_key_path, server_2.p2p_crt_path, server_2.p2p_key_path
+            server_2.chia_ca_crt_path, server_2.chia_ca_key_path, server_2.p2p_crt_path, server_2.p2p_key_path
         )
         ws = await session.ws_connect(
             url, autoclose=True, autoping=True, heartbeat=60, ssl=ssl_context, max_msg_size=100 * 1024 * 1024
@@ -153,8 +153,8 @@ class TestDos:
 
         assert len(server_1.all_connections) == 1
 
-        ws_con: WSlotusConnection = list(server_1.all_connections.values())[0]
-        ws_con_2: WSlotusConnection = list(server_2.all_connections.values())[0]
+        ws_con: WSChiaConnection = list(server_1.all_connections.values())[0]
+        ws_con_2: WSChiaConnection = list(server_2.all_connections.values())[0]
 
         ws_con.peer_host = "1.2.3.4"
         ws_con_2.peer_host = "1.2.3.4"
@@ -206,8 +206,8 @@ class TestDos:
 
         assert len(server_1.all_connections) == 1
 
-        ws_con: WSlotusConnection = list(server_1.all_connections.values())[0]
-        ws_con_2: WSlotusConnection = list(server_2.all_connections.values())[0]
+        ws_con: WSChiaConnection = list(server_1.all_connections.values())[0]
+        ws_con_2: WSChiaConnection = list(server_2.all_connections.values())[0]
 
         ws_con.peer_host = "1.2.3.4"
         ws_con_2.peer_host = "1.2.3.4"
@@ -255,8 +255,8 @@ class TestDos:
 
         assert len(server_1.all_connections) == 1
 
-        ws_con: WSlotusConnection = list(server_1.all_connections.values())[0]
-        ws_con_2: WSlotusConnection = list(server_2.all_connections.values())[0]
+        ws_con: WSChiaConnection = list(server_1.all_connections.values())[0]
+        ws_con_2: WSChiaConnection = list(server_2.all_connections.values())[0]
 
         ws_con.peer_host = "1.2.3.4"
         ws_con_2.peer_host = "1.2.3.4"
