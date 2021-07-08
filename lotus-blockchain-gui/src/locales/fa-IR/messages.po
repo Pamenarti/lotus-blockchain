@@ -78,10 +78,6 @@ msgstr "افزودن پوشه حاوی پلات"
 msgid "Add Plot to Queue"
 msgstr "افزودن پلات به صف"
 
-#: src/components/plot/overview/PlotOverviewHero.tsx:43
-#~ msgid "Add lotus plot and start mining on both networks simultaneously"
-#~ msgstr ""
-
 #: src/components/wallet/Wallets.tsx:86
 msgid "Add Wallet"
 msgstr "افزودن کیف پول"
@@ -96,6 +92,10 @@ msgstr "افزودن کیف پول"
 #: src/components/plot/PlotAddDirectoryDialog.tsx:40
 #~ msgid "Add a plot"
 #~ msgstr "افزودن پلات"
+
+#: src/components/plot/overview/PlotOverviewHero.tsx:43
+#~ msgid "Add lotus plot and start mining on both networks simultaneously"
+#~ msgstr ""
 
 #: src/components/plot/overview/PlotOverviewHero.tsx:43
 msgid "Add old plots and start mining on both networks simultaneously"
@@ -1534,18 +1534,6 @@ msgstr "ورود"
 msgid "Skips adding a final directory to harvester for farming"
 msgstr "از افزودن پوشه نهایی به برداشت گر(harvester) برای مزرعه داری، صرفه نظر شود"
 
-#: src/electron/main.tsx:357
-msgid "lotus"
-msgstr ""
-
-#: src/electron/main.tsx:313
-msgid "lotus Blockchain Wiki"
-msgstr ""
-
-#: src/components/wallet/Wallets.tsx:35
-msgid "lotus Wallet"
-msgstr ""
-
 #: src/electron/main.tsx:404
 msgid "Speech"
 msgstr "صحبت کردن"
@@ -1648,26 +1636,6 @@ msgstr ""
 #: src/components/fullNode/FullNode.jsx:107
 #~ msgid "Syncing {progress}/{tip}"
 #~ msgstr "همگام‌سازی {progress}/{tip}"
-
-#: src/components/farm/card/FarmCardBlockRewards.tsx:15
-#~ msgid "Tlotus Block Rewards"
-#~ msgstr ""
-
-#: src/components/farm/card/FarmCardCoinbaseRewards.tsx:12
-#~ msgid "Tlotus Farming Rewards"
-#~ msgstr ""
-
-#: src/components/farm/card/FarmCardFeesReward.tsx:12
-#~ msgid "Tlotus Fees Collected"
-#~ msgstr ""
-
-#: src/components/farm/card/FarmCardUserFees.tsx:12
-#~ msgid "Tlotus User Fees"
-#~ msgstr "Tlotus User Fees"
-
-#: src/components/farm/card/FarmCardUserFees.tsx:15
-#~ msgid "Tlotus User Transaction Fees"
-#~ msgstr ""
 
 #: src/components/plot/add/PlotAddChooseSize.tsx:18
 #~ msgid "Temporary files are created during the plotting process which exceeds the size of the final plot files. Make sure you have enough space. <0>Learn more</0>"
@@ -1796,6 +1764,26 @@ msgstr "زمان ایجاد"
 msgid "Timestamp"
 msgstr "برچسب زمان"
 
+#: src/components/farm/card/FarmCardBlockRewards.tsx:15
+#~ msgid "Tlotus Block Rewards"
+#~ msgstr ""
+
+#: src/components/farm/card/FarmCardCoinbaseRewards.tsx:12
+#~ msgid "Tlotus Farming Rewards"
+#~ msgstr ""
+
+#: src/components/farm/card/FarmCardFeesReward.tsx:12
+#~ msgid "Tlotus Fees Collected"
+#~ msgstr ""
+
+#: src/components/farm/card/FarmCardUserFees.tsx:12
+#~ msgid "Tlotus User Fees"
+#~ msgstr "Tlotus User Fees"
+
+#: src/components/farm/card/FarmCardUserFees.tsx:15
+#~ msgid "Tlotus User Transaction Fees"
+#~ msgstr ""
+
 #: src/components/wallet/WalletHistory.tsx:32
 msgid "To"
 msgstr "به"
@@ -1822,10 +1810,6 @@ msgstr "اندازه کل پلات ها:"
 msgid "Total Size of Plots"
 msgstr "جمع اندازه پلات ها"
 
-#: src/components/farm/card/FarmCardTotallotusFarmed.tsx:15
-#~ msgid "Total lotus Farmed"
-#~ msgstr ""
-
 #: src/components/block/Block.jsx:216
 msgid "Total VDF Iterations"
 msgstr "کل تکرار های VDF"
@@ -1833,6 +1817,10 @@ msgstr "کل تکرار های VDF"
 #: src/components/fullNode/FullNode.jsx:202
 msgid "Total iterations since the start of the blockchain"
 msgstr "کل تکرارها از زمان شروع زنجیره بلوکی"
+
+#: src/components/farm/card/FarmCardTotallotusFarmed.tsx:15
+#~ msgid "Total lotus Farmed"
+#~ msgstr ""
 
 #: src/components/dashboard/DashboardSideBar.tsx:27
 #~ msgid "Trade"
@@ -1940,12 +1928,12 @@ msgstr "در انتظار همگام سازی"
 #~ msgid "WalletItem.didWallet"
 #~ msgstr ""
 
-#: src/components/wallet/Wallets.tsx:41
-#~ msgid "WalletItem.rlWallet"
-#~ msgstr ""
-
 #: src/components/wallet/Wallets.tsx:30
 #~ msgid "WalletItem.lotusWallet"
+#~ msgstr ""
+
+#: src/components/wallet/Wallets.tsx:41
+#~ msgid "WalletItem.rlWallet"
 #~ msgstr ""
 
 #: src/components/wallet/Wallets.tsx:107
@@ -2074,6 +2062,18 @@ msgstr "اتصال ها:"
 msgid "height:"
 msgstr "ارتفاع:"
 
+#: src/electron/main.tsx:357
+msgid "lotus"
+msgstr ""
+
+#: src/electron/main.tsx:313
+msgid "lotus Blockchain Wiki"
+msgstr ""
+
+#: src/components/wallet/Wallets.tsx:35
+msgid "lotus Wallet"
+msgstr ""
+
 #: src/components/wallet/Wallets.tsx:112
 msgid "not synced"
 msgstr "همگام‌سازی نشده"
@@ -2105,6 +2105,7 @@ msgstr "در حال همگام سازی"
 msgid "{currencyCode} Block Rewards"
 msgstr "{currencyCode} جایزه بلوک"
 
+#: src/components/farm/card/FarmCardTotalLotusFarmed.tsx:17
 #: src/components/farm/card/FarmCardTotallotusFarmed.tsx:17
 msgid "{currencyCode} Total lotus Farmed"
 msgstr ""
