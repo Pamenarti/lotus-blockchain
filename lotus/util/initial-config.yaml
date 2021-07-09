@@ -3,7 +3,7 @@ min_mainnet_k_size: 32
 # Send a ping to all peers after ping_interval seconds
 ping_interval: 120
 self_hostname: &self_hostname "localhost"
-daemon_port: 59400
+daemon_port: 9999
 inbound_rate_limit_percent: 100
 outbound_rate_limit_percent: 30
 
@@ -11,83 +11,19 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: 0e7dbcaa707b4a75ef62edad42116c2d09e5d66fdcb3a09c2d0262bc50b8fee1
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "851e62a6fd8bc40765f5340648743bf6439e752409217ffffc3f9c1461207083"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "851e62a6fd8bc40765f5340648743bf6439e752409217ffffc3f9c1461207083"
+      GENESIS_CHALLENGE: lotus1d9zfw2q2pkl9yz7lr4nu22792tkaqthavv395z9nxlz2f395pdpqc8cfag
     testnet0:
       MIN_PLOT_SIZE: 18
-      GENESIS_CHALLENGE: e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
-      NETWORK_TYPE: 1
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
-    testnet2:
-      MIN_PLOT_SIZE: 18
-      GENESIS_CHALLENGE: ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad
-      NETWORK_TYPE: 1
-      INITIAL_FREEZE_PERIOD: 100
-      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc"
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af"
-    testnet3:
-      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: ca7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
-      MIN_PLOT_SIZE: 18
-      NETWORK_TYPE: 1
-      MEMPOOL_BLOCK_BUFFER: 10
-    testnet4:
-      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: dd7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
-      INITIAL_FREEZE_END_TIMESTAMP: 1618776900  # Sun Apr 18 2021 16:15:00 GMT-0400 (Eastern Daylight Time)
-      MIN_PLOT_SIZE: 18
-      NETWORK_TYPE: 1
-      MEMPOOL_BLOCK_BUFFER: 10
-      EPOCH_BLOCKS: 768
-      DIFFICULTY_STARTING: 30
-    testnet5:
-      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: ee7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
-      INITIAL_FREEZE_END_TIMESTAMP: 1618869600  # Mon Apr 19 2021 18:00:00 GMT-0400 (Eastern Daylight Time)
-      MIN_PLOT_SIZE: 18
-      NETWORK_TYPE: 1
-      MEMPOOL_BLOCK_BUFFER: 10
-      EPOCH_BLOCKS: 768
-      DIFFICULTY_STARTING: 30
-    testnet7:
-      DIFFICULTY_CONSTANT_FACTOR: 10052721566054
-      GENESIS_CHALLENGE: 117816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015af
-      GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: 3d8765d3a597ec1d99663f6c9816d915b9f68613ac94009884c4addaefcce6af
-      GENESIS_PRE_FARM_POOL_PUZZLE_HASH: d23da14695a188ae5708dd152263c4db883eb27edeb936178d4d988b8f3ce5fc
-      INITIAL_FREEZE_END_TIMESTAMP: 1619661600  # Wed Apr 28 2021 22:00:00 GMT-0400 (Eastern Daylight Time)
-      MIN_PLOT_SIZE: 18
-      NETWORK_TYPE: 1
-      MEMPOOL_BLOCK_BUFFER: 10
-      EPOCH_BLOCKS: 768
-      DIFFICULTY_STARTING: 30
+      GENESIS_CHALLENGE: lotus1d9zfw2q2pkl9yz7lr4nu22792tkaqthavv395z9nxlz2f395pdpqc8cfag
   config:
     mainnet:
       address_prefix: "lotus"
     testnet0:
       address_prefix: "tlotus"
-    testnet1:
-      address_prefix: "tlotus"
-    testnet2:
-      address_prefix: "tlotus"
-    testnet3:
-      address_prefix: "tlotus"
-    testnet4:
-      address_prefix: "tlotus"
-    testnet7:
-      address_prefix: "tlotus"
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.lotus.farm/notify/mainnet_alert.txt
-lotus_ALERTS_PUBKEY: 89b7fd87cb56e926ecefb879a29aae308be01f31980569f6a75a69d2a9a69daefd71fb778d865f7c50d6c967e3025937
+lotus_ALERTS_PUBKEY: aba19a69d9183fd7b7165eec91f8ca981d78d107b23d8fcbfcc53b2b720088aaed7422ecf04fd826de5e714c5ce8a2da
 
 # public ssl ca is included in source code
 # Private ssl ca is used for trusted connections between machines user owns
@@ -297,7 +233,7 @@ full_node:
   # List of trusted DNS seeders to bootstrap from.
   # If you modify this, please change the hardcode as well from FullNode.set_server()
   dns_servers:
-    - "dns-introducer-lotus.lotuscoin.org"
+    - "93.114.130.29"
   farmer_peer:
       host: *self_hostname
       port: 9447
@@ -305,8 +241,8 @@ full_node:
       host: *self_hostname
       port: 9446
   introducer_peer:
-      host: introducer.lotuscoin.org  # lotus AWS introducer IPv4/IPv6
-      port: 9444
+      host: 93.114.130.29  # lotus AWS introducer IPv4/IPv6
+      port: 21111
   wallet_peer:
     host: *self_hostname
     port: 9449
@@ -387,7 +323,7 @@ wallet:
   recent_peer_threshold: 6000
 
   introducer_peer:
-    host: introducer.lotuscoin.org # lotus AWS introducer IPv4/IPv6
+    host: 93.114.130.29 # lotus AWS introducer IPv4/IPv6
     port: 9444
 
   ssl:
