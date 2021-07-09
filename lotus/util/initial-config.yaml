@@ -11,7 +11,7 @@ network_overrides: &network_overrides
   constants:
     mainnet:
       NETWORK_TYPE: 0
-      GENESIS_CHALLENGE: 9b9ffca948750d8b41ac755da213461e9d2253ec7bfce80695d78f7fe7d55112
+      GENESIS_CHALLENGE: lotus1d9zfw2q2pkl9yz7lr4nu22792tkaqthavv395z9nxlz2f395pdpqc8cfag
       GENESIS_PRE_FARM_POOL_PUZZLE_HASH: "e8e245e2e6536e17fd7cbc2e3bd90de06f55362ee3c84cea5a68391e5bad7ef6"
       GENESIS_PRE_FARM_FARMER_PUZZLE_HASH: "e8e245e2e6536e17fd7cbc2e3bd90de06f55362ee3c84cea5a68391e5bad7ef6"
     testnet0:
@@ -27,7 +27,7 @@ network_overrides: &network_overrides
 
 selected_network: &selected_network "mainnet"
 ALERTS_URL: https://download.chia.org/notify/mainnet_alert.txt
-FLAX_ALERTS_PUBKEY: a88dc9b53e21088dcd53347eda53b533aec7cd5ff267c3968b1dfc0dc132e39575cf401f0d6bc9952404dbbfc30731c5
+lotus_ALERTS_PUBKEY: a88dc9b53e21088dcd53347eda53b533aec7cd5ff267c3968b1dfc0dc132e39575cf401f0d6bc9952404dbbfc30731c5
 
 # public ssl ca is included in source code
 # Private ssl ca is used for trusted connections between machines user owns
@@ -35,9 +35,9 @@ private_ssl_ca:
   crt: "config/ssl/ca/private_ca.crt"
   key: "config/ssl/ca/private_ca.key"
 
-flax_ssl_ca:
-  crt: "config/ssl/ca/flax_ca.crt"
-  key: "config/ssl/ca/flax_ca.key"
+lotus_ssl_ca:
+  crt: "config/ssl/ca/lotus_ca.crt"
+  key: "config/ssl/ca/lotus_ca.key"
 
 
 daemon_ssl:
@@ -80,9 +80,9 @@ harvester:
     crt: "config/ssl/ca/private_ca.crt"
     key: "config/ssl/ca/private_ca.key"
 
-  flax_ssl_ca:
-    crt: "config/ssl/ca/flax_ca.crt"
-    key: "config/ssl/ca/flax_ca.key"
+  lotus_ssl_ca:
+    crt: "config/ssl/ca/lotus_ca.crt"
+    key: "config/ssl/ca/lotus_ca.key"
 
 pool:
   # Replace this with a real puzzle hash
@@ -231,7 +231,7 @@ full_node:
   weight_proof_timeout: 360
 
   # when enabled, the full node will print a pstats profile to the root_dir/profile every second
-  # analyze with flax/utils/profiler.py
+  # analyze with lotus/utils/profiler.py
   enable_profiler: False
 
   # List of trusted DNS seeders to bootstrap from.
@@ -245,7 +245,7 @@ full_node:
       host: *self_hostname
       port: 6886
   introducer_peer:
-      host: 93.114.130.29  # Flax AWS introducer IPv4/IPv6
+      host: 93.114.130.29  # lotus AWS introducer IPv4/IPv6
       port: 6888
   wallet_peer:
     host: *self_hostname
@@ -327,7 +327,7 @@ wallet:
   recent_peer_threshold: 6000
 
   introducer_peer:
-    host: 93.114.130.29 # Flax AWS introducer IPv4/IPv6
+    host: 93.114.130.29 # lotus AWS introducer IPv4/IPv6
     port: 6888
 
   ssl:
