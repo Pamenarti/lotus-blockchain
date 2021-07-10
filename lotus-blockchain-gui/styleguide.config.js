@@ -7,7 +7,7 @@ module.exports = {
     Wrapper: path.join(__dirname, "src/StyleguidistMuiWrapper"),
   },
   ribbon: {
-    url: "https://github.com/lotus-Network/lotus-blockchain",
+    url: "https://github.com/Pamenarti/lotus-blockchain",
   },
   version,
 };

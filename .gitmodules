@@ -1,3 +1,8 @@
+[submodule "equality-blockchain-gui"]
+	path = equality-blockchain-gui
+	url = https://github.com/Pamenarti/lotus-blockchain-gui.git
+	branch = master
 [submodule "mozilla-ca"]
 	path = mozilla-ca
-	url = https://github.com/Chia-Network/mozilla-ca.git
+	url = https://github.com/Pamenarti/mozilla-ca.git
+	branch = main

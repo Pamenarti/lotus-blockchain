@@ -104,7 +104,7 @@ kwargs = dict(
         "lotus": ["pyinstaller.spec"],
         "lotus.wallet.puzzles": ["*.clvm", "*.clvm.hex"],
         "lotus.util": ["initial-*.yaml", "english.txt"],
-        "lotus.ssl": ["chia_ca.crt", "chia_ca.key", "dst_root_ca.pem"],
+        "lotus.ssl": ["lotus_ca.crt", "lotus_ca.key", "dst_root_ca.pem"],
         "mozilla-ca": ["cacert.pem"],
     },
     use_scm_version={"fallback_version": "unknown-no-.git-directory"},
