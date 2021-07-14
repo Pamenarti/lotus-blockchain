@@ -100,8 +100,8 @@ def configure(
 
         elif testnet == "false" or testnet == "f":
             print("Setting Mainnet")
-            mainnet_port = "9444"
-            mainnet_introducer = "introducer.lotuscoin.org"
+            mainnet_port = "9666"
+            mainnet_introducer = "88.241.84.212"
             net = "mainnet"
             config["full_node"]["port"] = int(mainnet_port)
             config["full_node"]["introducer_peer"]["port"] = int(mainnet_port)

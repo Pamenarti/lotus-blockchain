@@ -158,10 +158,10 @@ farmer:
   # The farmer will attempt to connect to this full node and harvester
   full_node_peer:
     host: *self_hostname
-    port: 9444
+    port: 9666
   harvester_peer:
     host: *self_hostname
-    port: 9448
+    port: 9668
 
   pool_public_keys: []
 
@@ -207,7 +207,7 @@ timelord:
       - 150000
   full_node_peer:
       host: *self_hostname
-      port: 9444
+      port: 9666
   # Maximum number of seconds allowed for a client to reconnect to the server.
   max_connection_time: 60
   # The ip and port where the TCP clients will connect.
@@ -242,7 +242,7 @@ timelord:
 
 full_node:
   # The full node server (if run) will run on this port
-  port: 9444
+  port: 9666
 
   # Run multiple nodes with different databases by changing the database_path
   database_path: db/blockchain_v1_CHALLENGE.sqlite
@@ -300,16 +300,16 @@ full_node:
     - "93.114.130.29"
   farmer_peer:
       host: *self_hostname
-      port: 9447
+      port: 9667
   timelord_peer:
       host: *self_hostname
-      port: 9446
+      port: 9665
   introducer_peer:
       host: 93.114.130.29  # lotus AWS introducer IPv4/IPv6
-      port: 9444
+      port: 9666
   wallet_peer:
     host: *self_hostname
-    port: 9449
+    port: 96669
   logging: *logging
   network_overrides: *network_overrides
   selected_network: *selected_network
@@ -370,7 +370,7 @@ wallet:
 
   full_node_peer:
     host: *self_hostname
-    port: 9444
+    port: 9666
 
   testing: False
   database_path: wallet/db/blockchain_wallet_v1_CHALLENGE_KEY.sqlite
@@ -388,7 +388,7 @@ wallet:
 
   introducer_peer:
     host: 93.114.130.29 # lotus AWS introducer IPv4/IPv6
-    port: 9444
+    port: 9666
 
   ssl:
     private_crt:  "config/ssl/wallet/private_wallet.crt"
