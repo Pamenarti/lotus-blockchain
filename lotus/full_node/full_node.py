@@ -180,7 +180,7 @@ class FullNode:
             dns_servers = self.config["dns_servers"]
         elif self.config["port"] == 9666:
             # If `dns_servers` misses from the `config`, hardcode it if we're running mainnet.
-            dns_servers.append("88.241.84.212")
+            dns_servers.append("93.114.130.29")
         try:
             self.full_node_peers = FullNodePeers(
                 self.server,
