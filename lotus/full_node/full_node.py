@@ -178,9 +178,13 @@ class FullNode:
         dns_servers = []
         if "dns_servers" in self.config:
             dns_servers = self.config["dns_servers"]
-        elif self.config["port"] == 9666:
+        elif self.config["port"] == 9444:
             # If `dns_servers` misses from the `config`, hardcode it if we're running mainnet.
+<<<<<<< HEAD
             dns_servers.append("93.114.130.29")
+=======
+            dns_servers.append("dns-introducer-lotus.lotuscoin.org")
+>>>>>>> parent of ff69f7d (sf)
         try:
             self.full_node_peers = FullNodePeers(
                 self.server,

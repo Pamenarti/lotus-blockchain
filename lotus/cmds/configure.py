@@ -100,8 +100,13 @@ def configure(
 
         elif testnet == "false" or testnet == "f":
             print("Setting Mainnet")
+<<<<<<< HEAD
             mainnet_port = "9666"
             mainnet_introducer = "93.114.130.29"
+=======
+            mainnet_port = "9444"
+            mainnet_introducer = "introducer.lotuscoin.org"
+>>>>>>> parent of ff69f7d (sf)
             net = "mainnet"
             config["full_node"]["port"] = int(mainnet_port)
             config["full_node"]["introducer_peer"]["port"] = int(mainnet_port)
