@@ -1,5 +1,5 @@
 # lotus-blockchain
-
+# !!! It has been shelved for now due to lack of support.
 ![lotus](https://i0.wp.com/lotus.farm/wp-content/uploads/2021/05/banner-logo.png)
 
 
